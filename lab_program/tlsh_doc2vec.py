@@ -55,25 +55,40 @@ def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> No
     
     vector_df = pd.DataFrame(vector_lists, index=tags)
 
-    ### ラベル付け ###
+    ### ラベル付け4値 ###
     """
     Backdoor.Graybird 1
     Packed.Generic    2
     Ransom.Cerber     3
     report            0
     """
+    # for index_name in vector_df.index[:]:
+    #     if index_name.startswith("report"):
+    #         vector_df.loc[index_name, 'LABEL'] = 0
+    #     elif index_name.startswith("Backdoor"):
+    #         vector_df.loc[index_name, 'LABEL'] = 1
+    #     elif index_name.startswith("Packed"):
+    #         vector_df.loc[index_name, 'LABEL'] = 2
+    #     elif index_name.startswith("Ransom"):
+    #         vector_df.loc[index_name, 'LABEL'] = 3
+    #     else:
+    #         print("ラベル付けできないファイルがあります。")
+    #         exit()
+    
+    ###ラベル付け　２値
+    """
+    Backdoor.Graybird 1
+    Packed.Generic    1
+    Ransom.Cerber     1
+    report            0
+    """
     for index_name in vector_df.index[:]:
         if index_name.startswith("report"):
             vector_df.loc[index_name, 'LABEL'] = 0
-        elif index_name.startswith("Backdoor"):
-            vector_df.loc[index_name, 'LABEL'] = 1
-        elif index_name.startswith("Packed"):
-            vector_df.loc[index_name, 'LABEL'] = 2
-        elif index_name.startswith("Ransom"):
-            vector_df.loc[index_name, 'LABEL'] = 3
         else:
-            print("ラベル付けできないファイルがあります。")
-            exit()
+            vector_df.loc[index_name, 'LABEL'] = 1
+
+
     
     vector_df.to_csv(csv_save_path)
 
@@ -96,6 +111,6 @@ if __name__ ==  "__main__":
     }
 
     #CSVとして保存する場所
-    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_4label.csv'
+    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_2label.csv'
 
     change_to_doc2vec(target_csv, parameters, csv_save_path)
