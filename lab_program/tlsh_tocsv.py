@@ -19,11 +19,9 @@ import time
 import tlsh
 import typing
 
-"""TLSHによるハッシュ値を作成し、CSVとして出力する"""
-def create_tlsh_tocsv(file_paths: list[str], csv_path: str) -> None:
-
-    start_time = time.time() #<- 開始時間
-
+"""TLSHによるハッシュ値を作成し、リストにして返す"""
+#４つごとに分解する関数
+def create_tlsh_4_split_list(file_paths: list[str]) -> list[str]:
     spilit_hash_list = []
     
     for i in range(len(file_paths)):
@@ -33,20 +31,34 @@ def create_tlsh_tocsv(file_paths: list[str], csv_path: str) -> None:
             for i in range(0, 72, 4):
                 inside_spilit_list.append(target_hash[i:i+4])
             spilit_hash_list.append(inside_spilit_list)
+    return spilit_hash_list
+
+#３つごとに分解する関数
+def create_tlsh_3_split_list(file_paths: list[str]) -> list[str]:
+    spilit_hash_list = []
+    
+    for i in range(len(file_paths)):
+        with open(file_paths[i] ,'rb') as f:
+            target_hash = tlsh.hash(f.read())
+            inside_spilit_list = []
+            for i in range(0, 72, 3):
+                inside_spilit_list.append(target_hash[i:i+3])
+            spilit_hash_list.append(inside_spilit_list)
+    return spilit_hash_list
     
 
-    ### インデックス名を作成する ###
+"""インデックス名を作成""" 
+def create_index_name_list(file_paths):
     index_name = []
     for file_name in file_paths[:]:
         file_name = file_name.replace('custom_datasets/dataset_1\\', '')
         file_name = file_name.replace('.json.txt.txt', '')
         index_name.append(file_name)
-
-    ### データフレーム化 """
-    df = pd.DataFrame(spilit_hash_list, index=index_name)
+    return index_name
 
 
-    ### ラベル付け ###
+"""ラベル付けをする関数"""
+def labeling_func(df) -> pd.DataFrame:
     """
     Backdoor.Graybird 1
     Packed.Generic    2
@@ -65,15 +77,10 @@ def create_tlsh_tocsv(file_paths: list[str], csv_path: str) -> None:
         else:
             print("ラベル付けできないファイルがあります。")
             exit()
+    
+    return df
 
-
-    # print(df)
-
-    ### csvとして出力 ###
-    df.to_csv(csv_path)
-
-    end_time = time.time()
-    print('実行時間 = ', end_time - start_time)
+    # print('実行時間 = ', end_time - start_time)
             
 
 
@@ -96,7 +103,25 @@ if __name__ == "__main__":
     file_paths = get_files_path(folder_path)
 
     ### TLSHハッシュ値を計算し、CSVに変換 ###
-    csv_path = "CSV/anything/tlsh_csv_origin_4label.csv"
-    create_tlsh_tocsv(file_paths, csv_path)
-    
+    csv_path = "CSV/anything/tlsh_csv_origin_3spilit_4label.csv"
+
+    # spilit_hash_list = create_tlsh_4_split_list(file_paths)
+    spilit_hash_list = create_tlsh_3_split_list(file_paths)
+
+    index_name_list = create_index_name_list(file_paths)
+    print(index_name_list)
+
+    ###データフレーム化###
+    df = pd.DataFrame(spilit_hash_list, index=index_name_list) 
+
+    # print(df)
+
+    ###ラベル付け###
+    df = labeling_func(df)
+
+    ### csvとして出力 ###
+    df.to_csv(csv_path)
+
+
+     
     
