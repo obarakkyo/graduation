@@ -117,7 +117,11 @@ if __name__ == '__main__':
     # csv_name = './CSV/Binarization/grad/doc2vec/Backdoor_s100w8alpha0.1-0.001dm0seed4.csv'
     # csv_name = './CSV/Binarization/grad/doc2vec/infostealer_s100w8alpha0.1-0.001dm0seed4.csv'
     # csv_name = './CSV/Binarization/grad/doc2vec/Packed_s100w8alpha0.1-0.001dm0seed4.csv'
-    csv_name = './CSV/Binarization/grad/doc2vec/Trojan_s100w8alpha0.1-0.001dm0seed4.csv'
+    # csv_name = './CSV/Binarization/grad/doc2vec/Trojan_s100w8alpha0.1-0.001dm0seed4.csv'
+
+
+    """TLSH"""
+    csv_name = '../CSV/anything/tlsh_csv_doc2vec_2label.csv'
 
     #csvの特徴量の数を指定
     dimention = 100

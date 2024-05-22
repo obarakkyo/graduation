@@ -136,11 +136,14 @@ if __name__ == "__main__":
     # csv_name = './CSV/Binarization/grad/tfidf/tfidf_ngram4size100Trojan.csv'
 
     """Doc2VecのCSV"""
-    csv_name = './CSV/Binarization/grad/doc2vec/report_s100w8alpha0.1-0.001dm0seed4.csv'
+    # csv_name = './CSV/Binarization/grad/doc2vec/report_s100w8alpha0.1-0.001dm0seed4.csv'
     # csv_name = './CSV/Binarization/grad/doc2vec/Backdoor_s100w8alpha0.1-0.001dm0seed4.csv'
     # csv_name = './CSV/Binarization/grad/doc2vec/infostealer_s100w8alpha0.1-0.001dm0seed4.csv'
     # csv_name = './CSV/Binarization/grad/doc2vec/Packed_s100w8alpha0.1-0.001dm0seed4.csv'
     # csv_name = './CSV/Binarization/grad/doc2vec/Trojan_s100w8alpha0.1-0.001dm0seed4.csv'
+
+    """TLSHのCSV"""
+    csv_name = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
 
     #csvファイルの特徴量の数を指定
     dimention = 100
@@ -174,35 +177,35 @@ if __name__ == "__main__":
 
 
     """--------------------XGBoostの時-------------------------"""
-    # model = xgb.XGBClassifier(
-    #     booster = 'gbtree',
-    #     objective = 'binary:logistic',
-    #     seed = 10,
-    # )
+    model = xgb.XGBClassifier(
+        booster = 'gbtree',
+        objective = 'binary:logistic',
+        seed = 10,
+    )
 
-    # fit_params = {
-    #     'verbose' : 0, #学習中のコマンドライン出力  
-    #     'early_stopping_rounds' : 10, #学習時、評価指標がこの回数連続で改善しなくなった時点でストップ
-    #     'eval_metric' : 'logloss', 
-    #     'eval_set'    : [(x_train, y_train), (x_test, y_test)]   #評価指標
-    # }
+    fit_params = {
+        'verbose' : 0, #学習中のコマンドライン出力  
+        'early_stopping_rounds' : 10, #学習時、評価指標がこの回数連続で改善しなくなった時点でストップ
+        'eval_metric' : 'logloss', 
+        'eval_set'    : [(x_train, y_train), (x_test, y_test)]   #評価指標
+    }
 
-    # cv_params = {
-    #     'max_depth'    : [i for i in range(2, 100, 2)],
-    #     'n_estimators' : [i for i in range(10, 200, 10)],
-    #     'reg_alpha'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
-    #     'reg_lambda'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
-    #     'learning_rate': [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
-    #  }
+    cv_params = {
+        'max_depth'    : [i for i in range(2, 100, 2)],
+        'n_estimators' : [i for i in range(10, 200, 10)],
+        'reg_alpha'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
+        'reg_lambda'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
+        'learning_rate': [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
+     }
 
-    # params_scales = {
-    #     'max_depth' : 'linear',
-    #     'n_estimators' : 'linear',
-    #     'reg_alpha'    : 'log',
-    #     'reg_lambda'   : 'log',
-    #     'learning_rate': 'log',
-    # }
-    # main(cv_params, params_scales, model, x_train, y_train, fit_params)
+    params_scales = {
+        'max_depth' : 'linear',
+        'n_estimators' : 'linear',
+        'reg_alpha'    : 'log',
+        'reg_lambda'   : 'log',
+        'learning_rate': 'log',
+    }
+    main(cv_params, params_scales, model, x_train, y_train, fit_params)
     """------------------------------------------------------------"""
 
 
@@ -210,44 +213,44 @@ if __name__ == "__main__":
 
 
     """-------------------------LightGBMの時---------------------------"""
-    model = lgb.LGBMClassifier(
-        boosting_type = 'gbdt', #決定木勾配ブースティング
-        objective = 'binary', #2クラス分類
-        class_weight = "balanced",
-        seed = 10,
-    )
+#     model = lgb.LGBMClassifier(
+#         boosting_type = 'gbdt', #決定木勾配ブースティング
+#         objective = 'binary', #2クラス分類
+#         class_weight = "balanced",
+#         seed = 10,
+#     )
 
-    model.set_params(num_leaves=2, min_child_samples=5)
+#     model.set_params(num_leaves=2, min_child_samples=5)
 
-   #学習時のfitパラメータ設定
-    fit_params = {
-        'verbose' : 0, #学習中のコマンドライン出力オフ
-        'early_stopping_rounds' : 10,
-        'eval_metric' : 'binary_logloss',
-        'eval_set' : [(x_train, y_train), (x_test, y_test)]
-    }
+#    #学習時のfitパラメータ設定
+#     fit_params = {
+#         'verbose' : 0, #学習中のコマンドライン出力オフ
+#         'early_stopping_rounds' : 10,
+#         'eval_metric' : 'binary_logloss',
+#         'eval_set' : [(x_train, y_train), (x_test, y_test)]
+#     }
 
-    #ハイパーパラメータの設定
-    cv_params = {
-        'reg_alpha': [0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1, 3, 10],
-        'reg_lambda': [0, 0.0001, 0.001, 0.01, 0.1, 0.3, 1],
-        'num_leaves': [2, 4, 8, 16, 32, 64, 96],
-        'colsample_bytree': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-        'subsample': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-        'subsample_freq': [0, 1, 2, 3, 4, 5, 6, 7],
-        'min_child_samples': [0, 2, 5, 10, 20, 30, 40, 50],
-    }
+#     #ハイパーパラメータの設定
+#     cv_params = {
+#         'reg_alpha': [0, 0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1, 3, 10],
+#         'reg_lambda': [0, 0.0001, 0.001, 0.01, 0.1, 0.3, 1],
+#         'num_leaves': [2, 4, 8, 16, 32, 64, 96],
+#         'colsample_bytree': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+#         'subsample': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+#         'subsample_freq': [0, 1, 2, 3, 4, 5, 6, 7],
+#         'min_child_samples': [0, 2, 5, 10, 20, 30, 40, 50],
+#     }
 
-    params_scales = {
-        'reg_alpha'  : 'log',
-        'reg_lambda' : 'log',
-        'num_leaves' : 'linear',
-        'colsample_bytree' : 'linear',
-        'subsample' : 'linear',
-        'subsample_freq' : 'linear',
-        'min_child_samples' : 'linear',
-    }  
-    main(cv_params, params_scales, model, x_train, y_train, fit_params)
+#     params_scales = {
+#         'reg_alpha'  : 'log',
+#         'reg_lambda' : 'log',
+#         'num_leaves' : 'linear',
+#         'colsample_bytree' : 'linear',
+#         'subsample' : 'linear',
+#         'subsample_freq' : 'linear',
+#         'min_child_samples' : 'linear',
+#     }  
+#     main(cv_params, params_scales, model, x_train, y_train, fit_params)
     """------------------------------------------------------------------"""
 
 
