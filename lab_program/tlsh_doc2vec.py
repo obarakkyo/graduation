@@ -16,7 +16,9 @@ import time
 def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> None:
     df = pd.read_csv(target_csv, index_col=0)
 
-    hash_lists = df.iloc[:, 0:18].values.tolist()
+    # hash_lists = df.iloc[:, 0:18].values.tolist()
+    hash_lists = df.iloc[:, 0:24].values.tolist()
+
     tags = df.index.to_list()
 
     tagged_corpus = []
@@ -97,7 +99,8 @@ def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> No
 if __name__ ==  "__main__":
     print("This program changes tlsh to doc2vec value!")
 
-    target_csv = "CSV/anything/tlsh_csv_origin_4label.csv"
+    # target_csv = "CSV/anything/tlsh_csv_origin_4label.csv"
+    target_csv = "CSV/anything/tlsh_csv_origin_3spilit_4label.csv"
 
     #Doc2Vecのパラメータを指定
     parameters = {
@@ -111,6 +114,6 @@ if __name__ ==  "__main__":
     }
 
     #CSVとして保存する場所
-    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_2label.csv'
+    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_3spilit_2label.csv'
 
     change_to_doc2vec(target_csv, parameters, csv_save_path)
