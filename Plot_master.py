@@ -40,7 +40,7 @@ def create_train_test(csv_name, dimention):
 
 
 
-def main(cv_params, params_scales, model, x_train, y_train, fit_params):
+def main(cv_params, params_scales, model, x_train, y_train, fit_params=None):
     """validation_curveの実行"""
 
     scoring = 'neg_log_loss'
@@ -144,6 +144,7 @@ if __name__ == "__main__":
 
     """TLSHのCSV"""
     csv_name = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
+    csv_name = "../CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv"
 
     #csvファイルの特徴量の数を指定
     dimention = 100
@@ -152,23 +153,23 @@ if __name__ == "__main__":
     x_train, x_test, y_train, y_test = create_train_test(csv_name, dimention)
 
     """---------------ランダムフォレストの時--------------------"""
-    # model = RandomForestClassifier(verbose=0, class_weight='balanced', max_features='sqrt')
+    model = RandomForestClassifier(verbose=0, class_weight='balanced', max_features='sqrt')
 
-    # #ハイパーパラメータと探索範囲のリストを辞書する
-    # cv_params = {
-    #     'n_estimators' : [i for i in range(10, 200, 2)],
-    #     'max_depth'    : [i for i in range(5, 100, 2)],
-    #     'min_samples_split' : [i for i in range(1, 15)],
-    # }
+    #ハイパーパラメータと探索範囲のリストを辞書する
+    cv_params = {
+        'n_estimators' : [i for i in range(10, 200, 2)],
+        'max_depth'    : [i for i in range(5, 100, 2)],
+        'min_samples_split' : [i for i in range(1, 15)],
+    }
 
-    # #ハイパーパラメータのスケールを示す辞書
-    # params_scales = {
-    #     'n_estimators' : 'linear',
-    #     'max_depth'    : 'linear',
-    #     'min_samples_split' : 'linear',
-    # }
+    #ハイパーパラメータのスケールを示す辞書
+    params_scales = {
+        'n_estimators' : 'linear',
+        'max_depth'    : 'linear',
+        'min_samples_split' : 'linear',
+    }
 
-    # main(cv_params, params_scales, model, x_train, y_train)
+    main(cv_params, params_scales, model, x_train, y_train)
     """-------------------------------------------------------"""
 
 
@@ -177,35 +178,35 @@ if __name__ == "__main__":
 
 
     """--------------------XGBoostの時-------------------------"""
-    model = xgb.XGBClassifier(
-        booster = 'gbtree',
-        objective = 'binary:logistic',
-        seed = 10,
-    )
+    # model = xgb.XGBClassifier(
+    #     booster = 'gbtree',
+    #     objective = 'binary:logistic',
+    #     seed = 10,
+    # )
 
-    fit_params = {
-        'verbose' : 0, #学習中のコマンドライン出力  
-        'early_stopping_rounds' : 10, #学習時、評価指標がこの回数連続で改善しなくなった時点でストップ
-        'eval_metric' : 'logloss', 
-        'eval_set'    : [(x_train, y_train), (x_test, y_test)]   #評価指標
-    }
+    # fit_params = {
+    #     'verbose' : 0, #学習中のコマンドライン出力  
+    #     'early_stopping_rounds' : 10, #学習時、評価指標がこの回数連続で改善しなくなった時点でストップ
+    #     'eval_metric' : 'logloss', 
+    #     'eval_set'    : [(x_train, y_train), (x_test, y_test)]   #評価指標
+    # }
 
-    cv_params = {
-        'max_depth'    : [i for i in range(2, 100, 2)],
-        'n_estimators' : [i for i in range(10, 200, 10)],
-        'reg_alpha'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
-        'reg_lambda'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
-        'learning_rate': [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
-     }
+    # cv_params = {
+    #     'max_depth'    : [i for i in range(2, 100, 2)],
+    #     'n_estimators' : [i for i in range(10, 200, 10)],
+    #     'reg_alpha'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
+    #     'reg_lambda'    : [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
+    #     'learning_rate': [0, 0.0001, 0.001, 0.01, 0.03, 0.1, 0.3, 1.0],
+    #  }
 
-    params_scales = {
-        'max_depth' : 'linear',
-        'n_estimators' : 'linear',
-        'reg_alpha'    : 'log',
-        'reg_lambda'   : 'log',
-        'learning_rate': 'log',
-    }
-    main(cv_params, params_scales, model, x_train, y_train, fit_params)
+    # params_scales = {
+    #     'max_depth' : 'linear',
+    #     'n_estimators' : 'linear',
+    #     'reg_alpha'    : 'log',
+    #     'reg_lambda'   : 'log',
+    #     'learning_rate': 'log',
+    # }
+    # main(cv_params, params_scales, model, x_train, y_train, fit_params)
     """------------------------------------------------------------"""
 
 

@@ -76,7 +76,8 @@ if __name__ == "__main__":
     print("This program learns TLSH using random forest!!")
 
     # target_csv = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
-    target_csv = "../CSV/anything/tlsh_csv_doc2vec_3spilit_2label.csv"
+    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_3spilit_2label.csv"
+    target_csv = "../CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv"
 
     #次元数の初期設定
     dimention = 100

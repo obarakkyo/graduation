@@ -16,15 +16,21 @@ import time
 def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> None:
     df = pd.read_csv(target_csv, index_col=0)
 
-    # hash_lists = df.iloc[:, 0:18].values.tolist()
-    hash_lists = df.iloc[:, 0:24].values.tolist()
+    hash_lists = df.iloc[:, 0:-2].values.tolist()
 
     tags = df.index.to_list()
 
     tagged_corpus = []
 
+    ## １文字以外の時に使う ##
+    # for i in range(len(hash_lists)):
+    #     tagged_corpus.append(TaggedDocument(hash_lists[i], tags[i]))
+
+    ## １文字の時 ##
     for i in range(len(hash_lists)):
-        tagged_corpus.append(TaggedDocument(hash_lists[i], tags[i]))
+        #文字列に変換
+        hash_list_str = [str(word) for word in hash_lists[i]]
+        tagged_corpus.append(TaggedDocument(hash_list_str, tags[i]))
     
     """モデルの作成"""
     print('-----Creating Model-----')
@@ -53,7 +59,8 @@ def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> No
     """CSVを作成する"""
     vector_lists = []
     for i in range(len(tagged_corpus)):
-        vector_lists.append(model.infer_vector(hash_lists[i]))
+        hash_list_str = [str(word) for word in hash_lists[i]]
+        vector_lists.append(model.infer_vector(hash_list_str))
     
     vector_df = pd.DataFrame(vector_lists, index=tags)
 
@@ -100,7 +107,8 @@ if __name__ ==  "__main__":
     print("This program changes tlsh to doc2vec value!")
 
     # target_csv = "CSV/anything/tlsh_csv_origin_4label.csv"
-    target_csv = "CSV/anything/tlsh_csv_origin_3spilit_4label.csv"
+    # target_csv = "CSV/anything/tlsh_csv_origin_3spilit_4label.csv"
+    target_csv = "CSV/anything/tlsh_csv_origin_1_spilit_4label.csv"
 
     #Doc2Vecのパラメータを指定
     parameters = {
@@ -114,6 +122,6 @@ if __name__ ==  "__main__":
     }
 
     #CSVとして保存する場所
-    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_3spilit_2label.csv'
+    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv'
 
     change_to_doc2vec(target_csv, parameters, csv_save_path)
