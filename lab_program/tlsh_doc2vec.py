@@ -114,7 +114,9 @@ if __name__ ==  "__main__":
 
     #Doc2Vecのパラメータを指定
     parameters = {
-        'vector_size' : 100,
+        # 'vector_size' : 100,
+        # 'vector_size' : 18,
+        'vector_size' : 4,
         'window_size' : 8,
         'iter'        : 500,
         'alpha'       : 0.1,
@@ -124,6 +126,6 @@ if __name__ ==  "__main__":
     }
 
     #CSVとして保存する場所
-    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_4spilit_2label.csv'
+    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_4spilit_4dimention_2label.csv'
 
     change_to_doc2vec(target_csv, parameters, csv_save_path)

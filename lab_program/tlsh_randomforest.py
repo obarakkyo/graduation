@@ -16,13 +16,13 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 
-def main(target_csv, dimention, parameters, model) -> None:
+def main(target_csv, parameters, model) -> None:
     """データのロード"""
     df = pd.read_csv(target_csv, index_col=0)
     print('df.shape = ', df.shape)
 
     #説明変数
-    x = df.iloc[:, 0:dimention]
+    x = df.iloc[:, 0:-1]
     print('x.shape = ', x.shape)
 
     #目的変数
@@ -79,10 +79,11 @@ if __name__ == "__main__":
     # target_csv = "../CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv"
     # target_csv = "../CSV/anything/tlsh_csv_doc2vec_2spilit_2label.csv"
     # target_csv = "../CSV/anything/tlsh_csv_doc2vec_3spilit_2label.csv"
-    target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_2label.csv"
+    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_2label.csv"
+    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_18dimention_2label.csv"
+    target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_4dimention_2label.csv"
 
-    #次元数の初期設定
-    dimention = 100
+
 
     #グリッドリサーチによるハイパラメータの探索候補設定
     parameters = {
@@ -94,7 +95,7 @@ if __name__ == "__main__":
     #モデルインスタンス
     model = RandomForestClassifier(class_weight="balanced", random_state=123)
 
-    main(target_csv, dimention, parameters, model)
+    main(target_csv, parameters, model)
 
 
 
