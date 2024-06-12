@@ -106,9 +106,11 @@ def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> No
 if __name__ ==  "__main__":
     print("This program changes tlsh to doc2vec value!")
 
-    # target_csv = "CSV/anything/tlsh_csv_origin_4label.csv"
+    # target_csv = "CSV/anything/tlsh_csv_origin_1_spilit_4label.csv"
+    # target_csv = "CSV/anything/tlsh_csv_origin_2_spilit_4label.csv"
     # target_csv = "CSV/anything/tlsh_csv_origin_3spilit_4label.csv"
-    target_csv = "CSV/anything/tlsh_csv_origin_1_spilit_4label.csv"
+    target_csv = "CSV/anything/tlsh_csv_origin_4spilit_4label.csv"
+# 
 
     #Doc2Vecのパラメータを指定
     parameters = {
@@ -122,6 +124,6 @@ if __name__ ==  "__main__":
     }
 
     #CSVとして保存する場所
-    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv'
+    csv_save_path = 'CSV/anything/tlsh_csv_doc2vec_4spilit_2label.csv'
 
     change_to_doc2vec(target_csv, parameters, csv_save_path)

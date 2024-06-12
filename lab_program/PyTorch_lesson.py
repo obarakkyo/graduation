@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import matplotlib.pyplot as plt
 
 
 """ニューラルネットワークの定義"""
@@ -81,10 +82,11 @@ def main() -> None:
     hidden_size2 = 64
     output_size = 2
     learning_rate = 0.001
-    num_epochs = 2000
+    num_epochs = 100
 
     #モデルの初期化
     model = SimpleNN(input_size, hidden_size, hidden_size2, output_size)
+    losses = []
 
     #損失関数とオプティマイザの定義
     criterion = nn.CrossEntropyLoss()
@@ -94,7 +96,7 @@ def main() -> None:
     for epoch in range(num_epochs):
         outputs = model(x_train)
         loss = criterion(outputs, y_train)
-
+        losses.append(loss.item())
         #逆伝搬とオプティマイザのステップ
         optimizer.zero_grad()
         loss.backward()
@@ -107,12 +109,14 @@ def main() -> None:
     #モデルの評価
     model.eval()
     with torch.no_grad():
-        # test_inputs = torch.tensor(x_test, dtype=torch.float32)
-        # test_labels = torch.tensor(y_test, dtype=torch.long).squeeze()
         test_outputs = model(x_test)
         _, predicted = torch.max(test_outputs.data, 1)
         accuracy = accuracy_score(y_test.numpy(), predicted.numpy())
         print(f'Accuracy on test data: {accuracy * 100:.2f}%')
+    
+    #損失関数プロット
+    plt.plot(losses)
+    plt.show()
 
 
 

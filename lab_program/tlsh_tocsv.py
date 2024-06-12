@@ -46,6 +46,18 @@ def create_tlsh_3_split_list(file_paths: list[str]) -> list[str]:
             spilit_hash_list.append(inside_spilit_list)
     return spilit_hash_list
 
+#2つごとに分解する関数
+def create_tlsh_2_split_list(file_paths: list[str]) -> list[str]:
+    spilit_hash_list = []
+    for i in range(len(file_paths)):
+        with open(file_paths[i], 'rb') as f:
+            target_hash = tlsh.hash(f.read())
+            inside_split_list = []
+            for j in range(0, 72, 2):
+                inside_split_list.append(target_hash[j:j+2])
+            spilit_hash_list.append(inside_split_list)
+    return spilit_hash_list
+
 #１つごとに分解する関数
 def create_tlsh_1_split_list(file_paths: list[str]) -> list[str]:
     spilit_hash_list = []
@@ -116,11 +128,12 @@ if __name__ == "__main__":
     file_paths = get_files_path(folder_path)
 
     ### TLSHハッシュ値を計算し、CSVに変換 ###
-    csv_path = "CSV/anything/tlsh_csv_origin_1_spilit_4label.csv"
+    csv_path = "CSV/anything/tlsh_csv_origin_2_spilit_4label.csv"
 
     # spilit_hash_list = create_tlsh_4_split_list(file_paths)
     # spilit_hash_list = create_tlsh_3_split_list(file_paths)
-    spilit_hash_list = create_tlsh_1_split_list(file_paths)
+    spilit_hash_list = create_tlsh_2_split_list(file_paths)
+    # spilit_hash_list = create_tlsh_1_split_list(file_paths)
 
     index_name_list = create_index_name_list(file_paths)
     print(index_name_list)

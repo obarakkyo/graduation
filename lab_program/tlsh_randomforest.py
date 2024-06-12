@@ -76,8 +76,10 @@ if __name__ == "__main__":
     print("This program learns TLSH using random forest!!")
 
     # target_csv = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
+    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv"
+    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_2spilit_2label.csv"
     # target_csv = "../CSV/anything/tlsh_csv_doc2vec_3spilit_2label.csv"
-    target_csv = "../CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv"
+    target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_2label.csv"
 
     #次元数の初期設定
     dimention = 100
@@ -85,12 +87,12 @@ if __name__ == "__main__":
     #グリッドリサーチによるハイパラメータの探索候補設定
     parameters = {
     'n_estimators' : [i for i in range(50, 80, 5)],
-    'max_features'  : ('sqrt', 'log2', 'auto', None),
+    'max_features'  : ('sqrt', 'log2', None),
     'max_depth'   : [i for i in range(20, 50, 5)],
     }
 
     #モデルインスタンス
-    model = RandomForestClassifier(class_weight="balanced")
+    model = RandomForestClassifier(class_weight="balanced", random_state=123)
 
     main(target_csv, dimention, parameters, model)
 
