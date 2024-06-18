@@ -17,7 +17,7 @@ def download_and_split_dataset(target_csv: str) -> None:
 
     #説明変数と目的変数に分割
     x = csv_data.iloc[:, 0:csv_data.shape[1]-1].values
-    y = csv_data.loc[:, ["LABEL"]].values
+    y = csv_data.loc[:, ["LABEL"]].values.ravel()
     print(x[0:1])
     print(y[0:1])
     print('x.shape = ', x.shape)
@@ -33,24 +33,24 @@ def create_model_func():
         class_weight= 'balanced',
         n_jobs= -1,
         seed = 10,
+        early_stopping_rounds = 10,
+        # eval_metric = 'bibary_logloss',
     )
     return model
 
 
 def grid_search(model, params, x_train, x_test, y_train, y_test):
     """グリッドサーチの実行"""
-    fit_params = {
-        'callbacks': [lgb.early_stopping(10), lgb.log_evaluation(0)]
-    }
-    
     grid = GridSearchCV(
         estimator=model,
         param_grid=params,
         cv=5,
+        scoring="accuracy",
     )
     
     start_time = time.time()
-    grid.fit(x_train, y_train, eval_set=[(x_test, y_test)], eval_metric='binary_logloss', **fit_params)
+    # grid.fit(x_train, y_train, eval_set=[(x_test, y_test)])
+    grid.fit(x_train, y_train)
     end_time = time.time() - start_time
     
     print(grid.best_params_)
@@ -61,7 +61,8 @@ def grid_search(model, params, x_train, x_test, y_train, y_test):
 
 
 if __name__ == "__main__":
-    target_csv = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
+    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
+    target_csv = "../CSV/dataset1CSV/doc2vec/tlsh_csv_doc2vec_4spilit_2label.csv"
 
     x_train, x_test, y_train, y_test = download_and_split_dataset(target_csv)
 

@@ -75,13 +75,13 @@ def main(target_csv, parameters, model) -> None:
 if __name__ == "__main__":
     print("This program learns TLSH using random forest!!")
 
-    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
-    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_1spilit_2label.csv"
-    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_2spilit_2label.csv"
-    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_3spilit_2label.csv"
-    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_2label.csv"
-    # target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_18dimention_2label.csv"
-    target_csv = "../CSV/anything/tlsh_csv_doc2vec_4spilit_4dimention_2label.csv"
+    # target_csv = "../CSV/dataset1CSV/ascii/tlsh_ascii_4split_2label.csv"
+    # target_csv = "../CSV/dataset1CSV/ascii/tlsh_ascii_3split_2label.csv"
+    # target_csv = "../CSV/dataset1CSV/ascii/tlsh_ascii_2split_2label.csv"
+    target_csv = "../CSV/dataset1CSV/ascii/tlsh_ascii_1split_2label.csv"
+
+    # target_csv = "../CSV/dataset1CSV/ascii/tlsh_AsciiSigmoid_4split_2label.csv"
+    
 
 
 

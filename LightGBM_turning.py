@@ -6,14 +6,14 @@ from sklearn.metrics import classification_report, confusion_matrix
 import lightgbm as lgb
 import time
 
-def main(cav_name, dimention, params):
+def main(cav_name, params):
     """データの読み込み"""
     print('csv_name = ', cav_name)
     df = pd.read_csv(csv_name, index_col=0)
     print('df.shape = ', df.shape)
 
     #説明変数x type(numpy.ndarray)
-    x = df.iloc[:, 0:dimention].values
+    x = df.iloc[:, 0:-1].values
     print('x.shape = ', x.shape)
 
     #目的変数y  type(numpy.ndarray)
@@ -121,10 +121,8 @@ if __name__ == '__main__':
 
 
     """TLSH"""
-    csv_name = '../CSV/anything/tlsh_csv_doc2vec_2label.csv'
+    csv_name = "./CSV/dataset1CSV/doc2vec/tlsh_csv_doc2vec_4spilit_2label.csv"
 
-    #csvの特徴量の数を指定
-    dimention = 100
 
     #ハイパーパラメータの設定
     params = {
@@ -137,4 +135,4 @@ if __name__ == '__main__':
         'min_child_samples': [2, 4, 6, 10],
     }
 
-    main(csv_name, dimention, params)
+    main(csv_name, params)
