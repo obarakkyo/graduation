@@ -87,14 +87,21 @@ if __name__ == "__main__":
 
     """dataset2"""
     # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_1split_2label.csv"
-    target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_1split_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_1split_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_2split_2label.csv"
+    # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_2split_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_3split_2label.csv"
+    # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_3split_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_4split_2label.csv"
+    target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_4split_6label.csv"
+
     
 
 
 
     #グリッドリサーチによるハイパラメータの探索候補設定
     parameters = {
-    'n_estimators' : [i for i in range(50, 80, 5)],
+    'n_estimators' : [i for i in range(50, 100, 5)],
     'max_features'  : ('sqrt', 'log2', None),
     'max_depth'   : [i for i in range(20, 50, 5)],
     }

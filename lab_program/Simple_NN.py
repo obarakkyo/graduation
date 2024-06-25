@@ -8,8 +8,9 @@ from torch import nn, optim
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 """ニューラルネットワークの定義"""
@@ -72,19 +73,27 @@ def main() -> None:
     print('#####This program learns TLSH using PyTorch!#####')
 
     #訓練データとテストデータに分割
+
+    """dataset1"""
     # csv_path = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
-    csv_path = "../CSV/dataset1CSV/ascii/tlsh_ascii_1split_2label.csv"
+    # csv_path = "../CSV/dataset1CSV/ascii/tlsh_ascii_1split_2label.csv"
     # csv_path = "../CSV/dataset1CSV/ascii/tlsh_ascii_4split_2label.csv"
     # csv_path = "../CSV/dataset1CSV/doc2vec/tlsh_csv_doc2vec_4spilit_18dimention_2label.csv"
+
+    """dataset2"""
+    # csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_1split_2label.csv"
+    # csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_1split_6label.csv"
+    # csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_2split_2label.csv"
+    csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_2split_6label.csv"
 
     x_train, x_test, y_train, y_test = dowmload_and_split_dataset(csv_path)
 
 
     #ハイパーパラメータの設定
-    input_size   = 72
+    input_size   = 36
     hidden_size  = 36
     hidden_size2 = 72
-    output_size = 2
+    output_size = 6
     learning_rate = 0.001
     num_epochs = 200
 
@@ -117,6 +126,21 @@ def main() -> None:
         _, predicted = torch.max(test_outputs.data, 1)
         accuracy = accuracy_score(y_test.numpy(), predicted.numpy())
         print(f'Accuracy on test data: {accuracy * 100:.2f}%')
+
+         # 混合行列の計算
+        cm = confusion_matrix(y_test.numpy(), predicted.numpy())
+        print(f'Confusion Matrix:\n{cm}')
+
+        #レポート表示
+        print(classification_report(y_test.numpy(), predicted.numpy()))
+
+        # 混合行列のプロット
+        plt.figure(figsize=(10, 7))
+        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+        plt.xlabel('Predicted')
+        plt.ylabel('True')
+        plt.title('Confusion Matrix')
+        plt.show()
     
     #損失関数プロット
     plt.plot(losses)
