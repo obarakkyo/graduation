@@ -93,7 +93,18 @@ if __name__ == "__main__":
     # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_3split_2label.csv"
     # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_3split_6label.csv"
     # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_4split_2label.csv"
-    target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_4split_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/ascii/tlsh_ascii_4split_6label.csv"
+
+    # target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_1split_72dim_2label.csv"
+    # target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_2split_36dim_2label.csv"
+    # target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_3split_24dim_2label.csv"
+    # target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_4split_18dim_2label.csv"
+
+    # target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_1split_72dim_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_2split_36dim_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_3split_24dim_6label.csv"
+    target_csv = "../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_4split_18dim_6label.csv"
+    
 
     
 

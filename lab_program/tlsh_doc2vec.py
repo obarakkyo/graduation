@@ -91,11 +91,11 @@ def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> No
     Ransom.Cerber     1
     report            0
     """
-    # for index_name in vector_df.index[:]:
-    #     if index_name.startswith("report"):
-    #         vector_df.loc[index_name, 'LABEL'] = 0
-    #     else:
-    #         vector_df.loc[index_name, 'LABEL'] = 1
+    for index_name in vector_df.index[:]:
+        if index_name.startswith("report"):
+            vector_df.loc[index_name, 'LABEL'] = 0
+        else:
+            vector_df.loc[index_name, 'LABEL'] = 1
     
     ###ラベル付け　６値
     """
@@ -106,23 +106,23 @@ def change_to_doc2vec(csv_path: str, parameters: dict, csv_save_path: str) -> No
     Infostealer.Limitail 4
     Trojan.Gen           5
     """
-    for index_name in vector_df.index[:]:
-        if index_name.startswith("report"):
-            vector_df.loc[index_name, 'LABEL'] = 0
-        elif index_name.startswith("Backdoor"):
-            vector_df.loc[index_name, 'LABEL'] = 1
-        elif index_name.startswith("Packed"):
-            vector_df.loc[index_name, 'LABEL'] = 2
-        elif index_name.startswith("Ransom"):
-            vector_df.loc[index_name, 'LABEL'] = 3
-        elif index_name.startswith("Info"):
-            vector_df.loc[index_name, 'LABEL'] = 4
-        elif index_name.startswith("Trojan"):
-            vector_df.loc[index_name, 'LABEL'] = 5
-        else:
-            print("ラベル付けできないファイルがあります。")
-            print('index_name = ', index_name)
-            exit()
+    # for index_name in vector_df.index[:]:
+    #     if index_name.startswith("report"):
+    #         vector_df.loc[index_name, 'LABEL'] = 0
+    #     elif index_name.startswith("Backdoor"):
+    #         vector_df.loc[index_name, 'LABEL'] = 1
+    #     elif index_name.startswith("Packed"):
+    #         vector_df.loc[index_name, 'LABEL'] = 2
+    #     elif index_name.startswith("Ransom"):
+    #         vector_df.loc[index_name, 'LABEL'] = 3
+    #     elif index_name.startswith("Info"):
+    #         vector_df.loc[index_name, 'LABEL'] = 4
+    #     elif index_name.startswith("Trojan"):
+    #         vector_df.loc[index_name, 'LABEL'] = 5
+    #     else:
+    #         print("ラベル付けできないファイルがあります。")
+    #         print('index_name = ', index_name)
+    #         exit()
 
 
     
@@ -140,13 +140,18 @@ if __name__ ==  "__main__":
     # target_csv = "CSV/anything/tlsh_csv_origin_4spilit_4label.csv"
 
     """dataset2"""
-    target_csv = "../CSV/dataset2CSV/origin/tlsh_csv_origin_1_spilit_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/origin/tlsh_csv_origin_1_spilit_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/origin/tlsh_csv_origin_2_spilit_6label.csv"
+    # target_csv = "../CSV/dataset2CSV/origin/tlsh_csv_origin_3_spilit_6label.csv"
+    target_csv = "../CSV/dataset2CSV/origin/tlsh_csv_origin_4_spilit_6label.csv"
+
+
 
     #Doc2Vecのパラメータを指定
     parameters = {
         # 'vector_size' : 100,
         # 'vector_size' : 18,
-        'vector_size' : 72,
+        'vector_size' : 18,
         'window_size' : 8,
         'iter'        : 500,
         'alpha'       : 0.1,
@@ -156,6 +161,6 @@ if __name__ ==  "__main__":
     }
 
     #CSVとして保存する場所
-    csv_save_path = '../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_1split_72dim_6label.csv'
+    csv_save_path = '../CSV/dataset2CSV/doc2vec/tlsh_doc2vec_4split_18dim_2label.csv'
 
     change_to_doc2vec(target_csv, parameters, csv_save_path)
