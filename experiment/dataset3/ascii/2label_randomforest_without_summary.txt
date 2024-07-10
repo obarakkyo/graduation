@@ -1,0 +1,15 @@
+GridSearch Finished!!!
+Time :  31.78145408630371
+Best params : {'max_depth': 20, 'max_features': None, 'n_estimators': 55}
+Best Score  : 0.9547925270403146
+best_model's score =  0.9609929078014184
+[[ 37  10]
+ [  1 234]]
+              precision    recall  f1-score   support
+
+         0.0       0.97      0.79      0.87        47
+         1.0       0.96      1.00      0.98       235
+
+    accuracy                           0.96       282
+   macro avg       0.97      0.89      0.92       282
+weighted avg       0.96      0.96      0.96       282
