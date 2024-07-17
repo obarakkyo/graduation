@@ -1,0 +1,14 @@
+{'colsample_bytree': 1, 'min_child_samples': 10, 'num_leaves': 20, 'reg_alpha': 0.001, 'reg_lambda': 1}
+0.9787059980334316
+Time :  203.12574672698975
+best_model's score =  0.9716312056737588
+[[ 44   3]
+ [  5 230]]
+              precision    recall  f1-score   support
+
+         0.0       0.90      0.94      0.92        47
+         1.0       0.99      0.98      0.98       235
+
+    accuracy                           0.97       282
+   macro avg       0.94      0.96      0.95       282
+weighted avg       0.97      0.97      0.97       282

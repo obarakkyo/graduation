@@ -22,7 +22,7 @@ def main(target_csv, parameters, model) -> None:
     print('df.shape = ', df.shape)
 
     #説明変数
-    x = df.iloc[:, 0:100]
+    x = df.iloc[:, 0:-1]
     print('x.shape = ', x.shape)
 
     #目的変数
@@ -73,7 +73,8 @@ def main(target_csv, parameters, model) -> None:
 
 
 if __name__ == "__main__":
-    target_csv = "../CSV/dataset3CSV/ascii/ascii_6label.csv"
+    # target_csv = "../CSV/dataset3CSV/ascii/ascii_6label.csv"
+    target_csv = "../CSV/dataset3CSV/doc2vec/6label.csv"
     
     #グリッドリサーチによるハイパラメータの探索候補設定
     parameters = {
