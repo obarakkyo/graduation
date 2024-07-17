@@ -19,7 +19,7 @@ def check_api(f_json):
 def main():
     print("This program checks api'scount.")
 
-    target_folder = "../custom_datasets/obara_clearn/*json"
+    target_folder = "../ben_reports_splits/*json"
     print("target_folder = {}".format(target_folder))
 
     file_paths = glob.glob(target_folder)
@@ -34,15 +34,15 @@ def main():
             flag = check_api(f_json)
             if flag:
                 count+=1
-                if count > 235:
-                    continue
+                # if count > 235:
+                #     continue
                 move_files.append(file_path)
     
     #対象ファイルを移動する
     print("Total counts of moving file = {}".format(len(move_files)))
-    for file_path in move_files:
-        new_path = file_path.replace("../custom_datasets/obara_clearn\\", "../custom_datasets/dataset_3/")
-        shutil.copy2(file_path, new_path)
+    # for file_path in move_files:
+    #     new_path = file_path.replace("../custom_datasets/obara_clearn\\", "../custom_datasets/dataset_3/")
+    #     shutil.copy2(file_path, new_path)
         
     
     print("count = {}".format(count))
