@@ -12,12 +12,18 @@ import lightgbm as lgb
 def create_model():
     params = {
         "boosting_type" :"gbdt", #決定木勾配ブースティング
+        
         # "objective" : "binary",    #２クラス分類
+        # "metric" : "binary_logloss",
+
         "objective" : "multiclass",    #多クラス分類
+        "metric" : "multi_logloss", 
+        
         "class_weight" : "balanced",
         "n_jobs" : -1,
+        "n_estimators" : 500,
         "random_state" : 10,
-        # "early_stopping_round" : 10,
+        "early_stopping_round" : 10,
     }
 
     model = lgb.LGBMClassifier(**params)

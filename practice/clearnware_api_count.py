@@ -23,6 +23,7 @@ def main():
     print("target_folder = {}".format(target_folder))
 
     file_paths = glob.glob(target_folder)
+    print(file_paths[0])
     print("Total counts of file = {}".format(len(file_paths)))
 
     #APIが100個あるか確認
@@ -40,9 +41,9 @@ def main():
     
     #対象ファイルを移動する
     print("Total counts of moving file = {}".format(len(move_files)))
-    # for file_path in move_files:
-    #     new_path = file_path.replace("../custom_datasets/obara_clearn\\", "../custom_datasets/dataset_3/")
-    #     shutil.copy2(file_path, new_path)
+    for file_path in move_files:
+        new_path = file_path.replace("../ben_reports_splits\\", "../custom_datasets/dataset_4/")
+        shutil.copy2(file_path, new_path)
         
     
     print("count = {}".format(count))
