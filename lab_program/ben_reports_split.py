@@ -1,36 +1,15 @@
 """
-ben_reportsのJSONファイルを分割する。
-"""
+ben_reportsデータセットを分割する.
 
-"""
-このプログラムは、ben_reportsデータセットを分割する。
+先頭API100個 + Summaryの内容９個
 
-len(file_paths) = 1890
-Error decoding JSON from file: ../ben_reports\a088170d91a58e42bda88d192cd50536.json
-Error decoding JSON from file: ../ben_reports\db88cea04959ef0e922c90b53738f37a.json
+
+対象外ファイル183個でした。
 """
 import json
 import glob
-
-def create_filepath(file_path, count):
-    filename = file_path.replace("../ben_reports\\", "")
-    filename = "report" + count + "--" + filename
-    filename = "../ben_reports_splits/" + filename
-    # print(filename)
-    return filename
-
-
-def create_api_features(behavior_json, maxnum=100):
-    get_list = []
-    for _, thread_id in enumerate(behavior_json["apistats"]):
-        api_json = behavior_json["apistats"][thread_id]
-        for _, apiname in enumerate(api_json):
-            for i in range(api_json[apiname]):
-                if len(get_list) == maxnum:
-                    break
-                get_list.append(apiname)
-    api_dict = {"apis":get_list}
-    return api_dict
+import os
+import time
 
 def create_summary_features(behavior_json):
     summary_dict = {"file_created"   : 0,
@@ -44,69 +23,124 @@ def create_summary_features(behavior_json):
                     "command_line"   : 0
                     } 
     summary_json = behavior_json["summary"]
-    
     for _, key in enumerate(summary_dict):
         target_key = summary_json.get(key)
         if target_key is not None:
             summary_dict[key] = len(summary_json[key])
+    # print(summary_dict)
     return summary_dict
+    
 
-def file_save_func(filename, all_dict):
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(all_dict, f)
+def create_api_features(behavior_json, maxnum):
+    api_list = []
+    count = 0
+
+    process_json = behavior_json["processes"]
+    for i in range(len(process_json)):
+        calls_json = process_json[i]["calls"]
+        if len(calls_json) == 0:
+            continue
+        else:
+            call_num = len(calls_json)
+            for j in range(call_num):
+                if count == maxnum:
+                    break
+                api_list.append(calls_json[j]["api"])
+                count+=1
+    # print(len(api_list))
+    api_list = {"api_list":api_list}
+    return api_list
+
+def create_filename(file_path, count):
+    filename = file_path.replace("../ben_reports\\", "")
+    filename = "report" + str(count) + "-" + filename
+    # print(filename)
+    return filename
+
 
 def main():
-    print("このプログラムは、ben_reportsデータセットを分割する。\n")
-
-    # 対象データセットのパス取得#
+    """初期値変数"""
     target_folder = "../ben_reports/*json"
+
+    failed_file_path = []
+
+    count = 0
+
+    output_count = 0
+
+    """ファイルのパスを取得する。"""
     file_paths = glob.glob(target_folder)
-    print("len(file_paths) = {}".format(len(file_paths)))
+    print("file_paths = {}".format(len(file_paths)))
 
-    count = 1
 
+    """JSONファイルの作成"""
     for file_path in file_paths[:]:
-            try:
-                with open(file_path, "r") as f:
-                    f_json = json.load(f)
-            except json.JSONDecodeError:
-                    print(f"Error decoding JSON from file: {file_path}")
+        output_count += 1
+        # print("This file is {}".format(file_path))
+        try:
+            with open(file_path, "r") as f:
+                f_json = json.load(f)
+        except json.JSONDecodeError:
+            print(f"Error decordin JSON from file: {file_path}")
+            failed_file_path.append(file_path)
+            continue
+    
+        all_dict = {}
 
-            all_dict = {}
+        #behaviorがないなら飛ばす
+        if f_json.get("behavior") is None:
+            print("This file does not contain [behavior] ")
+            failed_file_path.append(file_path)
+            continue
 
-            #behaviorが無いなら飛ばす
-            if f_json.get("behavior") is None:
-                continue
+        behavior_json = f_json["behavior"]
 
-            behavior_json = f_json["behavior"]
+        #processesがないなら飛ばす
+        if behavior_json.get("processes") is None:
+            print("This file does not contain [processes] ")
+            failed_file_path.append(file_path)
+            continue
+
+        #summaryがないなら飛ばす
+        if behavior_json.get("summary") is None:
+            print("This file does not contain [summary]")
+            failed_file_path.append(file_path)
+            continue
+
+        ## API抜き出し
+        api_dict = create_api_features(behavior_json, maxnum=100)
+
+        ##Summaryの抜出
+        summary_dict = create_summary_features(behavior_json)
+
+        ##all_dictに結合
+        all_dict = {**api_dict, **summary_dict}
+
+        #保存用ファイル名作成
+        count += 1
+        filename = create_filename(file_path, count)
+
+        #保存用ファイルパス作成
+        newfile_path = "../custom_datasets/obara_bendataset/" + filename
+
+        #ファイルとして保存
+        with open(newfile_path, "w", encoding="utf-8") as f2:
+            json.dump(all_dict, f2)
+
+        
+        #あと何個か出力
+        os.system("cls")
+        print("{} / {}".format(output_count, len(file_paths)))
+        time.sleep(0.1)
+    
+    for failed_path in failed_file_path:
+        print(failed_path)
+    print("対象外ファイル数 = {}".format(len(failed_file_path)))
+
+
             
-            #apistsが無いなら飛ばす
-            if behavior_json.get("apistats") is  None:
-                continue
-
-            #summaryが無いなら飛ばす
-            if behavior_json.get("summary") is None:
-                continue
-
-            ## 保存用のファイルパスを作成 ##
-            filename = create_filepath(file_path, str(count))
-            count += 1
-
-            ## API(MAXNUM)個取得
-            api_dict = create_api_features(behavior_json, maxnum=100)
-
-            #summaryをぬき出す
-            summary_dict = create_summary_features(behavior_json)
-
-            #all_dictに結合
-            all_dict = {**api_dict, **summary_dict}
-
-            #ファイルとして保存
-            file_save_func(filename, all_dict)
-
-
-
-
+    
 
 if __name__ == "__main__":
+    print("このプログラムは、ben_reportsデータセットを分割します。")
     main()

@@ -6,7 +6,7 @@ import json
 import shutil
 
 def check_api(f_json):
-    api_list = f_json["apis"]
+    api_list = f_json["api_list"]
     # print(api_list)
 
     if len(api_list) >= 100:
@@ -14,12 +14,10 @@ def check_api(f_json):
     else:
         return False
 
-
-
 def main():
     print("This program checks api'scount.")
 
-    target_folder = "../ben_reports_splits/*json"
+    target_folder = "../custom_datasets/obara_bendataset/*json"
     print("target_folder = {}".format(target_folder))
 
     file_paths = glob.glob(target_folder)
@@ -38,11 +36,12 @@ def main():
                 # if count > 235:
                 #     continue
                 move_files.append(file_path)
+    print(len(move_files))
     
     #対象ファイルを移動する
     print("Total counts of moving file = {}".format(len(move_files)))
     for file_path in move_files:
-        new_path = file_path.replace("../ben_reports_splits\\", "../custom_datasets/dataset_4/")
+        new_path = file_path.replace("../custom_datasets/obara_bendataset\\", "../custom_datasets/dataset_4/")
         shutil.copy2(file_path, new_path)
         
     

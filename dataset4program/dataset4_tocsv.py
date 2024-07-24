@@ -13,11 +13,13 @@ def create_feature_list_func(file_path):
     result = []
     with open(file_path, "r") as f:
         f_json = json.load(f)
-        api_lists = f_json["apis"]
+        api_lists = f_json["api_list"]
         # print(api_lists)
         for key in summary_key_lists:
             summary_lists.append(f_json[key])
         result = api_lists + summary_lists
+        # result = api_lists 
+
         return result
 
 def create_index_name(file_path):

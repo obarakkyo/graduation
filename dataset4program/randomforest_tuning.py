@@ -74,8 +74,9 @@ def main(target_csv, parameters, model) -> None:
 
 if __name__ == "__main__":
     # target_csv = "../CSV/dataset4CSV/ascii/2label.csv"
-    target_csv = "../CSV/dataset4CSV/ascii/6label.csv"
-    # target_csv = "../CSV/dataset4CSV/doc2vec/6label.csv"
+    # target_csv = "../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/ascii/6label.csv"
+    target_csv = "../CSV/dataset4CSV/ascii/6labelWithoutSummary.csv"
     
     #グリッドリサーチによるハイパラメータの探索候補設定
     parameters = {

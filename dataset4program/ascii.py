@@ -12,7 +12,7 @@ def calculate_ascii_vector(target_str: str) -> float:
 
 def main():
     # 対象CSVファイルをデータフレームにする#
-    csv_path = "../CSV/dataset4CSV/origin/6label.csv"
+    csv_path = "../CSV/dataset4CSV/origin/2label_WithoutSummary.csv"
     df = pd.read_csv(csv_path, index_col=0)
     print(df.head())
     print("df.shape = {}".format(df.shape))
@@ -24,7 +24,7 @@ def main():
     df.iloc[:, 0:100] = vectorized_data
 
     #CSV化
-    df.to_csv("../CSV/dataset4CSV/ascii/6label.csv")
+    df.to_csv("../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv")
     print("Vectorization time is {}s".format(end_time - start_time))
 
 if __name__ == "__main__":
