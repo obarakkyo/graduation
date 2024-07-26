@@ -74,28 +74,20 @@ def main() -> None:
 
     #訓練データとテストデータに分割
 
-    """dataset1"""
-    # csv_path = "../CSV/anything/tlsh_csv_doc2vec_2label.csv"
-    # csv_path = "../CSV/dataset1CSV/ascii/tlsh_ascii_1split_2label.csv"
-    # csv_path = "../CSV/dataset1CSV/ascii/tlsh_ascii_4split_2label.csv"
-    # csv_path = "../CSV/dataset1CSV/doc2vec/tlsh_csv_doc2vec_4spilit_18dimention_2label.csv"
-
-    """dataset2"""
-    # csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_1split_2label.csv"
-    # csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_1split_6label.csv"
-    # csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_2split_2label.csv"
-    csv_path = "../CSV/dataset2CSV/ascii/tlsh_ascii_2split_6label.csv"
+    """"dataset4"""
+    # csv_path = "../CSV/dataset4CSV/ascii/2label.csv"
+    csv_path = "../CSV/dataset4CSV/doc2vec/2label.csv"
 
     x_train, x_test, y_train, y_test = dowmload_and_split_dataset(csv_path)
 
 
     #ハイパーパラメータの設定
-    input_size   = 36
+    input_size   = 109
     hidden_size  = 36
     hidden_size2 = 72
-    output_size = 6
+    output_size = 2
     learning_rate = 0.001
-    num_epochs = 200
+    num_epochs = 400
 
     #モデルの初期化
     model = SimpleNN(input_size, hidden_size, hidden_size2, output_size)
