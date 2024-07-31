@@ -76,8 +76,15 @@ if __name__ == "__main__":
     # target_csv = "../CSV/dataset4CSV/ascii/2label.csv"
     # target_csv = "../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv"
     # target_csv = "../CSV/dataset4CSV/ascii/6label.csv"
-    target_csv = "../CSV/dataset4CSV/ascii/6labelWithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/ascii/6labelWithoutSummary.csv"
+
+    # target_csv = "../CSV/dataset4CSV/doc2vec/2label.csv"
+    # target_csv = "../CSV/dataset4CSV/doc2vec/2labelWithoutSummary.csv"
+    target_csv = "../CSV/dataset4CSV/doc2vec/6label.csv"
+    # target_csv = "../CSV/dataset4CSV/doc2vec/2labelWithoutSummary.csv"
     
+    
+
     #グリッドリサーチによるハイパラメータの探索候補設定
     parameters = {
     'n_estimators' : [i for i in range(50, 100, 5)],
