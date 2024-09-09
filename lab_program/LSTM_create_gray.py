@@ -67,7 +67,7 @@ def main():
         def __init__(self, hidden_size):
             super().__init__()
             self.hidden_size = hidden_size
-            self.lstm  = nn.LSTM(1, hidden_size=self.hidden_size, num_layers=2, dropout=1)
+            self.lstm  = nn.LSTM(1, hidden_size=self.hidden_size, num_layers=2, dropout=0.5)
             self_linear_first = nn.Linear(100, 50)
             self.linear_last = nn.Linear(hidden_size, 1)
         def forward(self, x):
