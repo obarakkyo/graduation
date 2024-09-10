@@ -14,6 +14,12 @@ def main():
     ### データセットの取り込み ###
     csv_path = "../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv"   #ASCII
     # csv_path = "../CSV/dataset4CSV/doc2vec/2labelWithoutSummary.csv" #Doc2Vec
+    # csv_path = "../CSV\dataset4CSV/buket/Simplevector_2label_WithoutSummary.csv"
+    # csv_path = "../CSV\dataset4CSV/buket/NexttoVector_2label_WithoutSummary.csv"
+    # csv_path = "../CSV/dataset4CSV/buket/StrpositionVector_2label_WithoutSummary.csv"
+    # csv_path = "../CSV/dataset4CSV/buket/Scale_StrpositionVector_2label_WithoutSummary.csv"
+
+
     df = pd.read_csv(csv_path, index_col=0)
     print("df.shape = {}".format(df.shape))
 
@@ -29,9 +35,9 @@ def main():
 
     ### ヒストグラムとして表示　###
     fig, ax = plt.subplots()
-    ax.hist(reshape_datas, bins=50)
+    ax.hist(reshape_datas, bins=80)
 
-    plt.savefig("../pictures/dataset4_ascii.png")
+    # plt.savefig("../pictures/dataset4_scale_strposition_buket.png")
     plt.show()
 
     ### 統計量を算出 ###

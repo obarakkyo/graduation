@@ -4,10 +4,9 @@
 import pandas as pd
 from collections import Counter
 
-def buket_change_func(target_str:str):
+def buket_change_func(target_str:str, scale_num=1, num_buket=64):
     changed_vector = 0           
     target_len = len(target_str) #文字列の長さ
-    num_buket = 64
     buket_list = [0]*num_buket
 
     #単純に除算の余りのインデックスに＋１
@@ -15,7 +14,7 @@ def buket_change_func(target_str:str):
         buket_index = ord(char) % num_buket
         buket_list[buket_index] += 1
     
-    #隣り合う２文字を足した余りをインデックスに+1
+    # 隣り合う２文字を足した余りをインデックスに+1
     for i in range(target_len-1):
         char1, char2 = target_str[i], target_str[i+1]
         buket_index = (ord(char1)+ord(char2)) % num_buket
@@ -27,7 +26,7 @@ def buket_change_func(target_str:str):
         buket_list[buket_index] += (i+1)
 
     
-    changed_vector = sum((0.01*i*value) for i, value in enumerate(buket_list)) / target_len
+    changed_vector = sum((scale_num*i*value) for i, value in enumerate(buket_list)) / target_len
     return changed_vector
 
 def main():
@@ -58,7 +57,7 @@ def main():
 
     ###ベクトル化###
     for api in all_api_list:
-        vector = buket_change_func(api)
+        vector = buket_change_func(api, scale_num=0.01, num_buket=64)
         api_dict[api] = vector
         # print("{} = {}".format(api, vector))
     

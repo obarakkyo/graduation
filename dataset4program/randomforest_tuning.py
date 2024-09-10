@@ -80,8 +80,11 @@ if __name__ == "__main__":
 
     # target_csv = "../CSV/dataset4CSV/doc2vec/2label.csv"
     # target_csv = "../CSV/dataset4CSV/doc2vec/2labelWithoutSummary.csv"
-    target_csv = "../CSV/dataset4CSV/doc2vec/6label.csv"
+    # target_csv = "../CSV/dataset4CSV/doc2vec/6label.csv"
     # target_csv = "../CSV/dataset4CSV/doc2vec/2labelWithoutSummary.csv"
+
+    # target_csv = "../CSV/dataset4CSV/buket/Scale_StrpositionVector_2label_WithoutSummary.csv"
+    target_csv = "../CSV/dataset4CSV/buket/SimpleAndPositin_2label_WithoutSummary.csv"
     
     
 
