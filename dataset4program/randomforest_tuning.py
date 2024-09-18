@@ -74,7 +74,7 @@ def main(target_csv, parameters, model) -> None:
 
 if __name__ == "__main__":
     # target_csv = "../CSV/dataset4CSV/ascii/2label.csv"
-    # target_csv = "../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv"
+    target_csv = "../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv"
     # target_csv = "../CSV/dataset4CSV/ascii/6label.csv"
     # target_csv = "../CSV/dataset4CSV/ascii/6labelWithoutSummary.csv"
 
@@ -83,8 +83,31 @@ if __name__ == "__main__":
     # target_csv = "../CSV/dataset4CSV/doc2vec/6label.csv"
     # target_csv = "../CSV/dataset4CSV/doc2vec/2labelWithoutSummary.csv"
 
+    """バケット配列"""
     # target_csv = "../CSV/dataset4CSV/buket/Scale_StrpositionVector_2label_WithoutSummary.csv"
-    target_csv = "../CSV/dataset4CSV/buket/SimpleAndPositin_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/SimpleAndPositin_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position_15_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position_35_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position_50_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position_80_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position_105_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position_128_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position_145_2label_WithoutSummary.csv"
+
+    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_10_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_35_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_55_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_85_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_110_2label_WithoutSummary.csv"
+    target_csv = "../CSV/dataset4CSV/buket/Position&Simple_128_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_145_2label_WithoutSummary.csv"
+    
+    
+    
+
+    
+
+
     
     
 

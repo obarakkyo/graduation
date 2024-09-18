@@ -115,6 +115,36 @@ def Simple_and_position_func(target_str:str, num_buket=10, scale_value=1) -> flo
     changed_vector = sum((scale_value*i*value) for i, value in enumerate(buket_list)) / target_len
     return changed_vector
 
+#【パターン６】文字列のi番目も考慮したものを加算 #
+def position_buket(target_str:str, scale_num=1, num_buket=128):
+    changed_vector = 0           
+    target_len = len(target_str) #文字列の長さ
+    buket_list = [0]*num_buket
+
+    for i, char in enumerate(target_str):
+        buket_index = (ord(char)) % num_buket
+        buket_list[buket_index] += (0.1*i+1)
+    
+    changed_vector = sum((scale_num*i*value) for i, value in enumerate(buket_list)) / target_len
+    return changed_vector
+
+# 【パターン７】パターン６とシンプルバケットを合わせる#
+def simple_position_buket(target_str:str, scale_num=1, num_buket=128):
+    changed_vector = 0           
+    target_len = len(target_str) #文字列の長さ
+    buket_list = [0]*num_buket
+    
+    for char in target_str:
+        buket_index = ord(char) % num_buket
+        buket_list[buket_index] += 1
+
+    for i, char in enumerate(target_str):
+        buket_index = (ord(char)) % num_buket
+        buket_list[buket_index] += (0.1*i+1)
+    
+    changed_vector = sum((scale_num*i*value) for i, value in enumerate(buket_list)) / target_len
+    return changed_vector
+
 
 def main():
     print("\n###############START###############")
@@ -144,7 +174,15 @@ def main():
     # end_time = time.time()
 
     ##【パターン５】パターン１とパターン3の重みを小数にしたとき ##
-    vectorized_data = df.iloc[:, 0:100].applymap(Simple_and_position_func)
+    # vectorized_data = df.iloc[:, 0:100].applymap(Simple_and_position_func)
+    # end_time = time.time()
+
+    ##【パターン６】 ##
+    # vectorized_data = df.iloc[:, 0:100].applymap(position_buket)
+    # end_time = time.time()
+
+     ##【パターン７】 ##
+    vectorized_data = df.iloc[:, 0:100].applymap(simple_position_buket)
     end_time = time.time()
 
 
@@ -152,7 +190,7 @@ def main():
     df.iloc[:, 0:100] = vectorized_data
 
     #CSV化
-    df.to_csv("../CSV/dataset4CSV/buket/SimpleAndPositin_2label_WithoutSummary.csv")
+    df.to_csv("../CSV/dataset4CSV/buket/Position&Simple_128_2label_WithoutSummary.csv")
     print("Vectorization time is {}s".format(end_time - start_time))
     
 

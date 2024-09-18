@@ -79,7 +79,7 @@ def main():
     confflict_dict = {}
     confflict_count_list = []
 
-    for i in range(10, 150, 5):
+    for i in range(10, 130, 2):
         ###ベクトル化###
         for api in all_api_list:
             vector = buket_change_func(api, scale_num=1, num_buket=i) #buket
