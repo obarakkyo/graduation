@@ -71,10 +71,17 @@ def main(target_csv, parameters, model) -> None:
     print(confusion_matrix(y_test, y_pred))
     print(classification_report(y_test, y_pred))
 
+     # 分類を間違えたインデックスの抽出
+    misclassified_indices = y_test.index[y_test['LABEL'] != y_pred]
+
+    # 分類を間違えたファイル名の表示
+    print("Misclassified file names:")
+    print(misclassified_indices)
+
 
 if __name__ == "__main__":
-    # target_csv = "../CSV/dataset4CSV/ascii/2label.csv"
-    target_csv = "../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv"
+    target_csv = "../CSV/dataset4CSV/ascii/2label.csv"
+    # target_csv = "../CSV/dataset4CSV/ascii/2labelWithoutSummary.csv"
     # target_csv = "../CSV/dataset4CSV/ascii/6label.csv"
     # target_csv = "../CSV/dataset4CSV/ascii/6labelWithoutSummary.csv"
 
@@ -98,8 +105,8 @@ if __name__ == "__main__":
     # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_35_2label_WithoutSummary.csv"
     # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_55_2label_WithoutSummary.csv"
     # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_85_2label_WithoutSummary.csv"
-    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_110_2label_WithoutSummary.csv"
-    target_csv = "../CSV/dataset4CSV/buket/Position&Simple_128_2label_WithoutSummary.csv"
+    target_csv = "../CSV/dataset4CSV/buket/Position&Simple_110_2label_WithoutSummary.csv"
+    # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_128_2label_WithoutSummary.csv"
     # target_csv = "../CSV/dataset4CSV/buket/Position&Simple_145_2label_WithoutSummary.csv"
     
     
