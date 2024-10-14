@@ -122,8 +122,8 @@ def main():
 
     ### 配列の大きさでどのように遷移するか調べる ###
     for i in range(3, 128, 2):
-        vector_dict = position_buket(api_list, weight=0.1, length=i)
-        # vector_dict = simple_buket(api_list, length=i)
+        # vector_dict = position_buket(api_list, weight=0.1, length=i)
+        vector_dict = simple_buket(api_list, length=i)
         report_dict, confflict_rate, confflict_count = confflict_checker(vector_dict)
         print("i={}, rate={:.2f}%, count={}".format(i, confflict_rate, confflict_count))
 
