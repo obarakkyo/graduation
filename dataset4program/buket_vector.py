@@ -150,7 +150,8 @@ def main():
     print("\n###############START###############")
 
     ### 対象のCSVを取得 ###
-    csv_path = "../CSV/dataset4CSV/origin/2label_WithoutSummary.csv"
+    # csv_path = "../CSV/dataset4CSV/origin/2label_WithoutSummary.csv"
+    csv_path = "../CSV/dataset4CSV/origin/2label.csv"
     df = pd.read_csv(csv_path, index_col=0)
     print("df.shape = {}".format(df.shape))
 
@@ -178,19 +179,19 @@ def main():
     # end_time = time.time()
 
     ##【パターン６】 ##
-    # vectorized_data = df.iloc[:, 0:100].applymap(position_buket)
-    # end_time = time.time()
+    vectorized_data = df.iloc[:, 0:100].applymap(position_buket)
+    end_time = time.time()
 
      ##【パターン７】 ##
-    vectorized_data = df.iloc[:, 0:100].applymap(simple_position_buket)
-    end_time = time.time()
+    # vectorized_data = df.iloc[:, 0:100].applymap(simple_position_buket)
+    # end_time = time.time()
 
 
 
     df.iloc[:, 0:100] = vectorized_data
 
     #CSV化
-    df.to_csv("../CSV/dataset4CSV/buket/Position&Simple_128_2label_WithoutSummary.csv")
+    df.to_csv("../CSV/dataset4CSV/buket/Positon_128_2label.csv")
     print("Vectorization time is {}s".format(end_time - start_time))
     
 

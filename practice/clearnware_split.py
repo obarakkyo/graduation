@@ -47,15 +47,34 @@ def create_api_features(behavior_json, maxnum=100):
     return api_dict
 
 def create_summary_features(behavior_json):
-    summary_dict = {"file_created"   : 0,
+    summary_dict = {"command_line"  : 0, 
+                    "connects_host" : 0,
+                    "connects_ip"   : 0,
+                    "directory_created" : 0,
+                    "directory_enumerated" : 0,
+                    "directory_removed" : 0,
+                    "dll_loaded" : 0,
+                    "downloads_file" : 0,
+                    "fetches_url" : 0,
+                    "file_copied" : 0,
+                    "file_created" : 0,
+                    "file_deleted" : 0,
+                    "file_exists" : 0,
+                    "file_failed" : 0,
+                    "file_moved" : 0,
+                    "file_opened" : 0,
+                    "file_read" : 0,
                     "file_recreated" : 0,
-                    "file_deleted"   : 0,
-                    "file_written"   : 0,
-                    "file_opened"    : 0,
+                    "file_written" : 0,
+                    "guid" : 0,
+                    "mutex" : 0,
+                    "regkey_deleted" : 0,
+                    "regkey_opened" : 0,
+                    "regkey_read" : 0,
                     "regkey_written" : 0,
-                    "regkey_opened"  : 0,
-                    "regkey_read"    : 0,
-                    "command_line"   : 0
+                    "resolves_host" : 0,
+                    "tls_master" : 0,
+                    "wmi_query" : 0,
                     } 
     summary_json = behavior_json["summary"]
     

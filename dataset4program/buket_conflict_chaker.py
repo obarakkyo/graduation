@@ -18,9 +18,9 @@ def buket_change_func(target_str:str, scale_num=1, num_buket=64):
     buket_list = [0]*num_buket
 
     #単純に除算の余りのインデックスに＋１
-    for char in target_str:
-        buket_index = ord(char) % num_buket
-        buket_list[buket_index] += 1
+    # for char in target_str:
+    #     buket_index = ord(char) % num_buket
+    #     buket_list[buket_index] += 1
     
     # # 隣り合う２文字を足した余りをインデックスに+1
     # for i in range(target_len-1):
@@ -31,7 +31,7 @@ def buket_change_func(target_str:str, scale_num=1, num_buket=64):
     # # #文字列のi番目も考慮したものを加算
     for i, char in enumerate(target_str):
         buket_index = (ord(char)) % num_buket
-        buket_list[buket_index] += (0.1*i+1)
+        buket_list[buket_index] += (0.1*i + 1)
 
     # # #2乗の除算をインデックスに+1
     # for char in target_str:

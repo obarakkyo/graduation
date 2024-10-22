@@ -36,20 +36,39 @@ def create_features(behavior_json, maxnum=100):
                     break
                 api_list.append(calls_json[j]["api"])
                 count += 1
-    print(api_list, len(api_list))
+    # print(api_list, len(api_list))
     api_dict = {"api_list":api_list}
     return api_dict
 
 def create_summary_features(behavior_json):
-    summary_dict = {"file_created"   : 0,
+    summary_dict = {"command_line"  : 0, 
+                    "connects_host" : 0,
+                    "connects_ip"   : 0,
+                    "directory_created" : 0,
+                    "directory_enumerated" : 0,
+                    "directory_removed" : 0,
+                    "dll_loaded" : 0,
+                    "downloads_file" : 0,
+                    "fetches_url" : 0,
+                    "file_copied" : 0,
+                    "file_created" : 0,
+                    "file_deleted" : 0,
+                    "file_exists" : 0,
+                    "file_failed" : 0,
+                    "file_moved" : 0,
+                    "file_opened" : 0,
+                    "file_read" : 0,
                     "file_recreated" : 0,
-                    "file_deleted"   : 0,
-                    "file_written"   : 0,
-                    "file_opened"    : 0,
+                    "file_written" : 0,
+                    "guid" : 0,
+                    "mutex" : 0,
+                    "regkey_deleted" : 0,
+                    "regkey_opened" : 0,
+                    "regkey_read" : 0,
                     "regkey_written" : 0,
-                    "regkey_opened"  : 0,
-                    "regkey_read"    : 0,
-                    "command_line"   : 0
+                    "resolves_host" : 0,
+                    "tls_master" : 0,
+                    "wmi_query" : 0,
                     } 
     summary_json = behavior_json["summary"]
     
@@ -78,7 +97,7 @@ def main():
 
     """JSONファイルの作成"""
     for file_path in file_paths[:]:
-        print("This file is {}".format(file_path))
+        # print("This file is {}".format(file_path))
         with open(file_path, "r") as f:
             f_json = json.load(f)
             all_dict = {}
@@ -115,7 +134,7 @@ def main():
             #保存ファイル名作成
             virus_name = f_json["virustotal"]["scans"]["Symantec"]["result"]
             filename = create_filename(virus_name, file_path)
-            print(filename)
+            # print(filename)
 
             ## 保存用のファイルパスを作成 ##
             filepath = create_filepath(filename)

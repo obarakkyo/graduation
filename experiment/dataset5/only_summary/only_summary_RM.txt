@@ -1,0 +1,34 @@
+df.shape =  (2461, 129)
+x.shape =  (2461, 28)
+t.shape =  (2461, 1)
+
+x_train.shape =  (1968, 28)
+y_train.shape =  (1968, 1)
+x_test.shape =  (493, 28)
+y_test.shape =  (493, 1)
+GridSearch Finished!!!
+Time :  17.580975770950317
+Best params : {'max_depth': 20, 'max_features': 'log2', 'n_estimators': 85}
+Best Score  : 0.9812053577194819
+best_model's score =  0.9837728194726166
+[[252   1]
+ [  7 233]]
+              precision    recall  f1-score   support
+
+         0.0       0.97      1.00      0.98       253
+         1.0       1.00      0.97      0.98       240
+
+    accuracy                           0.98       493
+   macro avg       0.98      0.98      0.98       493
+weighted avg       0.98      0.98      0.98       493
+
+Misclassified file names:
+Index(['report1448-ad08612709dd31ca3c1ac67fcc2ffddc',
+       'Trojan.Gen-2b8078427e42662730b985a5fae9347635a3339de4d772e50cf19b42229a233f',
+       'Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10',
+       'Packed.Generic.436-1a23287a403b7120948ca18d5c923b7758751d547e5c517df9d092e0ccc5b513',
+       'Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c',
+       'Ransom.Cerber-662c0e2d2b07b70b7fe33e36b6356eb5d6ee8d2a8681866d2c4d58427e7ef35c',
+       'Trojan.Gen-09cddbe97e79c5fbfde5e903992c8a7bd0c2ba2dafd8b9c4af4af18f7b5d65ec',
+       'Infostealer.Limitail-756f7cc6d664e051b0b768a9b4bf10e5ed788f72caac8954b7651bcd30da442a'],
+      dtype='object')

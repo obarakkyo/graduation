@@ -1,0 +1,47 @@
+df.shape =  (2461, 129)
+x.shape =  (2461, 100)
+t.shape =  (2461, 1)
+
+x_train.shape =  (1968, 100)
+y_train.shape =  (1968, 1)
+x_test.shape =  (493, 100)
+y_test.shape =  (493, 1)
+GridSearch Finished!!!
+Time :  58.747029542922974
+Best params : {'max_depth': 25, 'max_features': 'sqrt', 'n_estimators': 70}
+Best Score  : 0.9507071724725848
+best_model's score =  0.9553752535496958
+[[245   8]
+ [ 14 226]]
+              precision    recall  f1-score   support
+
+         0.0       0.95      0.97      0.96       253
+         1.0       0.97      0.94      0.95       240
+
+    accuracy                           0.96       493
+   macro avg       0.96      0.96      0.96       493
+weighted avg       0.96      0.96      0.96       493
+
+Misclassified file names:
+Index(['report954-6c1bcf0b1297689c8c4c12cc70996a75',
+       'Trojan.Gen-8d5f1e04337fa3630cc01d15d50fb74d9b814b17f43599c1c61f95ade48a6f4a',
+       'Infostealer.Limitail-6c3ff8fc9799e04a236d02cc237904157bbb6e832b3b8037cc508c03abfbc03a',
+       'Backdoor.Graybird-afee8e31fe9fb0951bdb8389508c98a1de93dbf3beb5eab5725263e529f36abb',
+       'report835-616',
+       'Trojan.Gen-8b19a91278d63b8aa945555e34c7e108f2fa38bffd3597881cf5ccf4b1579107',
+       'Ransom.Cerber-68a1203a5f27b3087fde61ea64c71316e45a3c46f78208700f9e43ccf3a2489e',
+       'Trojan.Gen-8c466ea260b47354eba1259265aee436367121fbdc18c7d0ea3dadafede2efa7',
+       'Trojan.Gen-5a0f4ac543c0b6189f4419e2b68811ac60ac8198e0ec7f00cc0565d809da690b',
+       'report1671-f50caef7fe711fdda1879aeecadeb050',
+       'Packed.Generic.482-1c88688bb677f19cb78120b589ade1ad8f44b917ab6f3f051262059304d6b707',
+       'report1256-8b42753f2cfa3427522d87dc67327390',
+       'Infostealer.Limitail-5efde5502939dfa58e230ee6b2bda1e783182e7f7164fa131cd5936d0e11fbc2',
+       'report1519-c4189ac5817d672beb5662dc46a3d738',
+       'Packed.Generic.436-1a23287a403b7120948ca18d5c923b7758751d547e5c517df9d092e0ccc5b513',
+       'Trojan.Gen-5fc465ac4aca0b194b6f28c079c9266897664e09a959d296fa6cf3091e092395',
+       'Trojan.Gen-09cddbe97e79c5fbfde5e903992c8a7bd0c2ba2dafd8b9c4af4af18f7b5d65ec',
+       'report1479-b72a4d4c3db056f0cd08fb41a4b9b9ce',
+       'Packed.Generic.493-86ba81d92290dab5123f04c55eeb43b5fb8ce7b8aad2c0e9b0cb36d42a791cf8',
+       'Ransom.Cerber-333e881bcf062e4688d537545618f29507bfcc3ee6e7730f25954d1d061b4c38',
+       'report677-509', 'report1259-8b8f4dfb276d2271bcb80e5e81ee7743'],
+      dtype='object')

@@ -8,15 +8,15 @@ from collections import Counter
 
 
 
-def position_buket(api_list:list, weight=0.1, length=20) -> dict:
-    buket_list = [0] * length
+def position_buket(api_list:list, weight=0.1, length=128, scale=1.0) -> dict:
     vector_dict = {}
 
     for api_name in api_list:
+        buket_list = [0] * length   
         for i, char in enumerate(api_name):
             buket_index = ord(char) % length
             buket_list[buket_index] += (weight*i + 1)
-        vector =  sum((i*value) for i, value in enumerate(buket_list)) / len(api_name)
+        vector =  sum((scale*i*value) for i, value in enumerate(buket_list)) / len(api_name)
         vector_dict[api_name] = vector
     return vector_dict
 
@@ -105,9 +105,9 @@ def main():
     """----------------------------------------"""
 
     """バケット配列でi番目の値を考慮したベクトル化"""
-    # vector_dict = position_buket(api_list, weight=0.1, length=3)
-    # for key, value in vector_dict.items():
-    #     print(f"{key:<35}: {value:>15.8f}")
+    vector_dict = position_buket(api_list, weight=0.1, length=128, scale=1)
+    for key, value in vector_dict.items():
+        print(f"{key:<35}: {value:>15.8f}")
     """------------------------------------------"""
 
 
@@ -122,8 +122,8 @@ def main():
 
     ### 配列の大きさでどのように遷移するか調べる ###
     for i in range(3, 128, 2):
-        # vector_dict = position_buket(api_list, weight=0.1, length=i)
-        vector_dict = simple_buket(api_list, length=i)
+        vector_dict = position_buket(api_list, weight=0.1, length=i)
+        # vector_dict = simple_buket(api_list, length=i)
         report_dict, confflict_rate, confflict_count = confflict_checker(vector_dict)
         print("i={}, rate={:.2f}%, count={}".format(i, confflict_rate, confflict_count))
 
