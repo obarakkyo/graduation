@@ -1,0 +1,39 @@
+df.shape =  (2461, 129)
+x.shape =  (2461, 128)
+t.shape =  (2461, 1)
+
+x_train.shape =  (1968, 128)
+y_train.shape =  (1968, 1)
+x_test.shape =  (493, 128)
+y_test.shape =  (493, 1)
+GridSearch Finished!!!
+Time :  65.14882302284241
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 80}
+Best Score  : 0.9751036540473514
+best_model's score =  0.973630831643002
+[[253   0]
+ [ 13 227]]
+              precision    recall  f1-score   support
+
+         0.0       0.95      1.00      0.97       253
+         1.0       1.00      0.95      0.97       240
+
+    accuracy                           0.97       493
+   macro avg       0.98      0.97      0.97       493
+weighted avg       0.97      0.97      0.97       493
+
+Misclassified file names:
+Index(['Infostealer.Limitail-6c3ff8fc9799e04a236d02cc237904157bbb6e832b3b8037cc508c03abfbc03a',
+       'Trojan.Gen-8c466ea260b47354eba1259265aee436367121fbdc18c7d0ea3dadafede2efa7',
+       'Packed.Generic.459-63b5427786cff03648827dcfbaabebffe9b95eac300472aa62835c5ee0e79952',
+       'Ransom.Cerber-9347a68a4a283f7a323d1dad02d8e9d4bd2639225405f9b167a5787b2dc06774',
+       'Trojan.Gen-2b8078427e42662730b985a5fae9347635a3339de4d772e50cf19b42229a233f',
+       'Infostealer.Limitail-6b4c86b9db908217dbf5fed620edb61b26c5bb4dcd38d310c623e0382f767b2c',
+       'Packed.Generic.482-1c88688bb677f19cb78120b589ade1ad8f44b917ab6f3f051262059304d6b707',
+       'Infostealer.Limitail-5efde5502939dfa58e230ee6b2bda1e783182e7f7164fa131cd5936d0e11fbc2',
+       'Packed.Generic.436-1a23287a403b7120948ca18d5c923b7758751d547e5c517df9d092e0ccc5b513',
+       'Ransom.Cerber-662c0e2d2b07b70b7fe33e36b6356eb5d6ee8d2a8681866d2c4d58427e7ef35c',
+       'Trojan.Gen-09cddbe97e79c5fbfde5e903992c8a7bd0c2ba2dafd8b9c4af4af18f7b5d65ec',
+       'Infostealer.Limitail-756f7cc6d664e051b0b768a9b4bf10e5ed788f72caac8954b7651bcd30da442a',
+       'Infostealer.Limitail-06782b2472460f2d91238d0c524dfda4d52bfc43f2c48c2bed652e595fed3985'],
+      dtype='object')

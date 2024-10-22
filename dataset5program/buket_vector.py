@@ -116,7 +116,7 @@ def Simple_and_position_func(target_str:str, num_buket=10, scale_value=1) -> flo
     return changed_vector
 
 #【パターン６】文字列のi番目も考慮したものを加算 #
-def position_buket(target_str:str, scale_num=0.01, num_buket=128):
+def position_buket(target_str:str, scale_num=0.01, num_buket=64):
     changed_vector = 0           
     target_len = len(target_str) #文字列の長さ
     buket_list = [0]*num_buket
@@ -190,7 +190,7 @@ def main():
     df.iloc[:, 0:100] = vectorized_data
 
     #CSV化
-    df.to_csv("../CSV/dataset5CSV/buket/Position_128_2label.csv")
+    df.to_csv("../CSV/dataset5CSV/bucket/Position_64_2label.csv")
     print("Vectorization time is {}s".format(end_time - start_time))
     
 
