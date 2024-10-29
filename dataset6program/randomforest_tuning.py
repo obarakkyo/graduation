@@ -23,8 +23,9 @@ def main(target_csv, parameters, model) -> None:
     print('df.shape = ', df.shape)
 
     #説明変数
-    # x = df.iloc[:, 0:100] #APIだけ
-    x = df.iloc[:, 100:-1]
+    # x = df.iloc[:, :-1]
+    x = df.iloc[:, 0:100] #APIだけ
+    # x = df.iloc[:, 100:-1] #API以外を使う
     print('x.shape = ', x.shape)
 
     #目的変数
@@ -91,7 +92,20 @@ def main(target_csv, parameters, model) -> None:
 
 
 if __name__ == "__main__":
-    target_csv = "../CSV/dataset6CSV/bucket/Position_64_2label.csv"
+
+    #探索対象CSVの指定
+    """ASCII系"""
+    target_csv = "../CSV/dataset6CSV/ascii/2label.csv"
+
+    """Bucket系"""
+    # target_csv = "../CSV/dataset6CSV/bucket/Position_64_2label.csv"
+    # target_csv = "../CSV/dataset6CSV/bucket/Position_128_2label.csv"
+
+    "TF-IDF系"
+    # target_csv = "../CSV/dataset6CSV/tfidf/max100_1gram_2label.csv"
+    # target_csv = "../CSV/dataset6CSV/tfidf/max100_2gram_2label.csv"
+    # target_csv = "../CSV/dataset6CSV/tfidf/max100_3gram_2label.csv"
+    
 
 
     #グリッドリサーチによるハイパラメータの探索候補設定

@@ -1,0 +1,34 @@
+df.shape =  (2511, 131)
+x.shape =  (2511, 130)
+t.shape =  (2511, 1)
+
+x_train.shape =  (2008, 130)
+y_train.shape =  (2008, 1)
+x_test.shape =  (503, 130)
+y_test.shape =  (503, 1)
+GridSearch Finished!!!
+Time :  56.0644166469574
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 80}
+Best Score  : 0.9825709358444683
+best_model's score =  0.9801192842942346
+[[249   4]
+ [  6 244]]
+              precision    recall  f1-score   support
+
+         0.0       0.98      0.98      0.98       253
+         1.0       0.98      0.98      0.98       250
+
+    accuracy                           0.98       503
+   macro avg       0.98      0.98      0.98       503
+weighted avg       0.98      0.98      0.98       503
+
+Misclassified file names:
+Index(['Trojan.Gen-0aed495153a938fb084a0c324041f4c9c7a8db7a8a0b87d15b27373e1d1ea472',
+       'Trojan.Gen-2b8078427e42662730b985a5fae9347635a3339de4d772e50cf19b42229a233f',
+       'benreport726', 'benreport693', 'benreport486',
+       'Infostealer.Limitail-756f7cc6d664e051b0b768a9b4bf10e5ed788f72caac8954b7651bcd30da442a',
+       'benreport1391',
+       'Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf',
+       'Trojan.Gen-20a467b13ac01e4d4ea40e048fa4818d171d41ca1c71b8a45784e48823d04e89',
+       'Trojan.Gen-5136f7e57cc23cdc9fea628e943e09efbc34f7152a49c26e809479b2d3ab490e'],
+      dtype='object')

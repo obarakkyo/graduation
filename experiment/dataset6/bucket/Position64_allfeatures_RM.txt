@@ -1,0 +1,37 @@
+df.shape =  (2511, 131)
+x.shape =  (2511, 130)
+t.shape =  (2511, 1)
+
+x_train.shape =  (2008, 130)
+y_train.shape =  (2008, 1)
+x_test.shape =  (503, 130)
+y_test.shape =  (503, 1)
+GridSearch Finished!!!
+Time :  69.65283632278442
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 70}
+Best Score  : 0.9785846329450006
+best_model's score =  0.9721669980119284
+[[248   5]
+ [  9 241]]
+              precision    recall  f1-score   support
+
+         0.0       0.96      0.98      0.97       253
+         1.0       0.98      0.96      0.97       250
+
+    accuracy                           0.97       503
+   macro avg       0.97      0.97      0.97       503
+weighted avg       0.97      0.97      0.97       503
+
+Misclassified file names:
+Index(['Trojan.Gen-0aed495153a938fb084a0c324041f4c9c7a8db7a8a0b87d15b27373e1d1ea472',
+       'Trojan.Gen-2b8078427e42662730b985a5fae9347635a3339de4d772e50cf19b42229a233f',
+       'benreport726', 'benreport1716', 'benreport693', 'benreport486',
+       'Infostealer.Limitail-756f7cc6d664e051b0b768a9b4bf10e5ed788f72caac8954b7651bcd30da442a',
+       'benreport1391',
+       'Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10',
+       'Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf',
+       'Infostealer.Limitail-40ca86d64542a8278f431e5ddf7b719e968d0a4dd131133516d14fe810d64348',
+       'Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e',
+       'Trojan.Gen-20a467b13ac01e4d4ea40e048fa4818d171d41ca1c71b8a45784e48823d04e89',
+       'Trojan.Gen-5136f7e57cc23cdc9fea628e943e09efbc34f7152a49c26e809479b2d3ab490e'],
+      dtype='object')
