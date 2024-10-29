@@ -1,0 +1,55 @@
+df.shape =  (2511, 131)
+x.shape =  (2511, 100)
+t.shape =  (2511, 1)
+
+x_train.shape =  (2008, 100)
+y_train.shape =  (2008, 1)
+x_test.shape =  (503, 100)
+y_test.shape =  (503, 1)
+GridSearch Finished!!!
+Time :  264.2801659107208
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 95}
+Best Score  : 0.9198285381074676
+best_model's score =  0.9324055666003976
+[[236  17]
+ [ 17 233]]
+              precision    recall  f1-score   support
+
+         0.0       0.93      0.93      0.93       253
+         1.0       0.93      0.93      0.93       250
+
+    accuracy                           0.93       503
+   macro avg       0.93      0.93      0.93       503
+weighted avg       0.93      0.93      0.93       503
+
+Misclassified file names:
+Index(['benreport117',
+       'Infostealer.Limitail-1d078f7168bd934908c48a33d8262b148640b67d0ab541ba117289233ee3a529',
+       'benreport325',
+       'Trojan.Gen-1ab8a1af40f90e7d6e4edd698c8cf3e67656c378dbb13b3c8721501f00983008',
+       'Trojan.Gen-0aed495153a938fb084a0c324041f4c9c7a8db7a8a0b87d15b27373e1d1ea472',
+       'benreport1175', 'benreport726',
+       'Trojan.Gen-341da5499d007d1a2937b1961f96dbf3b7b2dd1901ca066f29b0ac1175e0fad9',
+       'Trojan.Gen-348b259665fe3b445c85358d3b4c201f4112e92d38c6d1d0cf4915d23acc0414',
+       'benreport362', 'benreport1716',
+       'Infostealer.Limitail-16631e735f7335a9b82f9a27ef48fbaa514d67b5f9f4ac21709e59f8f4036ac4',
+       'benreport1722',
+       'Trojan.Gen-52d766e22cd4afa3faeae7371053f4f1d16b8a7acb0d0019502e90e3c42b0560',
+       'benreport1340', 'benreport1422',
+       'Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf',
+       'Backdoor.Graybird-8f1081cf86782cc1b1577cb67497d6fb854f20cb6515dd8a14b564d43c6752a0',
+       'benreport604', 'benreport721',
+       'Infostealer.Limitail-40ca86d64542a8278f431e5ddf7b719e968d0a4dd131133516d14fe810d64348',
+       'Trojan.Gen-3cd42a257158385b5b0f4b715b6949e9f27fb7045cd2645508eecff9d3d5c3fe',
+       'benreport1090',
+       'Backdoor.Graybird-2821c9781c0351109c2a8b9633972e2c71f46371b648d2103c2741f560b60a1b',
+       'benreport1715',
+       'Backdoor.Graybird-a0a04c1fabf634b2f915f759027d71530989359d81650c39616c53fd5ebed357',
+       'benreport278',
+       'Infostealer.Limitail-9b1495df10401cb982ee4e105ad1e53299cb8c80957eb289e03f1d96d2301e4e',
+       'Trojan.Gen-20a467b13ac01e4d4ea40e048fa4818d171d41ca1c71b8a45784e48823d04e89',
+       'benreport433',
+       'Trojan.Gen-4b7ca5e147f6a9803454debaf1f2c44ddbd83130eddafec55992ba8b3102b91a',
+       'Trojan.Gen-2cea30fdcfcebca692528f088351810fad34051696ec10546160d660a9e2a91d',
+       'benreport1682', 'benreport451'],
+      dtype='object')

@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
     #探索対象CSVの指定
     """ASCII系"""
-    target_csv = "../CSV/dataset6CSV/ascii/2label.csv"
+    # target_csv = "../CSV/dataset6CSV/ascii/2label.csv"
 
     """Bucket系"""
     # target_csv = "../CSV/dataset6CSV/bucket/Position_64_2label.csv"
@@ -105,6 +105,11 @@ if __name__ == "__main__":
     # target_csv = "../CSV/dataset6CSV/tfidf/max100_1gram_2label.csv"
     # target_csv = "../CSV/dataset6CSV/tfidf/max100_2gram_2label.csv"
     # target_csv = "../CSV/dataset6CSV/tfidf/max100_3gram_2label.csv"
+
+    """Doc2Vec系"""
+    target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+
+
     
 
 
