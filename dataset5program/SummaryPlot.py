@@ -91,7 +91,7 @@ def main():
         tmp_min = min(get_normal_list)
         tmp_mean = statistics.mean(get_normal_list)
         tmp_median = statistics.median(get_normal_list)
-        normal_variance = statistics.variance(get_normal_list)
+        normal_variance = statistics.pstdev(get_normal_list)
 
         print("max    = {}".format(tmp_max))
         print("min    = {}".format(tmp_min))
@@ -114,7 +114,7 @@ def main():
         tmp_min = min(get_malware_list)
         tmp_mean = statistics.mean(get_malware_list)
         tmp_median = statistics.median(get_malware_list)
-        malware_variance = statistics.variance(get_malware_list)
+        malware_variance = statistics.pstdev(get_malware_list)
         print("max    = {}".format(tmp_max))
         print("min    = {}".format(tmp_min))
         print("mean   = {}".format(tmp_mean))
@@ -136,7 +136,7 @@ def main():
         if my_max <= 20:
             my_max = 20
         elif my_max > 100:
-            my_max = 100
+            my_max = 200
 
         # if summary_key in  ["directory_enumerated", "file_exists"]:
         #     continue
@@ -148,7 +148,7 @@ def main():
         # plot_hist_func(get_malware_list, summary_key, file_class="Malware", get_max=my_max)
 
     # CSVとして保存#
-    df = pd.DataFrame(static_list, index=name_list, columns=["max", "min", "mean", "median", "variance"])
+    df = pd.DataFrame(static_list, index=name_list, columns=["max", "min", "mean", "median", "pstev"])
     df.to_csv("../experiment/dataset5/SummartPlotPicture/static.csv")
 
 
