@@ -21,7 +21,7 @@ def create_column_name(columns_len, n_gram):
 
 
 # 文字列のi番目も考慮したものを加算 #
-def position_buket(target_str:str, scale_num=0.01, num_buket=64):
+def position_buket(target_str:str, scale_num=1, num_buket=64, LogTrans=False):
     changed_vector = 0           
     target_len = len(target_str) #文字列の長さ
     buket_list = [0]*num_buket
@@ -31,17 +31,20 @@ def position_buket(target_str:str, scale_num=0.01, num_buket=64):
         buket_list[buket_index] += (0.1*i+1)
     
     changed_vector = sum((scale_num*i*value) for i, value in enumerate(buket_list)) / target_len
-    return changed_vector
+    if LogTrans:
+        return np.log10(changed_vector)
+    else:
+        return changed_vector
 
 
-def ngram_position_bucket(target_df, n_gram=2, num_bucket=128):
+def ngram_position_bucket(target_df, n_gram=2, num_bucket=128, LogTrans=False):
     result_list = []
     for i in tqdm(range(target_df.shape[0])):
         vectorized_api100  = []
         for j in range(target_df.shape[1]-n_gram + 1):
             connect_str = target_df.iloc[i, j:j+n_gram].values
             join_str = "".join(connect_str)
-            vectorized_api100.append(position_buket(join_str, scale_num=0.01, num_buket=num_bucket))
+            vectorized_api100.append(position_buket(join_str, scale_num=0.01, num_buket=num_bucket, LogTrans=LogTrans))
         result_list.append(vectorized_api100)
     columns_list = create_column_name(len(vectorized_api100), n_gram)
     return_df = pd.DataFrame(result_list, index=target_df.index, columns=columns_list)
@@ -52,6 +55,7 @@ def main():
     ### 設定変数 ###
     n_gram = 3
     num_bucket = 128
+    LogTrans = True
 
     ### 対象CSVの指定 ###
     target_csv_path = "../CSV/dataset6CSV/origin/2label.csv"
@@ -61,7 +65,7 @@ def main():
     ### ベクトル化 ###
     api_df = df.iloc[:, 0:100]
     start_time = time.time()
-    vectorized_df = ngram_position_bucket(target_df=api_df, n_gram=n_gram, num_bucket=num_bucket)
+    vectorized_df = ngram_position_bucket(target_df=api_df, n_gram=n_gram, num_bucket=num_bucket, LogTrans=LogTrans)
     end_time = time.time()
 
     ### 後ろのSummary情報を抜き出して連結 ###
@@ -69,7 +73,7 @@ def main():
     save_df = pd.concat((vectorized_df, summary_process_df), axis=1)
     
     ### 保存 ###
-    save_df.to_csv(f"../CSV/dataset6CSV/bucket/{n_gram}gram_PositionBucket_{num_bucket}.csv")
+    save_df.to_csv(f"../CSV/dataset6CSV/bucket/{n_gram}gram_PositionBucket_{num_bucket}_Log{LogTrans}.csv")
 
 if __name__ == "__main__":
     main()

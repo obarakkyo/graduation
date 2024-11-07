@@ -5,6 +5,7 @@ ASCIIベクトル化にN-gram機能を追加したプログラム。
 import pandas as pd
 import time
 from tqdm import tqdm
+import numpy as np
 
 def create_column_name(columns_len, n_gram):
     columns_list = []
@@ -19,15 +20,21 @@ def create_column_name(columns_len, n_gram):
 
 
 
-def calculate_ascii_vector(target_str: str) -> float:
+def calculate_ascii_vector(target_str: str, LogTrans=False) -> float:
     if type(target_str) is int:
         target_str = str(target_str)
     squares = sum(ord(char) ** 2 for char in target_str)
-    return squares / len(target_str)
+
+    if LogTrans:
+        #対数変換して返す
+        return np.log1p(squares / len(target_str))
+    else: 
+        return squares / len(target_str)
+        
 
 
 
-def ascii_ngram_vectorizer(target_df, n_gram):
+def ascii_ngram_vectorizer(target_df, n_gram, LogTrans=False):
     result_list = []
 
     for i in tqdm(range(target_df.shape[0])):
@@ -35,7 +42,7 @@ def ascii_ngram_vectorizer(target_df, n_gram):
         for j in range(target_df.shape[1] - n_gram + 1):
             get_apiname = target_df.iloc[i, j:j+n_gram].values
             join_str = "".join(get_apiname)
-            vectorized_api100.append(calculate_ascii_vector(join_str))
+            vectorized_api100.append(calculate_ascii_vector(join_str, LogTrans))
         result_list.append(vectorized_api100)
     
     print(len(result_list), len(result_list[0]))
@@ -51,6 +58,7 @@ def ascii_ngram_vectorizer(target_df, n_gram):
 def main():
     # 設定変数 #
     n_gram = 3
+    LogTrans = True
 
     # 対象CSVファイルをデータフレームにする#
     csv_path = "../CSV/dataset6CSV/origin/2label.csv"
@@ -61,7 +69,7 @@ def main():
 
     # ベクトル化 #
     start_time = time.time()
-    vectorized_df = ascii_ngram_vectorizer(df.iloc[:, 0:100], n_gram=n_gram)
+    vectorized_df = ascii_ngram_vectorizer(df.iloc[:, 0:100], n_gram=n_gram, LogTrans=LogTrans)
     end_time   = time.time()
 
      ### 後ろのSummary情報を抜き出して連結 ###
@@ -69,7 +77,7 @@ def main():
     save_df = pd.concat((vectorized_df, summary_process_df), axis=1)
     
     ### 保存 ###
-    save_df.to_csv(f"../CSV/dataset6CSV/ascii/{n_gram}gram_2label.csv")
+    save_df.to_csv(f"../CSV/dataset6CSV/ascii/{n_gram}gram_Log{LogTrans}2label.csv")
 
 if __name__ == "__main__":
     main()
