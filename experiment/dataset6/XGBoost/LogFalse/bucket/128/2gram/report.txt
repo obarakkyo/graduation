@@ -1,0 +1,22 @@
+サーチ時間 = 194.12195706367493
+Best params : {'learning_rate': 0.1, 'max_depth': 10, 'n_estimators': 100, 'reg_alpha': 0.1, 'reg_lambda': 0}
+Best Score  : 0.9795784171412265
+best_model's score =  0.9900596421471173
+[[252   1]
+ [  4 246]]
+              precision    recall  f1-score   support
+
+           0       0.98      1.00      0.99       253
+           1       1.00      0.98      0.99       250
+
+    accuracy                           0.99       503
+   macro avg       0.99      0.99      0.99       503
+weighted avg       0.99      0.99      0.99       503
+
+Misclassified file names:
+Index(['Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346',
+       'Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119',
+       'Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7',
+       'Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10',
+       'benreport1504'],
+      dtype='object')

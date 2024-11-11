@@ -17,7 +17,40 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 
-def main(target_csv, parameters, model) -> None:
+def main() -> None:
+    """ 初期値 """
+    """ ASCII """
+    # vectorizer_name = "ascii"
+    # n_gram = "3gram"
+    # LogBoolean = True
+
+    # saving_file_path = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{n_gram}/report.txt"
+    # saving_plot_path   = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{n_gram}/importances.png"
+    # target_csv = f"../CSV/dataset6CSV/{vectorizer_name}/{n_gram}_Log{LogBoolean}_2label.csv"
+
+    """ Bucket """
+    # bucket_len = 128
+    # vectorizer_name = "bucket"
+    # n_gram = "3gram"
+    # LogBoolean = True
+
+    # saving_file_path = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{bucket_len}/{n_gram}/report.txt"
+    # saving_plot_path   = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{bucket_len}/{n_gram}/importances.png"
+    # target_csv = f"../CSV/dataset6CSV/{vectorizer_name}/{n_gram}_PositionBucket_{bucket_len}_Log{LogBoolean}.csv"
+
+
+    """Doc2Vec"""
+    # saving_file_path = f"../experiment/dataset6/RandomForest/doc2vec/report.txt"
+    # saving_plot_path = f"../experiment/dataset6/RandomForest/doc2vec/importances.png"
+    # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+
+    """TFIDF"""
+    n_gram = "3gram"
+
+    saving_file_path = f"../experiment/dataset6/RandomForest/tfidf/{n_gram}/report.txt"
+    saving_plot_path = f"../experiment/dataset6/RandomForest/tfidf/{n_gram}/importances.png"
+    target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
+
     """データのロード"""
     df = pd.read_csv(target_csv, index_col=0)
     print('df.shape = ', df.shape)
@@ -46,42 +79,57 @@ def main(target_csv, parameters, model) -> None:
     print('y_test.shape = ', y_test.shape)
 
 
+    """グリッドリサーチによるハイパラメータの探索候補設定"""
+    parameters = {
+        'n_estimators' : [i for i in range(50, 100, 5)],
+        'max_features'  : ('sqrt', 'log2', None),
+        'max_depth'   : [i for i in range(20, 50, 5)],
+    }
+
+    #モデルインスタンス
+    model = RandomForestClassifier(class_weight="balanced", random_state=123)
+
+
 
     """グリッドリサーチによる演算実行"""
     gridsearch = GridSearchCV(
         estimator = model,
         param_grid = parameters,
         scoring = 'accuracy',
+        cv=5,
         n_jobs=-1,
         verbose=0,
     )
+
     grid_start_time = time.time()
     gridsearch.fit(x_train, y_train.values.ravel())
     grid_end_time = time.time()
-    print('GridSearch Finished!!!')
-    print('Time : ',grid_end_time - grid_start_time)
+
+    with open(saving_file_path, mode="w", encoding="utf-8") as f:
+        print('GridSearch Finished!!!', file=f)
+        print('Time : ',grid_end_time - grid_start_time, file=f)
 
 
-    """グリッドサーチで得られた情報を取得"""
-    #最適なパラメータの取得
-    print('Best params : {}'.format(gridsearch.best_params_))
-    print('Best Score  : {}'.format(gridsearch.best_score_))
+        """グリッドサーチで得られた情報を取得"""
+        #最適なパラメータの取得
+        print('Best params : {}'.format(gridsearch.best_params_), file=f)
+        print('Best Score  : {}'.format(gridsearch.best_score_), file=f)
 
-    #最高性能のモデルを取得し、テストデータを分類
-    best_model = gridsearch.best_estimator_
-    y_pred = best_model.predict(x_test)
-    print('best_model\'s score = ', best_model.score(x_test, y_test))
+        #最高性能のモデルを取得し、テストデータを分類
+        best_model = gridsearch.best_estimator_
+        y_pred = best_model.predict(x_test)
+        print('best_model\'s score = ', best_model.score(x_test, y_test), file=f)
 
-    #混同行列を表示
-    print(confusion_matrix(y_test, y_pred))
-    print(classification_report(y_test, y_pred))
+        #混同行列を表示
+        print(confusion_matrix(y_test, y_pred), file=f)
+        print(classification_report(y_test, y_pred), file=f)
 
-     # 分類を間違えたインデックスの抽出
-    misclassified_indices = y_test.index[y_test['LABEL'] != y_pred]
+        # 分類を間違えたインデックスの抽出
+        misclassified_indices = y_test.index[y_test['LABEL'] != y_pred]
 
-    # 分類を間違えたファイル名の表示
-    print("Misclassified file names:")
-    print(misclassified_indices)
+        # 分類を間違えたファイル名の表示
+        print("Misclassified file names:", file=f)
+        print(misclassified_indices, file=f)
 
     #重要な特徴量を可視化
     labels = x_train.columns
@@ -90,55 +138,12 @@ def main(target_csv, parameters, model) -> None:
     plt.figure(figsize = (10,6))
     plt.barh(y = range(len(importances)), width = importances)
     plt.yticks(ticks = range(len(labels)), labels = labels)
+    plt.savefig(saving_plot_path)
     plt.show()
 
 
 if __name__ == "__main__":
-
-    #探索対象CSVの指定
-    """ASCII系"""
-    # target_csv = "../CSV/dataset6CSV/ascii/2label.csv"
-    # target_csv = "../CSV/dataset6CSV/ascii/2gram_2label.csv"
-    # target_csv = "../CSV/dataset6CSV/ascii/3gram_2label.csv"
-
-
-    """Bucket系"""
-    # target_csv = "../CSV/dataset6CSV/bucket/Position_64_2label.csv"
-    # target_csv = "../CSV/dataset6CSV/bucket/Position_128_2label.csv"
-
-    ### N-gram ###
-    # target_csv = "../CSV/dataset6CSV/bucket/2gram_PositionBucket_64.csv"
-    # target_csv = "../CSV/dataset6CSV/bucket/2gram_PositionBucket_128.csv"
-    # target_csv = "../CSV/dataset6CSV/bucket/3gram_PositionBucket_64.csv"
-    # target_csv = "../CSV/dataset6CSV/bucket/3gram_PositionBucket_128.csv"
-
-    ### LogTrans ###
-    target_csv = "../CSV/dataset6CSV/bucket/1gram_PositionBucket_64_LogTrue.csv"
-
-
-    "TF-IDF系"
-    # target_csv = "../CSV/dataset6CSV/tfidf/max100_1gram_2label.csv"
-    # target_csv = "../CSV/dataset6CSV/tfidf/max100_2gram_2label.csv"
-    # target_csv = "../CSV/dataset6CSV/tfidf/max100_3gram_2label.csv"
-
-    """Doc2Vec系"""
-    # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
-
-
-    
-
-
-    #グリッドリサーチによるハイパラメータの探索候補設定
-    parameters = {
-    'n_estimators' : [i for i in range(50, 100, 5)],
-    'max_features'  : ('sqrt', 'log2', None),
-    'max_depth'   : [i for i in range(20, 50, 5)],
-    }
-
-    #モデルインスタンス
-    model = RandomForestClassifier(class_weight="balanced", random_state=123)
-
-    main(target_csv, parameters, model)
+    main()
 
 
 
