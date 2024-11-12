@@ -1,0 +1,241 @@
+Accuracy of the model on the test set: 95.82504970178927%
+Accuracy of the model on the test set: 96.02385685884691%
+Accuracy of the model on the test set: 96.02385685884691%
+Accuracy of the model on the test set: 95.02982107355865%
+Accuracy of the model on the test set: 95.82504970178927%
+Accuracy of the model on the test set: 95.62624254473161%
+Accuracy of the model on the test set: 95.82504970178927%
+Accuracy of the model on the test set: 96.81908548707753%
+Accuracy of the model on the test set: 96.22266401590457%
+Accuracy of the model on the test set: 96.22266401590457%
+訓練時間 = 408.6890354156494s
+=====Average Accuracy over 10 trials: 95.94%=====
+
+Classification Report (averaged over trials):
+              precision    recall  f1-score   support
+
+     Class 0       0.95      0.97      0.96      2530
+     Class 1       0.97      0.95      0.96      2500
+
+    accuracy                           0.96      5030
+   macro avg       0.96      0.96      0.96      5030
+weighted avg       0.96      0.96      0.96      5030
+
+[[2459   71]
+ [ 133 2367]]
+
+Incorrectly Classified Indices (accumulated over trials):
+======1回目に間違えたもの 全部で21個====
+ ・ benreport486
+ ・ benreport113
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Infostealer.Limitail-eb9564da67131d38e827a75df42760359f9a599ea1318db2f74d6b52cf4f0275
+ ・ Trojan.Gen-22d1e5ff6bd48debadaa7b9316c9ef88357e7031d22b3fc4d84312e3e2186ced
+ ・ benreport1031
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ benreport1506
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ Infostealer.Limitail-76c7ebf989181977d89517717f036aabcc7d8e5434204dfa0777b5e3631c03c0
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+ ・ benreport1277
+ ・ benreport1155
+ ・ Infostealer.Limitail-64ae1e8ae71a4b909031e801c270cb765adabbfa4157a7b490d2923a73f2c3ef
+ ・ benreport891
+ ・ benreport694
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+======2回目に間違えたもの 全部で20個====
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ benreport644
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ benreport1031
+ ・ Infostealer.Limitail-64ae1e8ae71a4b909031e801c270cb765adabbfa4157a7b490d2923a73f2c3ef
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ Trojan.Gen-417f478ff91cc56592163397f9414160e1e187aedd0babe44ac5eaf215621e27
+ ・ Trojan.Gen-22d1e5ff6bd48debadaa7b9316c9ef88357e7031d22b3fc4d84312e3e2186ced
+ ・ benreport1277
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ benreport699
+ ・ benreport486
+ ・ benreport113
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ benreport438
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ benreport694
+ ・ benreport171
+======3回目に間違えたもの 全部で20個====
+ ・ Trojan.Gen-22d1e5ff6bd48debadaa7b9316c9ef88357e7031d22b3fc4d84312e3e2186ced
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ Infostealer.Limitail-b955984d847bfacaceb82cad86ebce81c1120158d04de2150d738460cbe97d08
+ ・ benreport486
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ benreport1277
+ ・ benreport1031
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ Infostealer.Limitail-64ae1e8ae71a4b909031e801c270cb765adabbfa4157a7b490d2923a73f2c3ef
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ Packed.Generic.493-13753e00acec054c238618c3856cea772e218b2b960f00916465e78530248d34
+ ・ Infostealer.Limitail-76c7ebf989181977d89517717f036aabcc7d8e5434204dfa0777b5e3631c03c0
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ Infostealer.Limitail-a47dbb5e006a7e90838a938d7704ff1a728090606a2bfa7dab1b9a0e6d35d386
+ ・ Infostealer.Limitail-eb9564da67131d38e827a75df42760359f9a599ea1318db2f74d6b52cf4f0275
+======4回目に間違えたもの 全部で25個====
+ ・ Infostealer.Limitail-eb9564da67131d38e827a75df42760359f9a599ea1318db2f74d6b52cf4f0275
+ ・ benreport1155
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ benreport1506
+ ・ benreport1031
+ ・ Infostealer.Limitail-76c7ebf989181977d89517717f036aabcc7d8e5434204dfa0777b5e3631c03c0
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ benreport113
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ benreport171
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ benreport794
+ ・ benreport1122
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ benreport1277
+ ・ benreport1700
+ ・ Infostealer.Limitail-64ae1e8ae71a4b909031e801c270cb765adabbfa4157a7b490d2923a73f2c3ef
+ ・ benreport694
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+ ・ Infostealer.Limitail-a47dbb5e006a7e90838a938d7704ff1a728090606a2bfa7dab1b9a0e6d35d386
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ benreport699
+======5回目に間違えたもの 全部で21個====
+ ・ benreport1155
+ ・ benreport576
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Infostealer.Limitail-bbab20be5bcfb097c1b04819939e16eef872a965c7c08e97afdb22aa7d55e0b6
+ ・ benreport486
+ ・ Infostealer.Limitail-dd003aa02f3c7ef6179e6b79d868d62afcf273ad3c79f99ccc779c12f46a17b2
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ benreport1277
+ ・ benreport1031
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ benreport113
+ ・ benreport699
+ ・ Infostealer.Limitail-a47dbb5e006a7e90838a938d7704ff1a728090606a2bfa7dab1b9a0e6d35d386
+ ・ Trojan.Gen-417f478ff91cc56592163397f9414160e1e187aedd0babe44ac5eaf215621e27
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+======6回目に間違えたもの 全部で22個====
+ ・ benreport171
+ ・ Infostealer.Limitail-64ae1e8ae71a4b909031e801c270cb765adabbfa4157a7b490d2923a73f2c3ef
+ ・ Trojan.Gen-26365ed9a72354905dd220f293aa238a36588e3ed11b0951e60dfc90b8353aba
+ ・ benreport113
+ ・ Trojan.Gen-417f478ff91cc56592163397f9414160e1e187aedd0babe44ac5eaf215621e27
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ benreport1031
+ ・ benreport694
+ ・ benreport1155
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ Trojan.Gen-22d1e5ff6bd48debadaa7b9316c9ef88357e7031d22b3fc4d84312e3e2186ced
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Infostealer.Limitail-a47dbb5e006a7e90838a938d7704ff1a728090606a2bfa7dab1b9a0e6d35d386
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ benreport486
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Infostealer.Limitail-b955984d847bfacaceb82cad86ebce81c1120158d04de2150d738460cbe97d08
+======7回目に間違えたもの 全部で21個====
+ ・ benreport486
+ ・ Infostealer.Limitail-b955984d847bfacaceb82cad86ebce81c1120158d04de2150d738460cbe97d08
+ ・ Trojan.Gen-417f478ff91cc56592163397f9414160e1e187aedd0babe44ac5eaf215621e27
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+ ・ benreport1277
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ benreport171
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ Infostealer.Limitail-76c7ebf989181977d89517717f036aabcc7d8e5434204dfa0777b5e3631c03c0
+ ・ Infostealer.Limitail-eb9564da67131d38e827a75df42760359f9a599ea1318db2f74d6b52cf4f0275
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ Infostealer.Limitail-a47dbb5e006a7e90838a938d7704ff1a728090606a2bfa7dab1b9a0e6d35d386
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ benreport113
+ ・ benreport1155
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ Infostealer.Limitail-64ae1e8ae71a4b909031e801c270cb765adabbfa4157a7b490d2923a73f2c3ef
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+======8回目に間違えたもの 全部で16個====
+ ・ Infostealer.Limitail-42382eec81db8e0e44a6cbc3f30d997d6a8052dc2bbb748d51a49c572b4995e8
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ benreport699
+ ・ benreport1031
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ benreport486
+ ・ benreport438
+ ・ benreport113
+ ・ benreport1277
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ benreport768
+======9回目に間違えたもの 全部で19個====
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ Trojan.Gen-26365ed9a72354905dd220f293aa238a36588e3ed11b0951e60dfc90b8353aba
+ ・ benreport1031
+ ・ Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e
+ ・ Trojan.Gen-22d1e5ff6bd48debadaa7b9316c9ef88357e7031d22b3fc4d84312e3e2186ced
+ ・ benreport964
+ ・ benreport1187
+ ・ Trojan.Gen-49fd15e6acb924f5c6b6418ec355f82ceff83bc99bd75db67f5eb87975df497f
+ ・ Trojan.Gen-417f478ff91cc56592163397f9414160e1e187aedd0babe44ac5eaf215621e27
+ ・ benreport699
+ ・ Infostealer.Limitail-76c7ebf989181977d89517717f036aabcc7d8e5434204dfa0777b5e3631c03c0
+ ・ Trojan.Gen-45e8b5b0e1b20332ae51ab1c472ce45453ee6563bc942f64d16f91fe77c28073
+ ・ benreport1277
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ Packed.Generic.442-713be2c25660a73a654e607038b61b1481943a623e14ec83f576aa1ee324f119
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+======10回目に間違えたもの 全部で19個====
+ ・ Trojan.Gen-22d1e5ff6bd48debadaa7b9316c9ef88357e7031d22b3fc4d84312e3e2186ced
+ ・ benreport438
+ ・ benreport576
+ ・ benreport1031
+ ・ benreport644
+ ・ benreport113
+ ・ benreport1277
+ ・ Trojan.Gen-083a6ced9e87e00b1c5682b195af516eaa4cbbecf8c62fabde847e4b43b296b7
+ ・ benreport1155
+ ・ benreport699
+ ・ benreport486
+ ・ Infostealer.Limitail-0123ab6dd5cc869f8915767ce440642b8305beabbb8b326f65a74952fc23417c
+ ・ Infostealer.Limitail-64ae1e8ae71a4b909031e801c270cb765adabbfa4157a7b490d2923a73f2c3ef
+ ・ benreport17
+ ・ Ransom.Cerber-293fb376819326d65e8151d19f496ec456278770eaf8c2689030262bc79bb346
+ ・ Trojan.Gen-458ff01fad6601f908f383f6c469fb7bb01402876ed10a7e818bfd8b3e0178e5
+ ・ Ransom.Cerber-194e955b852918d2f12fede9640a696dba2cccebca2d2c5a2a7bbcf6418d3e10
+ ・ Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf
+ ・ Trojan.Gen-417f478ff91cc56592163397f9414160e1e187aedd0babe44ac5eaf215621e27
