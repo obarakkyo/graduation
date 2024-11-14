@@ -39,6 +39,13 @@ def df_todoc2vec(normal_df, parameters):
         seed = parameters['seed'],
     )
 
+    # モデルの訓練
+    model.build_vocab(tagged_corpus)  # コーパスを基に単語辞書を構築
+    model.train(tagged_corpus, total_examples=model.corpus_count, epochs=parameters['iter'])  # 訓練実行
+
+
+    
+
     """データフレームに変換"""
     vectorized_list = []
     for i in range(len(tagged_corpus)):
@@ -78,7 +85,14 @@ def main():
 
 
     """Doc2Vecによるベクトル化処理"""
+    start_time = time.time()
     changed_df = df_todoc2vec(normal_df, parameters)
+    end_time = time.time()
+
+    """ファイルに実行時間を保存"""
+    savign_file_path = f"../experiment/vectorizer_time/doc2vec/time.txt"
+    with open(savign_file_path, mode="w", encoding="utf-8") as f:
+        print(f"ベクトル化実行時間 = {end_time - start_time}", file=f)
     
     """データフレームに上書きする"""
     df.iloc[:, 0:change_colmax] = changed_df

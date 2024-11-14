@@ -68,12 +68,18 @@ def main():
     vectorized_df = ngram_position_bucket(target_df=api_df, n_gram=n_gram, num_bucket=num_bucket, LogTrans=LogTrans)
     end_time = time.time()
 
+    ## ファイルに実行時間を保存 ##
+    saving_file_path = f"../experiment/vectorizer_time/bucket/{num_bucket}/Log{LogTrans}/{n_gram}gram/time.txt"
+    with open(saving_file_path, mode="w", encoding="utf-8") as f:
+        print(f"ベクトル化実行時間 = {end_time - start_time}", file=f)
+
+
     ### 後ろのSummary情報を抜き出して連結 ###
     summary_process_df = df.iloc[:, 100:]
     save_df = pd.concat((vectorized_df, summary_process_df), axis=1)
     
     ### 保存 ###
-    save_df.to_csv(f"../CSV/dataset6CSV/bucket/{n_gram}gram_PositionBucket_{num_bucket}_Log{LogTrans}.csv")
+    # save_df.to_csv(f"../CSV/dataset6CSV/bucket/{n_gram}gram_PositionBucket_{num_bucket}_Log{LogTrans}.csv")
 
 if __name__ == "__main__":
     main()

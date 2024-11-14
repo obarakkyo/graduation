@@ -4,6 +4,7 @@ API先頭100個をTF-IDFを用いてベクトル化したCSVを出力する.
 from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
 import re
+import time
 
 
 def training_thidf(all_api_string, index_list, n_gram=1):
@@ -32,7 +33,16 @@ def main():
 
     #Tf-idfでベクトル化
     n_gram = 3
+    start_time = time.time()
     vectorized_df = training_thidf(all_api_string, index_list=df.index, n_gram=n_gram) #(2511, 100)
+    end_time = time.time()
+
+
+    # 実行時間をファイルに保存 #
+    saving_file_path = f"../experiment/vectorizer_time/tfidf/{n_gram}gram/time.txt"
+    with open(saving_file_path, mode="w", encoding="utf-8") as f:
+        print(f"ベクトル化実行時間 = {end_time - start_time}", file=f)
+
 
     #Summary列の連結
     tmp_df = df.iloc[:, 100:]
@@ -40,8 +50,8 @@ def main():
     print(tmp_df.shape)
 
     #保存
-    save_path = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}gram_2label.csv"
-    tmp_df.to_csv(save_path)
+    # save_path = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}gram_2label.csv"
+    # tmp_df.to_csv(save_path)
 
 
     

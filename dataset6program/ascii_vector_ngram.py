@@ -72,12 +72,18 @@ def main():
     vectorized_df = ascii_ngram_vectorizer(df.iloc[:, 0:100], n_gram=n_gram, LogTrans=LogTrans)
     end_time   = time.time()
 
+    # ファイルに計測時間を書き込む #
+    saving_file_path = f"../experiment/vectorizer_time/ascii/Log{LogTrans}/{n_gram}gram/time.txt"
+    with open(saving_file_path, mode="w", encoding="utf-8") as f:
+        print(f"ベクトル化時間 = {end_time - start_time}", file=f)
+
+
      ### 後ろのSummary情報を抜き出して連結 ###
     summary_process_df = df.iloc[:, 100:]
     save_df = pd.concat((vectorized_df, summary_process_df), axis=1)
     
     ### 保存 ###
-    save_df.to_csv(f"../CSV/dataset6CSV/ascii/{n_gram}gram_Log{LogTrans}2label.csv")
+    # save_df.to_csv(f"../CSV/dataset6CSV/ascii/{n_gram}gram_Log{LogTrans}2label.csv")
 
 if __name__ == "__main__":
     main()
