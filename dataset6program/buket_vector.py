@@ -7,7 +7,7 @@ import time
 
 
 # 文字列のi番目も考慮したものを加算 #
-def position_buket(target_str:str, scale_num=0.01, num_buket=64):
+def position_buket(target_str:str, scale_num=0.01, num_buket=128):
     changed_vector = 0           
     target_len = len(target_str) #文字列の長さ
     buket_list = [0]*num_buket
@@ -34,13 +34,15 @@ def main():
     vectorized_data = df.iloc[:, 0:100].applymap(position_buket)
     end_time = time.time()
 
+    print(end_time - start_time)
+
 
 
     df.iloc[:, 0:100] = vectorized_data
 
     #CSV化
-    df.to_csv("../CSV/dataset6CSV/bucket/Position_64_2label.csv")
-    print("Vectorization time is {}s".format(end_time - start_time))
+    # df.to_csv("../CSV/dataset6CSV/bucket/Position_64_2label.csv")
+    # print("Vectorization time is {}s".format(end_time - start_time))
     
 
 
