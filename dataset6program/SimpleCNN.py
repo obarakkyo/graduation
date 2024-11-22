@@ -58,9 +58,13 @@ def main():
 
 
     """TF-IDFの時"""
-    vectorizer = "tfidf"
-    for current_ngram in ngram_list:
-        SimpleCNN_Dataset6(current_vectorizer=vectorizer, current_ngram=current_ngram, ngram_dimention=130)
+    # vectorizer = "tfidf"
+    # for current_ngram in ngram_list:
+    #     SimpleCNN_Dataset6(current_vectorizer=vectorizer, current_ngram=current_ngram, ngram_dimention=130)
+
+    """OnlySummaryの時"""
+    vectorizer = "SummaryOnly"
+    SimpleCNN_Dataset6(current_vectorizer=vectorizer, ngram_dimention=30)
 
             
 
@@ -103,6 +107,11 @@ def SimpleCNN_Dataset6(current_vectorizer=None, current_ngram=None, current_bool
         saving_file_path = f"../experiment/dataset6/SimpleCNN/tfidf/{n_gram}/report.txt"
         saving_plot_path = f"../experiment/dataset6/SimpleCNN/tfidf/{n_gram}/importances.png"
         target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
+
+    elif current_vectorizer == "SummaryOnly":
+        saving_file_path = f"../experiment/dataset6/SimpleCNN/SummaryOnly/report.txt"
+        saving_plot_path = f"../experiment/dataset6/SimpleCNN/SummaryOnly/importances.png"
+        target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
     else:
         print("ベクトル化手法をしてしてください。")
         exit()
@@ -114,7 +123,11 @@ def SimpleCNN_Dataset6(current_vectorizer=None, current_ngram=None, current_bool
     print(df.head(5))
 
     # 訓練データとテストデータの分割
-    X = df.drop("LABEL", axis=1).values
+    if current_vectorizer == "SummaryOnly":
+        X = df.iloc[:, 100:-1].values
+    else:
+        X = df.drop("LABEL", axis=1).values
+
     Y = df["LABEL"].values
     indices = df.index  # インデックス名を保持
 

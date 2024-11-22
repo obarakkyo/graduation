@@ -43,11 +43,16 @@ def main():
     # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
 
     """TFIDF"""
-    n_gram = "3gram"
+    # n_gram = "3gram"
 
-    saving_file_path = f"../experiment/dataset6/XGBoost/tfidf/{n_gram}/report.txt"
-    saving_plot_path = f"../experiment/dataset6/XGBoost/tfidf/{n_gram}/importances.png"
-    target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
+    # saving_file_path = f"../experiment/dataset6/XGBoost/tfidf/{n_gram}/report.txt"
+    # saving_plot_path = f"../experiment/dataset6/XGBoost/tfidf/{n_gram}/importances.png"
+    # target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
+
+    """SummaryOnly"""
+    saving_file_path = f"../experiment/dataset6/XGBoost/SummaryOnly/report.txt"
+    saving_plot_path = f"../experiment/dataset6/XGBoost/SummaryOnly/importances.png"
+    target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
 
 
 
@@ -58,7 +63,9 @@ def main():
     print(df.head(5))
 
     # データの分割 #
-    X = df.iloc[:, :-1]
+    # X = df.iloc[:, :-1]
+    X = df.iloc[:, 100:-1] #SummaryOnly
+
     Y = df.loc[:, ["LABEL"]]
     Y = Y.astype(int)
     print("=====X(説明変数)=====")
