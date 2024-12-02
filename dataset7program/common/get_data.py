@@ -1,0 +1,2 @@
+def aiueo():
+    print("aiuoe")
