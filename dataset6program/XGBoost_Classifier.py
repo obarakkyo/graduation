@@ -50,9 +50,14 @@ def main():
     # target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
 
     """SummaryOnly"""
-    saving_file_path = f"../experiment/dataset6/XGBoost/SummaryOnly/report.txt"
-    saving_plot_path = f"../experiment/dataset6/XGBoost/SummaryOnly/importances.png"
-    target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+    # saving_file_path = f"../experiment/dataset6/XGBoost/SummaryOnly/report.txt"
+    # saving_plot_path = f"../experiment/dataset6/XGBoost/SummaryOnly/importances.png"
+    # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+
+    """Malware SummaryOnly """
+    saving_file_path = f"../experiment/dataset6/MalwareOnly/XGBoost/report.txt"
+    saving_plot_path = f"../experiment/dataset6/MalwareOnly/XGBoost/importances.png"
+    target_csv = f"../CSV/dataset6CSV/origin/malware_6label.csv"
 
 
 

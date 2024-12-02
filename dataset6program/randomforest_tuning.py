@@ -52,9 +52,14 @@ def main() -> None:
     # target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
 
     """SummaryOnly"""
-    saving_file_path = f"../experiment/dataset6/RandomForest/SummaryOnly/report.txt"
-    saving_plot_path = f"../experiment/dataset6/RandomForest/SummaryOnly/importances.png"
-    target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+    # saving_file_path = f"../experiment/dataset6/RandomForest/SummaryOnly/report.txt"
+    # saving_plot_path = f"../experiment/dataset6/RandomForest/SummaryOnly/importances.png"
+    # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+
+    """Malware SummaryOnly """
+    saving_file_path = f"../experiment/dataset6/MalwareOnly/RandomForest/report.txt"
+    saving_plot_path = f"../experiment/dataset6/MalwareOnly/RandomForest/importances.png"
+    target_csv = f"../CSV/dataset6CSV/origin/malware_6label.csv"
 
     """データのロード"""
     df = pd.read_csv(target_csv, index_col=0)

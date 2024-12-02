@@ -57,9 +57,14 @@ def main():
 
 
     """SummaryOnly"""
-    saving_file_path = f"../experiment/dataset6/LightGBM/SummaryOnly/report.txt"
-    saving_plot_path = f"../experiment/dataset6/LightGBM/SummaryOnly/importances.png"
-    target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+    # saving_file_path = f"../experiment/dataset6/LightGBM/SummaryOnly/report.txt"
+    # saving_plot_path = f"../experiment/dataset6/LightGBM/SummaryOnly/importances.png"
+    # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+
+    """Malware SummaryOnly """
+    saving_file_path = f"../experiment/dataset6/MalwareOnly/XGBoost/report.txt"
+    saving_plot_path = f"../experiment/dataset6/MalwareOnly/XGBoost/importances.png"
+    target_csv = f"../CSV/dataset6CSV/origin/malware_6label.csv"
 
 
 
