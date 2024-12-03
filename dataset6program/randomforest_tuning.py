@@ -20,22 +20,32 @@ from sklearn.metrics import classification_report
 def main() -> None:
     """ 初期値 """
     """ ASCII """
-    # vectorizer_name = "ascii"
-    # n_gram = "3gram"
-    # LogBoolean = True
+    vectorizer_name = "ascii"
+    n_gram = "1gram"
+    LogBoolean = False
 
     # saving_file_path = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{n_gram}/report.txt"
     # saving_plot_path   = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{n_gram}/importances.png"
     # target_csv = f"../CSV/dataset6CSV/{vectorizer_name}/{n_gram}_Log{LogBoolean}_2label.csv"
 
+    #APIOnlyの時#
+    # saving_file_path = f"../experiment/dataset6/APIOnly/RandomForest/Log{LogBoolean}/{vectorizer_name}/{n_gram}/report.txt"
+    # saving_plot_path   = f"../experiment/dataset6/APIOnly/RandomForest/Log{LogBoolean}/{vectorizer_name}/{n_gram}/importances.png"
+    # target_csv = f"../CSV/dataset6CSV/{vectorizer_name}/{n_gram}_Log{LogBoolean}_2label.csv"
+
     """ Bucket """
     # bucket_len = 128
     # vectorizer_name = "bucket"
-    # n_gram = "3gram"
-    # LogBoolean = True
+    # n_gram = "1gram"
+    # LogBoolean = False
 
     # saving_file_path = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{bucket_len}/{n_gram}/report.txt"
     # saving_plot_path   = f"../experiment/dataset6/RandomForest/Log{LogBoolean}/{vectorizer_name}/{bucket_len}/{n_gram}/importances.png"
+    # target_csv = f"../CSV/dataset6CSV/{vectorizer_name}/{n_gram}_PositionBucket_{bucket_len}_Log{LogBoolean}.csv"
+
+    # APIOnly #
+    # saving_file_path = f"../experiment/dataset6/APIOnly/RandomForest/Log{LogBoolean}/{vectorizer_name}/{bucket_len}/{n_gram}/report.txt"
+    # saving_plot_path   = f"../experiment/dataset6/APIOnly/RandomForest/Log{LogBoolean}/{vectorizer_name}/{bucket_len}/{n_gram}/importances.png"
     # target_csv = f"../CSV/dataset6CSV/{vectorizer_name}/{n_gram}_PositionBucket_{bucket_len}_Log{LogBoolean}.csv"
 
 
@@ -44,12 +54,23 @@ def main() -> None:
     # saving_plot_path = f"../experiment/dataset6/RandomForest/doc2vec/importances.png"
     # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
 
+    #APIOnlyの時#
+    # saving_file_path = f"../experiment/dataset6/APIOnly/RandomForest/doc2vec/report.txt"
+    # saving_plot_path = f"../experiment/dataset6/APIOnly/RandomForest/doc2vec/importances.png"
+    # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
+
+
     """TFIDF"""
-    # n_gram = "3gram"
+    n_gram = "3gram"
 
     # saving_file_path = f"../experiment/dataset6/RandomForest/tfidf/{n_gram}/report.txt"
     # saving_plot_path = f"../experiment/dataset6/RandomForest/tfidf/{n_gram}/importances.png"
     # target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
+
+    saving_file_path = f"../experiment/dataset6/APIOnly/RandomForest/tfidf/{n_gram}/report.txt"
+    saving_plot_path = f"../experiment/dataset6/APIOnly/RandomForest/tfidf/{n_gram}/importances.png"
+    target_csv = f"../CSV/dataset6CSV/tfidf/max100_{n_gram}_2label.csv"
+
 
     """SummaryOnly"""
     # saving_file_path = f"../experiment/dataset6/RandomForest/SummaryOnly/report.txt"
@@ -57,9 +78,9 @@ def main() -> None:
     # target_csv = "../CSV/dataset6CSV/doc2vec/2label.csv"
 
     """Malware SummaryOnly """
-    saving_file_path = f"../experiment/dataset6/MalwareOnly/RandomForest/report.txt"
-    saving_plot_path = f"../experiment/dataset6/MalwareOnly/RandomForest/importances.png"
-    target_csv = f"../CSV/dataset6CSV/origin/malware_6label.csv"
+    # saving_file_path = f"../experiment/dataset6/MalwareOnly/RandomForest/report.txt"
+    # saving_plot_path = f"../experiment/dataset6/MalwareOnly/RandomForest/importances.png"
+    # target_csv = f"../CSV/dataset6CSV/origin/malware_6label.csv"
 
     """データのロード"""
     df = pd.read_csv(target_csv, index_col=0)
@@ -67,10 +88,10 @@ def main() -> None:
 
     #説明変数
     # x = df.iloc[:, :-1]
-    # x = df.iloc[:, 0:100] #APIだけ
+    x = df.iloc[:, 0:100] #APIだけ
     # x = df.iloc[:, 0:99] #APIだけ【2gram】
     # x = df.iloc[:, 0:98] #APIだけ【3gram】
-    x = df.iloc[:, 100:-1] #API以外を使う
+    # x = df.iloc[:, 100:-1] #API以外を使う
     print('x.shape = ', x.shape)
 
     #目的変数

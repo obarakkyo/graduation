@@ -80,10 +80,5 @@ def main():
     df.to_csv(saving_csv_path)
             
 
-            
-
-
-    
-
 if __name__ == "__main__":
     main()
