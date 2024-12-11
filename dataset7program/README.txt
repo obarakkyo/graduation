@@ -3,15 +3,17 @@
 
 　マルウェアはそれぞれ100個ずつ持ってくる。
 ・Trojan.Gen ☑
+・Trojan.Gen.2　☑
 ・Backdoor.Trojan　☑
+・Backdoor.Graybird ☑    
 ・Packed.Generic.493　☑ 
 ・Ransom.Cerber     ☑    
-・Backdoor.Graybird ☑    
 ・Infostealer.Limitail  ☑
-・W32.Pykspa.D  ☑       
+・Infostealer.Shifu　☑
+・W32.Pykspa.D  ☑  
+・W32.Tempedreve     
 ・SMG.Heur!gen    ☑      
 ・ML.Attribute.HighConfidence　☑ ダウンローダー
-・Infostealer.Shifu　☑
 
 
 【マルウェアの概要】

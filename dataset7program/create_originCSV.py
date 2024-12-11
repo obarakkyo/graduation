@@ -49,7 +49,7 @@ def main():
     print(f"ターゲットデータセット = {dataset_path}")
     print(f"ファイルの数 = {len(file_paths)}")
 
-
+    
     ###リストに値を格納していく ###
     for file_path in tqdm(file_paths[:]):
         with open(file_path, mode="r", encoding="utf-8") as f:

@@ -13,7 +13,10 @@ import statistics
 
 def main():
     """CSVの取得"""
-    target_csv = "../CSV/dataset6CSV/ascii/1gram_LogFalse_2label.csv"
+    # target_csv = "../CSV/dataset6CSV/ascii/1gram_LogFalse_2label.csv"
+    # target_csv = "../CSV/dataset7CSV/bucket/1gram_LogFalse_64.csv"
+    target_csv = "../CSV/dataset7CSV/bucket/1gram_LogFalse_128.csv"
+
     df = pd.read_csv(target_csv, index_col=0)
     print(f"df.shape = {df.shape}")
 
