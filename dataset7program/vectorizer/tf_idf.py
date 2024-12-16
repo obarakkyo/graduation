@@ -74,7 +74,8 @@ def get_summaryinfo(f_json):
     summary_list = []
     for key in summary_key_lists:
         summary_list.append(f_json["summary"][key])
-    # print(summary_list)
+    summary_list.append(f_json["parent_count"])
+    summary_list.append(f_json["children_count"])
     return summary_list
 
 
@@ -108,7 +109,8 @@ def tfidf_main():
             print(f"ベクトル化時間 = {end_time - start_time}", file=timefile)
 
         ## Summary情報を付与する ##
-        summary_df = pd.DataFrame(all_summary_list, index=index_list, columns=summary_key_lists)
+        summary_parent_children_columns = summary_key_lists + ["parent", "children"]
+        summary_df = pd.DataFrame(all_summary_list, index=index_list, columns=summary_parent_children_columns)
         result_df = pd.concat((vectorized_df, summary_df), axis=1)
 
         ## LABELを付ける ##

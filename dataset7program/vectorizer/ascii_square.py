@@ -51,8 +51,10 @@ def ascii_square(ngram=1, LogBool=False, status_dict=None):
         print(f"Processing Time = {end_time - start_time}", file=f)
     
     ### Summaryを連結 ###
-    summary_df = df_origin.iloc[:, 100:]
-    result_df = pd.concat((vectorized_df, summary_df), axis=1)
+    summary_process_df = df_origin.iloc[:, 100:]
+    result_df = pd.concat((vectorized_df, summary_process_df), axis=1)
+
+        
 
     ### CSVとして保存 ###
     result_df.to_csv(status_dict["Save_csv_path"])

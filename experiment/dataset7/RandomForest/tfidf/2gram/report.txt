@@ -1,0 +1,16 @@
+GridSearch Finished!!!
+Time :  8.227655172348022
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 50}
+Best Score  : 1.0
+best_model's score =  1.0
+[[493]]
+              precision    recall  f1-score   support
+
+           1       1.00      1.00      1.00       493
+
+    accuracy                           1.00       493
+   macro avg       1.00      1.00      1.00       493
+weighted avg       1.00      1.00      1.00       493
+
+Misclassified file names:
+Index([], dtype='object')

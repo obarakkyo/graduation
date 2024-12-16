@@ -6,6 +6,35 @@ import glob
 import json
 from tqdm import tqdm
 
+summary_key_lists = ["command_line", 
+                    "connects_host",
+                    "connects_ip",
+                    "directory_created",
+                    "directory_enumerated",
+                    "directory_removed",
+                    "dll_loaded",
+                    "downloads_file",
+                    "fetches_url",
+                    "file_copied",
+                    "file_created",
+                    "file_deleted",
+                    "file_exists",
+                    "file_failed",
+                    "file_moved",
+                    "file_opened",
+                    "file_read",
+                    "file_recreated",
+                    "file_written",
+                    "guid",
+                    "mutex",
+                    "regkey_deleted",
+                    "regkey_opened",
+                    "regkey_read",
+                    "regkey_written",
+                    "resolves_host",
+                    "tls_master",
+                    "wmi_query"]
+
 
 
 
@@ -65,10 +94,11 @@ def main():
     
     # 列名を作成 #
     columns_list = [f"API{i+1}" for i in range(100)]
-    for _, value in file_dict["summary"].items():
-        columns_list.append(value)
+    for key, value in file_dict["summary"].items():
+        columns_list.append(key)
     columns_list.append("parent")
     columns_list.append("children")
+
 
     # データフレームに変換 #
     df = pd.DataFrame(features_list, index=index_list, columns=columns_list)

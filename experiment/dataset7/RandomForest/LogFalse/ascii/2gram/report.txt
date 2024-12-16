@@ -1,0 +1,31 @@
+GridSearch Finished!!!
+Time :  113.40765690803528
+Best params : {'max_depth': 25, 'max_features': 'sqrt', 'n_estimators': 80}
+Best Score  : 0.9751062373257902
+best_model's score =  0.9716024340770791
+[[248   5]
+ [  9 231]]
+              precision    recall  f1-score   support
+
+           0       0.96      0.98      0.97       253
+           1       0.98      0.96      0.97       240
+
+    accuracy                           0.97       493
+   macro avg       0.97      0.97      0.97       493
+weighted avg       0.97      0.97      0.97       493
+
+Misclassified file names:
+Index(['benreport360',
+       'Trojan.Gen-2b8078427e42662730b985a5fae9347635a3339de4d772e50cf19b42229a233f',
+       'ML.Attribute.HighConfidence-2e0a21331797e09b809f5afa96623b3dc8fe9880b932fa5ab1fc2e51dddddc95',
+       'Trojan.Gen-0b4d30d614d963b09286eabb81b57fb57e1f35cce6f8ca4e8bb3eacd720ae037',
+       'benreport693',
+       'Backdoor.Trojan-ff1ffbb546ffde0039b6600347ace81fb3f550bd81e4be89c8b069b71d115a13',
+       'Trojan.Gen.2-ecdb4130503eb18494bcd8bb7a1c68a987e5fb0fdf82bf04146a07a5e5a33d31',
+       'ML.Attribute.HighConfidence-ca8f0e3edf3a5d3670208e8b51253a740c9046a8f57267debcb0233a45ccc3dd',
+       'Infostealer.Limitail-46b29c9b87e820b4c44eab52ee215a281279590dac386791ccaa66695fee7d0e',
+       'benreport486',
+       'Trojan.Gen.2-fb0e8e66d30c9547c13d0e947b180d218b40fff6d77227eabb6a05db8fe595f6',
+       'benreport1716', 'benreport1714',
+       'Backdoor.Trojan-f3161ba2664ae1621c2ab147e569cb486403cc8612a403d733aae10e1e4d07f0'],
+      dtype='object')
