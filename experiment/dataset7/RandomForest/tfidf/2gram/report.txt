@@ -1,16 +1,25 @@
 GridSearch Finished!!!
-Time :  8.227655172348022
-Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 50}
-Best Score  : 1.0
-best_model's score =  1.0
-[[493]]
+Time :  128.5627419948578
+Best params : {'max_depth': 20, 'max_features': 'log2', 'n_estimators': 95}
+Best Score  : 0.9822167112282196
+best_model's score =  0.9837728194726166
+[[250   3]
+ [  5 235]]
               precision    recall  f1-score   support
 
-           1       1.00      1.00      1.00       493
+           0       0.98      0.99      0.98       253
+           1       0.99      0.98      0.98       240
 
-    accuracy                           1.00       493
-   macro avg       1.00      1.00      1.00       493
-weighted avg       1.00      1.00      1.00       493
+    accuracy                           0.98       493
+   macro avg       0.98      0.98      0.98       493
+weighted avg       0.98      0.98      0.98       493
 
 Misclassified file names:
-Index([], dtype='object')
+Index(['Trojan.Gen-2b8078427e42662730b985a5fae9347635a3339de4d772e50cf19b42229a233f.json',
+       'Trojan.Gen-0b4d30d614d963b09286eabb81b57fb57e1f35cce6f8ca4e8bb3eacd720ae037.json',
+       'benreport484.json',
+       'Backdoor.Trojan-ff1ffbb546ffde0039b6600347ace81fb3f550bd81e4be89c8b069b71d115a13.json',
+       'ML.Attribute.HighConfidence-ca8f0e3edf3a5d3670208e8b51253a740c9046a8f57267debcb0233a45ccc3dd.json',
+       'benreport486.json', 'benreport912.json',
+       'Backdoor.Trojan-f3161ba2664ae1621c2ab147e569cb486403cc8612a403d733aae10e1e4d07f0.json'],
+      dtype='object')

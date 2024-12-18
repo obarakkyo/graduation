@@ -118,29 +118,29 @@ def choice_Vectorized_CSV():
     saving_filepath = ""
 
     """ASCII"""
-    vectorizer = "ascii"
-    n_gram = [1, 2, 3]
-    LogBool = [True, False]
-    for current_gram in n_gram:
-        for current_Bool in LogBool:
-            target_csv = f"../CSV/dataset7CSV/{vectorizer}/{current_gram}gram_Log{current_Bool}.csv"
-            saving_filepath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_gram}gram/report.txt"
-            saving_plotpath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_gram}gram/importtances.png"
-            RMmain(target_csv=target_csv, saving_filepath=saving_filepath, saving_plotpath=saving_plotpath)
+    # vectorizer = "ascii"
+    # n_gram = [1, 2, 3]
+    # LogBool = [True, False]
+    # for current_gram in n_gram:
+    #     for current_Bool in LogBool:
+    #         target_csv = f"../CSV/dataset7CSV/{vectorizer}/{current_gram}gram_Log{current_Bool}.csv"
+    #         saving_filepath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_gram}gram/report.txt"
+    #         saving_plotpath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_gram}gram/importtances.png"
+    #         RMmain(target_csv=target_csv, saving_filepath=saving_filepath, saving_plotpath=saving_plotpath)
 
 
     """Bucket"""
-    vectorizer="bucket"
-    n_gram = [1, 2, 3]
-    LogBool = [False, True]
-    bucket_len = [64, 128]
-    for current_ngram in n_gram:
-        for current_Bool in LogBool:
-            for current_len in bucket_len:
-                target_csv = f"../CSV/dataset7CSV/{vectorizer}/{current_ngram}gram_Log{current_Bool}_{current_len}.csv"
-                saving_filepath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_len}/{current_ngram}gram/report.txt"
-                saving_plotpath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_len}/{current_ngram}gram/importances.png"
-                RMmain(target_csv=target_csv, saving_filepath=saving_filepath, saving_plotpath=saving_plotpath)
+    # vectorizer="bucket"
+    # n_gram = [1, 2, 3]
+    # LogBool = [False, True]
+    # bucket_len = [64, 128]
+    # for current_ngram in n_gram:
+    #     for current_Bool in LogBool:
+    #         for current_len in bucket_len:
+    #             target_csv = f"../CSV/dataset7CSV/{vectorizer}/{current_ngram}gram_Log{current_Bool}_{current_len}.csv"
+    #             saving_filepath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_len}/{current_ngram}gram/report.txt"
+    #             saving_plotpath = f"../experiment/dataset7/RandomForest/Log{current_Bool}/{vectorizer}/{current_len}/{current_ngram}gram/importances.png"
+    #             RMmain(target_csv=target_csv, saving_filepath=saving_filepath, saving_plotpath=saving_plotpath)
     
 
     """Tf-idf"""
@@ -153,10 +153,10 @@ def choice_Vectorized_CSV():
         RMmain(target_csv=target_csv, saving_filepath=saving_filepath, saving_plotpath=saving_plotpath)
 
     """Doc2Vec"""
-    target_csv = "../CSV/dataset7CSV/doc2vec/2label.csv"
-    saving_filepath = "../experiment/dataset7/RandomForest/doc2vec/report.txt"
-    saving_plotpath = "../experiment/dataset7/RandomForest/doc2vec/importances.png"
-    RMmain(target_csv=target_csv, saving_filepath=saving_filepath, saving_plotpath=saving_plotpath)
+    # target_csv = "../CSV/dataset7CSV/doc2vec/2label.csv"
+    # saving_filepath = "../experiment/dataset7/RandomForest/doc2vec/report.txt"
+    # saving_plotpath = "../experiment/dataset7/RandomForest/doc2vec/importances.png"
+    # RMmain(target_csv=target_csv, saving_filepath=saving_filepath, saving_plotpath=saving_plotpath)
 
 
 

@@ -1,16 +1,28 @@
 GridSearch Finished!!!
-Time :  8.243651628494263
-Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 50}
-Best Score  : 1.0
-best_model's score =  1.0
-[[493]]
+Time :  96.98673582077026
+Best params : {'max_depth': 20, 'max_features': 'log2', 'n_estimators': 90}
+Best Score  : 0.9817078053758024
+best_model's score =  0.9776876267748479
+[[250   3]
+ [  8 232]]
               precision    recall  f1-score   support
 
-           1       1.00      1.00      1.00       493
+           0       0.97      0.99      0.98       253
+           1       0.99      0.97      0.98       240
 
-    accuracy                           1.00       493
-   macro avg       1.00      1.00      1.00       493
-weighted avg       1.00      1.00      1.00       493
+    accuracy                           0.98       493
+   macro avg       0.98      0.98      0.98       493
+weighted avg       0.98      0.98      0.98       493
 
 Misclassified file names:
-Index([], dtype='object')
+Index(['benreport1391.json',
+       'Trojan.Gen.2-e9c4adaf6368c3024be77bb898b294520d300ff42e29b0634c29405debf4e2da.json',
+       'Trojan.Gen-2b8078427e42662730b985a5fae9347635a3339de4d772e50cf19b42229a233f.json',
+       'Trojan.Gen-0b4d30d614d963b09286eabb81b57fb57e1f35cce6f8ca4e8bb3eacd720ae037.json',
+       'SMG.Heur!gen-e9b0249f0018ce7812922a0ddab7c2e25071a67cb0bd9ea737c70ae52e12b1a6.json',
+       'Backdoor.Trojan-ff1ffbb546ffde0039b6600347ace81fb3f550bd81e4be89c8b069b71d115a13.json',
+       'ML.Attribute.HighConfidence-ca8f0e3edf3a5d3670208e8b51253a740c9046a8f57267debcb0233a45ccc3dd.json',
+       'ML.Attribute.HighConfidence-af22ec9e0088170751606b7237a77ee8ecf0d2950d6244d0cdc4c7b3a3cd20ff.json',
+       'benreport486.json', 'benreport912.json',
+       'Backdoor.Trojan-f3161ba2664ae1621c2ab147e569cb486403cc8612a403d733aae10e1e4d07f0.json'],
+      dtype='object')

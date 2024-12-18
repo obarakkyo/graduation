@@ -114,7 +114,7 @@ def tfidf_main():
         result_df = pd.concat((vectorized_df, summary_df), axis=1)
 
         ## LABELを付ける ##
-        result_df["LABEL"] = result_df.index.to_series().apply(lambda x: 0 if 'benreports' in x else 1)
+        result_df["LABEL"] = result_df.index.to_series().apply(lambda x: 0 if 'benreport' in x else 1)
 
 
         result_df.to_csv(f"../../CSV/dataset7CSV/tfidf/max{max_features}_{current_gram}gram.csv")
