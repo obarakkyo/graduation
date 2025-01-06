@@ -60,22 +60,28 @@ def ascii_main(status_dict:dict) -> None:
     
     ### データセットからパスを取得###
     file_paths = glob.glob(status_dict["target_folder"])
+
+    ## APIが100個に満たないファイルを取りのぞく###
+    file_paths.remove("../特徴量エンジニアリング用/customdataset/FFRI2017_report\ML.Attribute.HighConfidence-28e05b9d8a1af2ac620f84f526963f642d11cb78137a9877402678f775c1e749.json")
     print(f"対象データセット = {status_dict['target_folder']}")
     print(f"全データセット数 = {len(file_paths)}")
 
 
     ### ベクトル化対象範囲のリストを選択 ###
-    for max_search in status_dict["max_search_list"]:
-        vectorized_list , report_time = ascii_vectorizer(file_paths[0:max_search])
-        print(f"検体数 = {max_search}, ベクトル化時間 = {report_time}")
+    with open(status_dict["TimeReportPath"], mode="w", encoding="utf-8") as report:
+        for max_search in status_dict["max_search_list"]:
+            vectorized_list , report_time = ascii_vectorizer(file_paths[0:max_search])
+            print(f"検体数 = {max_search}, ベクトル化時間 = {report_time}", file=report)
 
-        # CSVとしてとりあえず保存 #
-        df = pd.DataFrame(vectorized_list, index=file_paths[0:max_search])
-        df.to_csv(f"VectorTimeProject/tmp_CSV/[ASCII]maxsearch{max_search}.csv")
+            # CSVとしてとりあえず保存 #
+            df = pd.DataFrame(vectorized_list, index=file_paths[0:max_search])
+            df.to_csv(f"VectorTimeProject/tmp_CSV/[ASCII]maxsearch{max_search}.csv")
 
 if __name__ == "__main__":
     status_dict = {
         "target_folder" : "../特徴量エンジニアリング用/customdataset/FFRI2017_report/*json",
-        "max_search_list" : [100, 500, 1000, 2000, 3000, 4000, 5000, 6000]
+        "max_search_list" : [100, 500, 1000, 2000, 3000, 4000, 5000, 6000],
+        # "max_search_list" : [100],
+        "TimeReportPath" : "experiment/VectorTimeProjectReport/AsciiTimeRepoer.txt"
     }
     ascii_main(status_dict)
