@@ -1,0 +1,25 @@
+グリッドサーチ時間 = 214.7408471107483
+Best params : {'learning_rate': 0.1, 'max_depth': -1, 'nestimators': 20, 'num_leaves': 31, 'reg_alpha': 0.2, 'reg_lambda': 1.0}
+Best Score  : 0.9837421371462524
+best_model's score =  0.9837728194726166
+[[252   1]
+ [  7 233]]
+              precision    recall  f1-score   support
+
+           0       0.97      1.00      0.98       253
+           1       1.00      0.97      0.98       240
+
+    accuracy                           0.98       493
+   macro avg       0.98      0.98      0.98       493
+weighted avg       0.98      0.98      0.98       493
+
+Misclassified file names:
+Index(['Backdoor.Trojan-d41187a2188d1e38de94430f9a1c8e3cbb7bddcdbabafc99ae40ca3796e8b11e',
+       'SMG.Heur!gen-ba6ecfe982b09caad8e8a0e800581002607576da0d795b12d27240e1c0f27df5',
+       'Trojan.Gen.2-ed693a0ee9f56dd57de3af1a33a7464d161d071e952fa13591562cf541793c11',
+       'Trojan.Gen.2-fb81f6d85db31cedb0c69f599ac026c7eeec4aa2505feba4c8728da4bb6b3d6a',
+       'benreport113',
+       'ML.Attribute.HighConfidence-59fcfeff52662c45494a37ed880ab405d58c693daa37caf530d6c139906135cd',
+       'Trojan.Gen-0aed495153a938fb084a0c324041f4c9c7a8db7a8a0b87d15b27373e1d1ea472',
+       'Trojan.Gen.2-ed23a571a6a64d90fb90ca2339a1f2384858cddd5bb4afe1266eb24a1b340692'],
+      dtype='object')
