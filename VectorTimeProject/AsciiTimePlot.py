@@ -70,18 +70,17 @@ def ascii_main(status_dict:dict) -> None:
     ### ベクトル化対象範囲のリストを選択 ###
     with open(status_dict["TimeReportPath"], mode="w", encoding="utf-8") as report:
         for max_search in status_dict["max_search_list"]:
-            vectorized_list , report_time = ascii_vectorizer(file_paths[0:max_search])
-            print(f"検体数 = {max_search}, ベクトル化時間 = {report_time}", file=report)
+            vectorized_list , report_time = ascii_vectorizer(file_paths[max_search:max_search+1000])
+            print(f"検体数 = {max_search}~{max_search+1000}, ベクトル化時間 = {report_time}", file=report)
 
             # CSVとしてとりあえず保存 #
-            df = pd.DataFrame(vectorized_list, index=file_paths[0:max_search])
-            df.to_csv(f"VectorTimeProject/tmp_CSV/[ASCII]maxsearch{max_search}.csv")
+            df = pd.DataFrame(vectorized_list, index=file_paths[max_search:max_search+1000])
+            df.to_csv(f"VectorTimeProject/tmp_CSV/[ASCII]maxsearch{max_search}_{max_search+1000}.csv")
 
 if __name__ == "__main__":
     status_dict = {
         "target_folder" : "../特徴量エンジニアリング用/customdataset/FFRI2017_report/*json",
-        "max_search_list" : [100, 500, 1000, 2000, 3000, 4000, 5000, 6000],
-        # "max_search_list" : [100],
+        "max_search_list" : [0, 1000, 2000, 3000, 4000, 5000],
         "TimeReportPath" : "experiment/VectorTimeProjectReport/AsciiTimeRepoer.txt"
     }
     ascii_main(status_dict)

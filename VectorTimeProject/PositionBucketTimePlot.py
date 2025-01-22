@@ -61,18 +61,18 @@ def PositionBucketTime(status_dict):
     with open(status_dict["TimeReportPath"], mode="w", encoding="utf-8") as report:
         for bucket_len in status_dict["Bucket_len"]:
             for max_search in status_dict["max_search_list"]:
-                vectorized_list, report_time = PositionBucket_main(file_paths[0:max_search], bucket_len)
-                print(f"検体数 = {max_search}, [len={bucket_len}]ベクトル化時間 = {report_time}", file=report)
+                vectorized_list, report_time = PositionBucket_main(file_paths[max_search:max_search+1000], bucket_len)
+                print(f"検体数 = {max_search}~{max_search+1000}, [len={bucket_len}]ベクトル化時間 = {report_time}", file=report)
 
                 # CSVとしてとりあえず保存 #
-                df = pd.DataFrame(vectorized_list, index=file_paths[0:max_search])
-                df.to_csv(f"VectorTimeProject/tmp_CSV/[Position][{bucket_len}]maxsearch{max_search}.csv")
+                df = pd.DataFrame(vectorized_list, index=file_paths[max_search:max_search+1000])
+                df.to_csv(f"VectorTimeProject/tmp_CSV/[Position][{bucket_len}]maxsearch{max_search}_{max_search+1000}.csv")
 
 
 if __name__ == "__main__":
     status_dict = {
         "target_folder" : "../特徴量エンジニアリング用/customdataset/FFRI2017_report/*json",
-        "max_search_list" : [100, 500, 1000, 2000, 3000, 4000, 5000, 6000],
+        "max_search_list" : [0, 1000, 2000, 3000, 4000, 5000, 6000],
         "Bucket_len" : [64, 128],
         "TimeReportPath" : "experiment/VectorTimeProjectReport/PositionBucketTimeReport.txt"
     }

@@ -1,0 +1,45 @@
+サーチ時間 = 6.389276742935181
+Best params : {'C': 100000}
+Best Score  : 0.9242776507665879
+best_model's score =  0.920892494929006
+[[231  22]
+ [ 17 223]]
+              precision    recall  f1-score   support
+
+           0       0.93      0.91      0.92       253
+           1       0.91      0.93      0.92       240
+
+    accuracy                           0.92       493
+   macro avg       0.92      0.92      0.92       493
+weighted avg       0.92      0.92      0.92       493
+
+Misclassified file names:
+Index(['benreport486',
+       'Trojan.Gen.2-e341ae811add40d0742f36e2eecb79d3a2b816755a4384da95701d9212e4381d',
+       'Trojan.Gen.2-e3922102509100b1eac0548849d13ac73beccdf4629e5bde8624bcd99933309b',
+       'Backdoor.Trojan-d41187a2188d1e38de94430f9a1c8e3cbb7bddcdbabafc99ae40ca3796e8b11e',
+       'ML.Attribute.HighConfidence-7105755fc6f02a8daeee71358134b8d1e4de7e2f8a3a647f38601cc2ca6451c8',
+       'ML.Attribute.HighConfidence-96a573824d197ef721f4549bfe65fc15295b2098cc125dc7105dbc139e78d8ba',
+       'benreport1785', 'benreport788',
+       'Infostealer.Limitail-10f5d0f417623ea40f0c90ad193d6a11b2c08cb367fa06d2e6afc898c296cc9f',
+       'benreport1386', 'benreport576', 'benreport1803', 'benreport1031',
+       'Trojan.Gen.2-ed693a0ee9f56dd57de3af1a33a7464d161d071e952fa13591562cf541793c11',
+       'benreport1506', 'benreport1579',
+       'ML.Attribute.HighConfidence-59fcfeff52662c45494a37ed880ab405d58c693daa37caf530d6c139906135cd',
+       'benreport1277',
+       'Packed.Generic.493-e5af7c48df308fc0cbaaaebdbcbb7e36d0e503412904fec687872026a449e155',
+       'benreport1527', 'benreport500', 'benreport1000', 'benreport1635',
+       'benreport768',
+       'ML.Attribute.HighConfidence-cffaf3c10879aa299b3ce4383ada3effe797cbea1d21640256044650e9f9ef8c',
+       'Trojan.Gen-4a9fe10b1b5d84b11e29659340e5b2bc389c95fc411aa5de2a59f53b1f85a3e0',
+       'Trojan.Gen.2-ed23a571a6a64d90fb90ca2339a1f2384858cddd5bb4afe1266eb24a1b340692',
+       'benreport291', 'benreport1684', 'benreport1788',
+       'W32.Tempedreve-a082fafa3dde5a329253c19a99f1a1f43deff9387b1af56df4b115a6491e3870',
+       'Packed.Generic.493-f3dc399a3b864215b7708fa257747055915544f0d3b75c587092464c2917f011',
+       'benreport1709', 'benreport1637',
+       'ML.Attribute.HighConfidence-6b45e6b8bf9695fa49a36402a08f9c61687ffa2b547021a258d54a32211dfaa4',
+       'benreport1053',
+       'Trojan.Gen.2-f2d60b7c013ff811ad9c38c74de4411b0c5fee7728d1fe128b11c0e066656fc0',
+       'benreport1187',
+       'ML.Attribute.HighConfidence-c9b4ae4b9b4c859a2358ac4cc3302b7650c2b057811aa1e6dcd01c203a4b8dc2'],
+      dtype='object')
