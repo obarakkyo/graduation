@@ -1,0 +1,28 @@
+##########グリッドサーチ終了##########
+Time : 218.21327567100525
+Best params : {'max_depth': 25, 'max_features': 'log2', 'n_estimators': 55}
+Best Score  : 0.97784276126558
+best_model's score =  0.9852348993288591
+[[369   4]
+ [  7 365]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.99       373
+           1       0.99      0.98      0.99       372
+
+    accuracy                           0.99       745
+   macro avg       0.99      0.99      0.99       745
+weighted avg       0.99      0.99      0.99       745
+
+Misclassified file names:
+Index(['Trojan.Dropper!g1-617056d34236c8cdbe69939bf5bbccd81dfc0eec5e4215038ccc7a8ad5b669cc.json',
+       'report127.json',
+       'Packed.Generic.505-8e0e132881abd9ebaa32d3cf262b5a027588fb725fe8451c361ac24375bfff42.json',
+       'Trojan.Dropper!g1-a98203f46bc212a8353b93380872484b17c22bc83c9f2911d944c85c4b304b61.json',
+       'report840.json', 'benreport486.json',
+       'SMG.Heur!gen-9f36ae797290d3f8a1a992ddaa3ce6f20be69186e0902112b7be5f3dac54d23f.json',
+       'benreport912.json',
+       'Trojan.Gen.2-b7cc1301dcc0c0891805f52e80c389858421af381879869d80ac1a703b1f139d.json',
+       'Trojan.Gen-b21984b3cf8b63a29c362a2aae6d2407de6e5523c63473256c6b36b44287b9d2.json',
+       'Trojan.Dropper!g1-8a85097bbab74e4cead4fda9bf828ca6abaecf848281147567ba056f9bc27657.json'],
+      dtype='object')

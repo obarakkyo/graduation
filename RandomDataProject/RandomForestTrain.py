@@ -166,10 +166,10 @@ if __name__ == "__main__":
 
     # TF-IDF用 #
     # CsvPath = "CSV/RandomDatasetCSV/tfidf/*csv"
-    CsvPath = "CSV/RandomDatasetCSV/tfidf/[2gram]*"
+    CsvPath = "CSV/RandomDatasetCSV/tfidf/[[]3gram[]]result*"
 
     csvpaths = glob.glob(CsvPath)
-
+    print(csvpaths)
     for path in csvpaths[:]:
         # 保存用のファイル名作成 #
         filename = path.replace("CSV/RandomDatasetCSV/tfidf\\", "")

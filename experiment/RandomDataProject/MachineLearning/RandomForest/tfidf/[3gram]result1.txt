@@ -1,28 +1,32 @@
 ##########グリッドサーチ終了##########
-Time : 236.53335189819336
-Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 50}
-Best Score  : 0.9785178500930574
-best_model's score =  0.9838926174496644
-[[368   5]
- [  7 365]]
+Time : 206.2881896495819
+Best params : {'max_depth': 25, 'max_features': 'log2', 'n_estimators': 55}
+Best Score  : 0.9768399977440639
+best_model's score =  0.9771812080536912
+[[366   7]
+ [ 10 362]]
               precision    recall  f1-score   support
 
-           0       0.98      0.99      0.98       373
-           1       0.99      0.98      0.98       372
+           0       0.97      0.98      0.98       373
+           1       0.98      0.97      0.98       372
 
     accuracy                           0.98       745
    macro avg       0.98      0.98      0.98       745
 weighted avg       0.98      0.98      0.98       745
 
 Misclassified file names:
-Index(['Trojan.Ransomlock-5cbb5f0f0355b928695e217e7f4c88855b93b33295bf3efff112594749fad631.json',
+Index(['report707.json',
+       'Trojan.Ransomlock-5cbb5f0f0355b928695e217e7f4c88855b93b33295bf3efff112594749fad631.json',
        'Trojan.Gen.2-a53343b29978e60b278b63a4c24fa8a0a0471c78af1e0aa563338bff4addb18d.json',
        'Trojan Horse-768dc60c83a598cc92cb8379ef61bc8fd219799596f92ce3429db19a06823e79.json',
-       'report127.json',
+       'report212.json', 'report127.json',
+       'None-1ef19282b3cfec84850e798ef9e2eaf3fe5aeaee833b066dc017b1f77108938a.json',
        'Infostealer.Bancos-ad1a29e82361e8783baa9240116e307d0b3357982293707e901b4f4069f06e4e.json',
        'benreport486.json', 'report840.json',
        'Trojan.Gen-3262f6ca29cc9f959b5d12be139ca4f55b56894733c08455ba366ca9bbe5a4bf.json',
        'Infostealer-0d8ab7805b647bf56e310b15ccb166883881bf85c0ae73030f40c63b60aa2ab2.json',
+       'Trojan.Dropper!g1-8a85097bbab74e4cead4fda9bf828ca6abaecf848281147567ba056f9bc27657.json',
+       'Trojan.Gen.2-d187081f27b6ba06c3ddb1ba7f2d87b434cc7aa8b42984f09fbef8a5801ee9ff.json',
        'benreport912.json',
        'SMG.Heur!gen-adbce1e0c361d9d00152ca103e13e6a2f48f3c27f9a7a82767ba298ac9a41711.json',
        'report850.json'],

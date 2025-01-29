@@ -1,0 +1,28 @@
+##########グリッドサーチ終了##########
+Time : 242.11600399017334
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 70}
+Best Score  : 0.9801928825221363
+best_model's score =  0.9825503355704698
+[[365   8]
+ [  5 367]]
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98       373
+           1       0.98      0.99      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['report707.json',
+       'Trojan.Gen.2-e8d99e48027327a0d1638f4d61a20926772eb7942ce4284455ec45047eff0c4e.json',
+       'report212.json', 'report127.json',
+       'Trojan.Gen.8-7405572101ace094b39fd793219a7582c5a5ab67b93d63042955592040839326.json',
+       'Trojan.Dropper!g1-8f0ac9daef213e791b067b2977dc5a3fbb8bed19eaee6da337d3c94a6771ef2a.json',
+       'benreport486.json',
+       'Infostealer-a2a8c473ad14d24cc38af2db9df121f03711a2878fbe0204d867d3b07e2f0ee3.json',
+       'report840.json',
+       'Trojan.Gen.2-0fe6e63a11f2d7628b3c0380f34d7f65728208b4e1c38c2abbf0ea70fd7bd2e0.json',
+       'report126.json', 'benreport1374.json', 'report850.json'],
+      dtype='object')

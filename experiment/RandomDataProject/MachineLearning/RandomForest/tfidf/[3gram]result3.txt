@@ -1,0 +1,31 @@
+##########グリッドサーチ終了##########
+Time : 210.1857373714447
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 80}
+Best Score  : 0.9785161581411088
+best_model's score =  0.978523489932886
+[[366   7]
+ [  9 363]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       373
+           1       0.98      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['Trojan.Gen.2-f3938a5d873d766fd81b770b91dfd00592033ea41e0a4a9ca565354816e65b08.json',
+       'report707.json', 'report212.json', 'report127.json',
+       'Trojan.Gen.2-6270305af841f70ba58b658c0786f0983d28f1693c017dcce0eef0128598f190.json',
+       'Trojan.Gen.2-3c79b9085cb48965a215b5938cf501a75c9902806b6530393be270029b14f6be.json',
+       'benreport486.json', 'report840.json',
+       'Trojan.Gen-3fa1b55353ceb65a839f9b8613732bf0ec8a0c1ec5d8c346801941b7f400daf8.json',
+       'Ransom.CryptXXX-d6696d3d18256218f070688ee96b99be95e99bb7649aa448a3a52d37946ef267.json',
+       'benreport912.json',
+       'Backdoor.Graybird-e6305ff8190995ed52cd9911a19070dcfe0f0b2e1006f8f57f961212b92307e0.json',
+       'SMG.Heur!gen-9f36ae797290d3f8a1a992ddaa3ce6f20be69186e0902112b7be5f3dac54d23f.json',
+       'Ransom.TeslaCrypt-08bd44c06513a5b490595560dc5eefff70f2ececfe72c6b9817310238038ef6c.json',
+       'ML.Attribute.HighConfidence-bf19dfe328f140bf522198810746796af7aa212c6eb438e453d29206e7e80823.json',
+       'report850.json'],
+      dtype='object')

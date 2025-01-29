@@ -1,0 +1,35 @@
+##########グリッドサーチ終了##########
+Time : 203.5288951396942
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 90}
+Best Score  : 0.978853420562856
+best_model's score =  0.9758389261744966
+[[369   4]
+ [ 14 358]]
+              precision    recall  f1-score   support
+
+           0       0.96      0.99      0.98       373
+           1       0.99      0.96      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['SMG.Heur!gen-ba6ecfe982b09caad8e8a0e800581002607576da0d795b12d27240e1c0f27df5.json',
+       'report212.json', 'report127.json',
+       'SMG.Heur!gen-9f36ae797290d3f8a1a992ddaa3ce6f20be69186e0902112b7be5f3dac54d23f.json',
+       'None-1ef19282b3cfec84850e798ef9e2eaf3fe5aeaee833b066dc017b1f77108938a.json',
+       'Trojan.Gen.2-1d784059ea56aaf798c600822c58e565694cda3ed77698a231c9514334ee3481.json',
+       'ML.Attribute.HighConfidence-02c69c8061410a229f6dbc4edfb07f746fa72a0853419a0fc22dc7bbbdc5e06d.json',
+       'benreport486.json',
+       'Trojan.Gen-3fa1b55353ceb65a839f9b8613732bf0ec8a0c1ec5d8c346801941b7f400daf8.json',
+       'NoSymantec-2f72375ff0217fe1d4065faa9e02066389ffd934d1e2659c4d06fe6a900c7529.json',
+       'Trojan.Gen.2-e8d99e48027327a0d1638f4d61a20926772eb7942ce4284455ec45047eff0c4e.json',
+       'report840.json',
+       'Trojan.Gen-d309cf6c49f831543c5a14549b94e0a209a10da1b86e3a1f8cef9a80b1beaac9.json',
+       'Trojan.Gen.2-0239a417007f9bcb21582baf617ec5e6721951a7a534282557c755c34d8a9df4.json',
+       'Ransom.TeslaCrypt-e134fde0574d2489db1d51dfb76aa8b4506560e95e57f5ab990fa3b47d755700.json',
+       'SecurityRisk.gen1-b7486a2e388f915b3651902cbbe72c4da21becfb8fdd62aa9f61808576e3f502.json',
+       'Trojan.Gen.2-62396ace4f7b0ccee975b6e5a071acebd11e1b7a967b8396063f7dfc95cd4856.json',
+       'Trojan.Gen-7a5573248f02f5e13780b4213343f9394874af9380fae9bcbc5251a7267d2f26.json'],
+      dtype='object')
