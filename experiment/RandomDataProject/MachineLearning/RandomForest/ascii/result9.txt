@@ -1,0 +1,41 @@
+##########グリッドサーチ終了##########
+Time : 161.30411887168884
+Best params : {'max_depth': 25, 'max_features': 'log2', 'n_estimators': 75}
+Best Score  : 0.9704613388979754
+best_model's score =  0.963758389261745
+[[362  11]
+ [ 16 356]]
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.96       373
+           1       0.97      0.96      0.96       372
+
+    accuracy                           0.96       745
+   macro avg       0.96      0.96      0.96       745
+weighted avg       0.96      0.96      0.96       745
+
+Misclassified file names:
+Index(['benreport1031.json', 'benreport930.json',
+       'Trojan.Gen.2-0ab487d0636b4414596f86d8d15d791c6cc633ed14c899d8c315351a4c4fc4e1.json',
+       'Infostealer.Dyre-c060c8c14ca86b6be83f84857b2b67432d50a72c7f008d04bb863ee150dfd8d6.json',
+       'Backdoor.Graybird-f3b0207b0a042b613b03cb56f0e97a8b4b3a9cda9345da00e05d088495139df4.json',
+       'W32.Extrat!gen1-14d924e1fde8a2f1b18a4f39995a73462366967f598ff297834b51aaa6fa7d79.json',
+       'SMG.Heur!gen-6dc3defb06005fb7ac41305ef97de37e6c59fd513a71e2b27f0c5be6e42feb21.json',
+       'benreport1506.json', 'benreport1504.json',
+       'Ransom.TeslaCrypt!g7-0ace27099890bbb858adf7a08b5bd745645520166c3e1b00debea6820f921b55.json',
+       'benreport1374.json',
+       'Trojan.Gen-8c466ea260b47354eba1259265aee436367121fbdc18c7d0ea3dadafede2efa7.json',
+       'Trojan.Gen-7a7a798f68d19570b140c36df40ea3365775dbe43711e7887734e023ac38c7f7.json',
+       'Trojan.Gen-4049185cd4a52ccb6a9e68a53307ca2e29bb723f2d5972069b7d12954eb89829.json',
+       'Trojan.Gen.SMH.2-568207130ec5b989a2803cd435eba65c5932edfc7f1113bb22cab103233f8a57.json',
+       'benreport1370.json',
+       'W32.Spyrat-031a20b13c2596a9776532ee6fc446e23a2c8286cf67cb37527424713dd3d3c2.json',
+       'Trojan.Gen.2-62396ace4f7b0ccee975b6e5a071acebd11e1b7a967b8396063f7dfc95cd4856.json',
+       'report126.json', 'benreport113.json', 'benreport431.json',
+       'Trojan.Gen-d2086b7a052261f87fc24d4b6c9dfe22ad04f8a809da7e352702a01ea6702450.json',
+       'benreport1700.json',
+       'Backdoor.Breut!gm-fe886cbca8fdd9fdb8532abe7e12709f40e6f426085582c9f8d119b0bb0c23c0.json',
+       'report850.json',
+       'ML.Attribute.HighConfidence-af25218526fa33c222e0052d2a71ee3f12c713e327e6e7974958307b10bade06.json',
+       'Backdoor.Breut!gm-52cd5962bb91930a3086d8b81460d144e25e44885ba42ad1e96b45623ec94a49.json'],
+      dtype='object')

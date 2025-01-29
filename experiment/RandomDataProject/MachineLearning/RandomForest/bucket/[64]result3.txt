@@ -1,0 +1,32 @@
+##########グリッドサーチ終了##########
+Time : 151.30505657196045
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 75}
+Best Score  : 0.9707929614798939
+best_model's score =  0.9771812080536912
+[[364   9]
+ [  8 364]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       373
+           1       0.98      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['benreport930.json', 'benreport1506.json', 'benreport1504.json',
+       'benreport1374.json',
+       'Trojan.Gen-56b04f84f47df3a9a44dc190d0fb7d99d1ed09b04c0651eb88d70d73de0d9035.json',
+       'Infostealer.Limitail-1210fa15170398851d251cd557e382016a5e5cda335e0bd1156626028a66e024.json',
+       'Trojan.Gen.2-7397074e0bc8ab653ff298777cd3cfe9557ef3dddcb80836fb519f7ed4d2c63a.json',
+       'benreport486.json',
+       'Infostealer.Limitail-06782b2472460f2d91238d0c524dfda4d52bfc43f2c48c2bed652e595fed3985.json',
+       'benreport1370.json', 'report126.json',
+       'Ransom.TeslaCrypt-e173f9e6bcdd0f7be77d2d557d68f02d64586477da73cc530e52f22c225e5690.json',
+       'benreport113.json',
+       'W32.Rahack.H-dad8a9fe92eba764f3033ccbdc0971eb3cc11e6929b3da265db69a9ad975fc35.json',
+       'Trojan.Gen-693dd4dd66ad6d769703c3dc8b5a184d3321dd7850c3bd024ba889ef84be2669.json',
+       'benreport1700.json',
+       'Trojan.Gen.2-29906b9904300c9944b3485c9a44c4ab14c47b3db616121a0057d3ecd19dd79c.json'],
+      dtype='object')

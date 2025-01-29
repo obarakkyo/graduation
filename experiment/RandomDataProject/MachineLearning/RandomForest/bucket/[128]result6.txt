@@ -1,0 +1,45 @@
+##########グリッドサーチ終了##########
+Time : 150.44086289405823
+Best params : {'max_depth': 20, 'max_features': 'log2', 'n_estimators': 85}
+Best Score  : 0.9721358073430715
+best_model's score =  0.9610738255033557
+[[362  11]
+ [ 18 354]]
+              precision    recall  f1-score   support
+
+           0       0.95      0.97      0.96       373
+           1       0.97      0.95      0.96       372
+
+    accuracy                           0.96       745
+   macro avg       0.96      0.96      0.96       745
+weighted avg       0.96      0.96      0.96       745
+
+Misclassified file names:
+Index(['benreport930.json',
+       'Trojan.Gen.2-f6045c3d60fb2e0ddbb264cd61adc37736508471aa5b3881f2510ec36ea6c00f.json',
+       'Trojan.Smoaler-4cdecca0c387ba2b7a6b841c69c561e2222519e763cff87399e0945d1a862470.json',
+       'benreport1506.json',
+       'SecurityRisk.gen1-de081f9959cf49532e6e694487c860e7474c34e92809bc5ec26c26f87b976ea6.json',
+       'benreport1504.json',
+       'Trojan.Gen.2-9989bfe71cb94624f733d02e048c3de802b5c16ec9fab9f1dde7bcde895e645b.json',
+       'Bloodhound.W32.VBWORM-4153eb269ae0ab4068bdc499c9e78d408d965c33f2f701028055f97cc04a92bb.json',
+       'benreport1374.json', 'benreport295.json', 'benreport486.json',
+       'ML.Attribute.HighConfidence-02c69c8061410a229f6dbc4edfb07f746fa72a0853419a0fc22dc7bbbdc5e06d.json',
+       'W32.Waledac.C!gen2-00d61b98f81f1c9f5f9b78070e04248ffa98466dca1a267b11d36ae33ca55162.json',
+       'benreport1370.json',
+       'SMG.Heur!gen-e98b31420066a7ae5a4b8a728c7a83dd3505ace05491b29cd85f1f90b717d389.json',
+       'report126.json',
+       'Trojan.Zbot-4c285a9d9ca4b0ec91be2595da88a3ad54e862a1e4cb9039ae1cfa740caf0dfe.json',
+       'benreport113.json',
+       'Infostealer.Limitail-06782b2472460f2d91238d0c524dfda4d52bfc43f2c48c2bed652e595fed3985.json',
+       'Trojan.Ransomlock-56b009953d2d0e5a30dbfe8261735dccacbc2399aa4523566e4fe1165d24344f.json',
+       'benreport1700.json',
+       'Trojan.Gen.2-1d784059ea56aaf798c600822c58e565694cda3ed77698a231c9514334ee3481.json',
+       'benreport100.json',
+       'SecurityRisk.gen1-10b255b86cd1059af426b56b55acd9ec77094528126b0723f6b7c621e31687db.json',
+       'Trojan.Gen.2-9b8deca46fb4838571d0968eb9b14e3e41aca685e422c85e67a9528db0f93d29.json',
+       'Trojan.Gen.2-fab1d405c164c74411dd2655a9f7dbb3e19ebcb3b0cb10815f163e42ce6a7800.json',
+       'Trojan.Gen-d8c371260f01ca23e908fd12163c093b78d74ac85e0d154efc4e3b026053a9de.json',
+       'SecurityRisk.gen1-2015b7b95a6417c929d71757bc34ce8333e239fe45b11512182edc00099b5352.json',
+       'Packed.Generic.505-8e0e132881abd9ebaa32d3cf262b5a027588fb725fe8451c361ac24375bfff42.json'],
+      dtype='object')

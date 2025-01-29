@@ -1,0 +1,33 @@
+##########グリッドサーチ終了##########
+Time : 151.3848524093628
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 85}
+Best Score  : 0.9731459026563647
+best_model's score =  0.974496644295302
+[[362  11]
+ [  8 364]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.97       373
+           1       0.97      0.98      0.97       372
+
+    accuracy                           0.97       745
+   macro avg       0.97      0.97      0.97       745
+weighted avg       0.97      0.97      0.97       745
+
+Misclassified file names:
+Index(['benreport930.json', 'benreport1506.json',
+       'SMG.Heur!gen-3d94a392078b54fee0c25f533d16dd4fe9d6727be66a44993d55e114f6789b1a.json',
+       'benreport1504.json',
+       'Trojan.Gen.2-984347ded71b503fbd9122015895327e333f077ce95b79229abb56fcc2413c15.json',
+       'benreport1374.json',
+       'Trojan.Smoaler-4cdecca0c387ba2b7a6b841c69c561e2222519e763cff87399e0945d1a862470.json',
+       'benreport486.json',
+       'W32.SillyFDC-4910ef7f82d69b856ddbe2f9f641c91f56730769f4483dbd08da0f2c44c26f2f.json',
+       'Trojan.Gen.2-857d97de22128254d7caf1041f11c380b59f662a2e7536935ee7e2529a57fb2f.json',
+       'Infostealer.Banker.C-7366fdb8f2cfcc99e2857a38f718a713e2a5dcba9a594c4617949eeacee51029.json',
+       'benreport1370.json', 'report126.json', 'benreport113.json',
+       'benreport1277.json', 'benreport1700.json',
+       'Backdoor.Trojan-b3690493c150a1438a7effe05664c6d3cb23d70193c86ae17c18b43c0e657fb0.json',
+       'Trojan.Gen.2-fab1d405c164c74411dd2655a9f7dbb3e19ebcb3b0cb10815f163e42ce6a7800.json',
+       'benreport100.json'],
+      dtype='object')

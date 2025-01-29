@@ -1,0 +1,29 @@
+##########グリッドサーチ終了##########
+Time : 289.0557277202606
+Best params : {'max_depth': 20, 'max_features': 'log2', 'n_estimators': 95}
+Best Score  : 0.9835536630759687
+best_model's score =  0.9812080536912752
+[[366   7]
+ [  7 365]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       373
+           1       0.98      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['report707.json',
+       'Trojan.Ransomlock-5cbb5f0f0355b928695e217e7f4c88855b93b33295bf3efff112594749fad631.json',
+       'Trojan.Gen.2-a53343b29978e60b278b63a4c24fa8a0a0471c78af1e0aa563338bff4addb18d.json',
+       'Trojan Horse-768dc60c83a598cc92cb8379ef61bc8fd219799596f92ce3429db19a06823e79.json',
+       'benreport1506.json', 'benreport1370.json',
+       'None-1ef19282b3cfec84850e798ef9e2eaf3fe5aeaee833b066dc017b1f77108938a.json',
+       'Infostealer.Bancos-ad1a29e82361e8783baa9240116e307d0b3357982293707e901b4f4069f06e4e.json',
+       'benreport486.json', 'report840.json',
+       'Infostealer-0d8ab7805b647bf56e310b15ccb166883881bf85c0ae73030f40c63b60aa2ab2.json',
+       'Trojan.Dropper!g1-8a85097bbab74e4cead4fda9bf828ca6abaecf848281147567ba056f9bc27657.json',
+       'report126.json', 'benreport1374.json'],
+      dtype='object')

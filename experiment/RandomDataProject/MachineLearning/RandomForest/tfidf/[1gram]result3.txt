@@ -1,0 +1,27 @@
+##########グリッドサーチ終了##########
+Time : 302.2574141025543
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 65}
+Best Score  : 0.986237662850375
+best_model's score =  0.9825503355704698
+[[365   8]
+ [  5 367]]
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98       373
+           1       0.98      0.99      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['Trojan.Gen.2-f3938a5d873d766fd81b770b91dfd00592033ea41e0a4a9ca565354816e65b08.json',
+       'report707.json', 'benreport1506.json',
+       'Trojan.Gen.2-6270305af841f70ba58b658c0786f0983d28f1693c017dcce0eef0128598f190.json',
+       'benreport1370.json', 'benreport486.json', 'report840.json',
+       'Ransom.CryptXXX-d6696d3d18256218f070688ee96b99be95e99bb7649aa448a3a52d37946ef267.json',
+       'benreport912.json',
+       'Backdoor.Graybird-e6305ff8190995ed52cd9911a19070dcfe0f0b2e1006f8f57f961212b92307e0.json',
+       'Ransom.TeslaCrypt-08bd44c06513a5b490595560dc5eefff70f2ececfe72c6b9817310238038ef6c.json',
+       'report126.json', 'benreport1374.json'],
+      dtype='object')

@@ -1,0 +1,36 @@
+##########グリッドサーチ終了##########
+Time : 160.54736375808716
+Best params : {'max_depth': 25, 'max_features': 'sqrt', 'n_estimators': 85}
+Best Score  : 0.9788522925948904
+best_model's score =  0.9664429530201343
+[[359  14]
+ [ 11 361]]
+              precision    recall  f1-score   support
+
+           0       0.97      0.96      0.97       373
+           1       0.96      0.97      0.97       372
+
+    accuracy                           0.97       745
+   macro avg       0.97      0.97      0.97       745
+weighted avg       0.97      0.97      0.97       745
+
+Misclassified file names:
+Index(['benreport1031.json', 'benreport930.json',
+       'Trojan.Gen-1ab8a1af40f90e7d6e4edd698c8cf3e67656c378dbb13b3c8721501f00983008.json',
+       'Packed.Generic.493-77f1fd82f978b6eb165edff0fc7b78231c6b95d3beebc40c1f59c3a43f914eca.json',
+       'benreport1506.json', 'benreport1504.json', 'benreport978.json',
+       'Backdoor.Trojan-b3690493c150a1438a7effe05664c6d3cb23d70193c86ae17c18b43c0e657fb0.json',
+       'Trojan Horse-768dc60c83a598cc92cb8379ef61bc8fd219799596f92ce3429db19a06823e79.json',
+       'None-1ef19282b3cfec84850e798ef9e2eaf3fe5aeaee833b066dc017b1f77108938a.json',
+       'benreport1374.json',
+       'Trojan.Gen.2-b7586d6fb5c159ca8e3547dcb09b88389d79ba737e08ab244ea21308357840ae.json',
+       'Infostealer.Bancos-ad1a29e82361e8783baa9240116e307d0b3357982293707e901b4f4069f06e4e.json',
+       'benreport337.json',
+       'SMG.Heur!gen-1a3fe7acaac7ddbd732c1b8e1e121c2083ce0ddde5c3bd19bc96494402b873e1.json',
+       'benreport486.json', 'benreport1370.json',
+       'Trojan.Gen-fe3535fbb06ff635e0a8933c2f29bf9d8480a9759409c57df74857a833294ae9.json',
+       'Ransom.CryptXXX-8fa5409b0c49716f36b496db80cd1cc9227118aa4b78e4c2b13ea4bcb05a0d8c.json',
+       'report126.json', 'benreport1000.json', 'benreport113.json',
+       'benreport1277.json', 'benreport1700.json',
+       'Packed.Generic.493-5f32c13db984afbe7d236d5d18384800d274ea3f349dbd3cf7754c2010997712.json'],
+      dtype='object')

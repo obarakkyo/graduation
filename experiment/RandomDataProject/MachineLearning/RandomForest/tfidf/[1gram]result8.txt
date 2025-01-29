@@ -1,0 +1,24 @@
+##########グリッドサーチ終了##########
+Time : 328.7985954284668
+Best params : {'max_depth': 25, 'max_features': 'sqrt', 'n_estimators': 90}
+Best Score  : 0.9818735547910439
+best_model's score =  0.9879194630872483
+[[367   6]
+ [  3 369]]
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.99       373
+           1       0.98      0.99      0.99       372
+
+    accuracy                           0.99       745
+   macro avg       0.99      0.99      0.99       745
+weighted avg       0.99      0.99      0.99       745
+
+Misclassified file names:
+Index(['benreport1031.json', 'benreport1506.json',
+       'Trojan.Gen.2-6270305af841f70ba58b658c0786f0983d28f1693c017dcce0eef0128598f190.json',
+       'report707.json', 'benreport486.json', 'report840.json',
+       'Ransom.TeslaCrypt-94074a6103a10635360382cc1036d757ad50c36d15de2d6b1f0f69b43a772b3f.json',
+       'Trojan.Gen-7115976399ecbd50eaf104935ec8de4988415bea670a5ec34709cb36cb8c418f.json',
+       'report126.json'],
+      dtype='object')

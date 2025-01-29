@@ -1,0 +1,40 @@
+##########グリッドサーチ終了##########
+Time : 152.70234060287476
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 90}
+Best Score  : 0.9724730697648185
+best_model's score =  0.9664429530201343
+[[362  11]
+ [ 14 358]]
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.97       373
+           1       0.97      0.96      0.97       372
+
+    accuracy                           0.97       745
+   macro avg       0.97      0.97      0.97       745
+weighted avg       0.97      0.97      0.97       745
+
+Misclassified file names:
+Index(['benreport1031.json', 'benreport930.json',
+       'Backdoor.Trojan-d41187a2188d1e38de94430f9a1c8e3cbb7bddcdbabafc99ae40ca3796e8b11e.json',
+       'Trojan.Dropper!g1-48c1bbe6a0dafba6c07f2c56f02c1141cfa7eea459d15e0aca174036fd3f0f82.json',
+       'Trojan.Cridex-15cb04f979d36ea6f5b9fe0ce016dddd5bce7572aaa018601e08c858b0da72ac.json',
+       'benreport1506.json',
+       'Trojan.Gen-d5ccf14073f1b99d74499909e7fb804f01d4f5e2af443d3e17541667378ef3ab.json',
+       'benreport1504.json',
+       'SMG.Heur!gen-3ec85f43a0052c568706d6bbf566dc7dc7947ca480f57d21a1f25a8d609875fa.json',
+       'SMG.Heur!gen-ba6ecfe982b09caad8e8a0e800581002607576da0d795b12d27240e1c0f27df5.json',
+       'Trojan.Gen.2-9b8deca46fb4838571d0968eb9b14e3e41aca685e422c85e67a9528db0f93d29.json',
+       'benreport1374.json',
+       'Infostealer.Limitail-5efde5502939dfa58e230ee6b2bda1e783182e7f7164fa131cd5936d0e11fbc2.json',
+       'Trojan.Gen-fa3c2d455012aaab3de57040f26b0cde251cfdff4e973d0adfa0c9f7cfbc0d6b.json',
+       'Infostealer.Bancos-5756f0ddb2ff1864197a3da87d5fa33aac20371eb096b9291931837ee61b1b4e.json',
+       'benreport486.json',
+       'Trojan.Gen.2-42b2db1cb72e6832c0efd5d4565c7d03c55a334db0d97978787be80c85db56cd.json',
+       'Trojan.Gen.2-d5f28020c3acafb0da589c7c3bcccb50cdd2ff3d516fb84090a0d3976abd0d91.json',
+       'benreport1370.json', 'benreport113.json', 'benreport431.json',
+       'benreport1700.json',
+       'Trojan.Gen-56b04f84f47df3a9a44dc190d0fb7d99d1ed09b04c0651eb88d70d73de0d9035.json',
+       'benreport100.json',
+       'ML.Attribute.HighConfidence-616435933cc3122cc969d455161c3f62278793bdc93ff9c6bfcaba63ad0447ec.json'],
+      dtype='object')

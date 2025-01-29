@@ -1,0 +1,40 @@
+##########グリッドサーチ終了##########
+Time : 161.00888395309448
+Best params : {'max_depth': 20, 'max_features': 'sqrt', 'n_estimators': 80}
+Best Score  : 0.9697873780384638
+best_model's score =  0.963758389261745
+[[360  13]
+ [ 14 358]]
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.96       373
+           1       0.96      0.96      0.96       372
+
+    accuracy                           0.96       745
+   macro avg       0.96      0.96      0.96       745
+weighted avg       0.96      0.96      0.96       745
+
+Misclassified file names:
+Index(['benreport1031.json', 'benreport930.json',
+       'Trojan.Gen.2-1d784059ea56aaf798c600822c58e565694cda3ed77698a231c9514334ee3481.json',
+       'SMG.Heur!gen-ba6ecfe982b09caad8e8a0e800581002607576da0d795b12d27240e1c0f27df5.json',
+       'benreport1506.json',
+       'Trojan Horse-2bdf7c9f4be624fd696636b68127f98383c36312ed5a32eedd46b842220616f8.json',
+       'benreport1504.json', 'benreport978.json',
+       'Trojan.Gen.2-9989bfe71cb94624f733d02e048c3de802b5c16ec9fab9f1dde7bcde895e645b.json',
+       'benreport1374.json',
+       'Trojan.Asprox.B-c4d2deb4eb69780b6db1b2733b3844cd100882f6795fcf3bf032e836e1baeee9.json',
+       'benreport10.json', 'benreport486.json', 'benreport1370.json',
+       'report126.json',
+       'Ransom.TeslaCrypt-e134fde0574d2489db1d51dfb76aa8b4506560e95e57f5ab990fa3b47d755700.json',
+       'benreport113.json',
+       'W32.Gosys-05560669ef10030e0e8da5434347d65cd2f0f4715400ce5b1a46b512e1c4fa60.json',
+       'Trojan.Gen.2-ce313276e40124383ade4076fed2a229a91d7e14c4c5d017076b99927aac2260.json',
+       'benreport1277.json', 'benreport1700.json',
+       'Backdoor.Zegost!gen2-f26232a3035eb1410194c8eb3abd842930c39f8820125de3d300893af0d7a2d9.json',
+       'Trojan.Gen.2-62396ace4f7b0ccee975b6e5a071acebd11e1b7a967b8396063f7dfc95cd4856.json',
+       'None-0ff4371269273391479d79141a3363c275007cae6b5ed5ad8ec1c415513d124b.json',
+       'Infostealer.Bancos-b755daedc107ba8cf294f0320381edd0bf7cbe910dc487b919a0b599cbeb1353.json',
+       'Infostealer.Limitail-eb9564da67131d38e827a75df42760359f9a599ea1318db2f74d6b52cf4f0275.json',
+       'Trojan.Gen-fe3535fbb06ff635e0a8933c2f29bf9d8480a9759409c57df74857a833294ae9.json'],
+      dtype='object')
