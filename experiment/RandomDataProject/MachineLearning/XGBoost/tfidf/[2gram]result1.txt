@@ -1,0 +1,24 @@
+サーチ時間 = 236.6268208026886
+Best params : {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'reg_alpha': 0, 'reg_lambda': 0}
+Best Score  : 0.9801979583779822
+best_model's score =  0.9838926174496644
+[[364   9]
+ [  3 369]]
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.98       373
+           1       0.98      0.99      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['Trojan.Ransomlock-5cbb5f0f0355b928695e217e7f4c88855b93b33295bf3efff112594749fad631.json',
+       'benreport1543.json', 'report212.json', 'benreport1200.json',
+       'benreport1277.json',
+       'Infostealer.Bancos-ad1a29e82361e8783baa9240116e307d0b3357982293707e901b4f4069f06e4e.json',
+       'benreport500.json', 'benreport1031.json', 'report840.json',
+       'Infostealer-0d8ab7805b647bf56e310b15ccb166883881bf85c0ae73030f40c63b60aa2ab2.json',
+       'benreport912.json', 'report126.json'],
+      dtype='object')

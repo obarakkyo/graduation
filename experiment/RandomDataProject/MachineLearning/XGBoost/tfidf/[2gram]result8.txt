@@ -1,0 +1,29 @@
+サーチ時間 = 250.3039653301239
+Best params : {'learning_rate': 0.1, 'max_depth': 20, 'n_estimators': 100, 'reg_alpha': 0, 'reg_lambda': 1}
+Best Score  : 0.9801968304100164
+best_model's score =  0.9798657718120806
+[[365   8]
+ [  7 365]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       373
+           1       0.98      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['benreport1031.json', 'report212.json', 'benreport1506.json',
+       'Backdoor.Trojan-36f897378f88d75e44b9e0156b9e1682814b76e75e84f901f80c1765b00866b5.json',
+       'Trojan.Gen.2-f04b49e4b228ffc2b45144441ed001d31f252669d0e6b9a98b6427da4ed49591.json',
+       'Trojan.Gen-d4711ba293e07512c48798040c2dfcc02a0de2daf12eb191deb598d28fe2d973.json',
+       'report840.json',
+       'Trojan.Gen-7115976399ecbd50eaf104935ec8de4988415bea670a5ec34709cb36cb8c418f.json',
+       'report126.json',
+       'Backdoor.Trojan-11f00b379680b545c1afa74a2232891b3348c28dab5a22adb8186c774ce47190.json',
+       'benreport500.json', 'benreport1543.json',
+       'Backdoor.Trojan-e4cc369a22dbe489807248761995cef04b6ef971576b03fec18c55dc072e275d.json',
+       'benreport912.json',
+       'Ransom.Troldesh!gm-a507ada66569e3f785178f30f5e4e806715005a642391fcbcdee0f146a142b60.json'],
+      dtype='object')

@@ -1,0 +1,40 @@
+サーチ時間 = 129.23578333854675
+Best params : {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'reg_alpha': 0, 'reg_lambda': 0.1}
+Best Score  : 0.9765021713383341
+best_model's score =  0.9651006711409396
+[[362  11]
+ [ 15 357]]
+              precision    recall  f1-score   support
+
+           0       0.96      0.97      0.97       373
+           1       0.97      0.96      0.96       372
+
+    accuracy                           0.97       745
+   macro avg       0.97      0.97      0.97       745
+weighted avg       0.97      0.97      0.97       745
+
+Misclassified file names:
+Index(['benreport930.json',
+       'Trojan.Smoaler-4cdecca0c387ba2b7a6b841c69c561e2222519e763cff87399e0945d1a862470.json',
+       'benreport1506.json',
+       'SecurityRisk.gen1-de081f9959cf49532e6e694487c860e7474c34e92809bc5ec26c26f87b976ea6.json',
+       'Trojan.Gen.2-0c514c7c6a403b1f7fe95df24b1388878017b1f7dfb996eeec244c01c356f696.json',
+       'Bloodhound.W32.VBWORM-4153eb269ae0ab4068bdc499c9e78d408d965c33f2f701028055f97cc04a92bb.json',
+       'benreport1374.json', 'benreport1635.json', 'benreport486.json',
+       'report840.json', 'benreport1613.json',
+       'ML.Attribute.HighConfidence-02c69c8061410a229f6dbc4edfb07f746fa72a0853419a0fc22dc7bbbdc5e06d.json',
+       'W32.Waledac.C!gen2-00d61b98f81f1c9f5f9b78070e04248ffa98466dca1a267b11d36ae33ca55162.json',
+       'benreport1370.json',
+       'SMG.Heur!gen-e98b31420066a7ae5a4b8a728c7a83dd3505ace05491b29cd85f1f90b717d389.json',
+       'benreport438.json',
+       'SMG.Heur!gen-fcb3e622e383f2ddd865ef039e82f72ae38dc4db495d958b47b80340224996fa.json',
+       'Trojan.Ransomlock-56b009953d2d0e5a30dbfe8261735dccacbc2399aa4523566e4fe1165d24344f.json',
+       'benreport1700.json',
+       'Trojan.Gen.2-27ce300a5ffa56d4ce51eddd7743086d96902ab54d6a0220ea81fc3a797fef2f.json',
+       'SecurityRisk.gen1-b7486a2e388f915b3651902cbbe72c4da21becfb8fdd62aa9f61808576e3f502.json',
+       'benreport100.json',
+       'SecurityRisk.gen1-10b255b86cd1059af426b56b55acd9ec77094528126b0723f6b7c621e31687db.json',
+       'Trojan.Gen.2-9b8deca46fb4838571d0968eb9b14e3e41aca685e422c85e67a9528db0f93d29.json',
+       'Trojan.Gen.2-fab1d405c164c74411dd2655a9f7dbb3e19ebcb3b0cb10815f163e42ce6a7800.json',
+       'Packed.Generic.505-8e0e132881abd9ebaa32d3cf262b5a027588fb725fe8451c361ac24375bfff42.json'],
+      dtype='object')

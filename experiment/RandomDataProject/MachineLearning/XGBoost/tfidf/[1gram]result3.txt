@@ -1,0 +1,26 @@
+サーチ時間 = 267.18064165115356
+Best params : {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'reg_alpha': 0.1, 'reg_lambda': 1}
+Best Score  : 0.984558682533416
+best_model's score =  0.9852348993288591
+[[368   5]
+ [  6 366]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.99       373
+           1       0.99      0.98      0.99       372
+
+    accuracy                           0.99       745
+   macro avg       0.99      0.99      0.99       745
+weighted avg       0.99      0.99      0.99       745
+
+Misclassified file names:
+Index(['Trojan.Gen.2-f3938a5d873d766fd81b770b91dfd00592033ea41e0a4a9ca565354816e65b08.json',
+       'benreport1543.json', 'benreport1506.json',
+       'Trojan.Gen.2-6270305af841f70ba58b658c0786f0983d28f1693c017dcce0eef0128598f190.json',
+       'benreport486.json', 'report840.json',
+       'Trojan.Gen-b749ee55924f94f53dc254461e4a24d01f551040edbc59ae746d0c63370d4330.json',
+       'Ransom.CryptXXX-d6696d3d18256218f070688ee96b99be95e99bb7649aa448a3a52d37946ef267.json',
+       'Backdoor.Graybird-e6305ff8190995ed52cd9911a19070dcfe0f0b2e1006f8f57f961212b92307e0.json',
+       'Ransom.TeslaCrypt-08bd44c06513a5b490595560dc5eefff70f2ececfe72c6b9817310238038ef6c.json',
+       'report126.json'],
+      dtype='object')

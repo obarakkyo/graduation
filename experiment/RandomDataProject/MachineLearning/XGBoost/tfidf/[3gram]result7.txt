@@ -1,0 +1,31 @@
+サーチ時間 = 248.91021132469177
+Best params : {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'reg_alpha': 0, 'reg_lambda': 1}
+Best Score  : 0.9765010433703682
+best_model's score =  0.9771812080536912
+[[366   7]
+ [ 10 362]]
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.98       373
+           1       0.98      0.97      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['Backdoor.Trojan-d41187a2188d1e38de94430f9a1c8e3cbb7bddcdbabafc99ae40ca3796e8b11e.json',
+       'benreport1543.json',
+       'Trojan.Gen-d5ccf14073f1b99d74499909e7fb804f01d4f5e2af443d3e17541667378ef3ab.json',
+       'report212.json',
+       'SMG.Heur!gen-ba6ecfe982b09caad8e8a0e800581002607576da0d795b12d27240e1c0f27df5.json',
+       'Trojan.Zbot-d4203790dc6b2851b5195f34593d8d264d3323c01d9e677c0ef7afd7c9bc529b.json',
+       'Trojan.Gen.2-9b8deca46fb4838571d0968eb9b14e3e41aca685e422c85e67a9528db0f93d29.json',
+       'benreport486.json', 'benreport500.json', 'report840.json',
+       'Infostealer.Bancos-5756f0ddb2ff1864197a3da87d5fa33aac20371eb096b9291931837ee61b1b4e.json',
+       'Trojan.Gen-52bce8b9c37d481e8544773cb62ae2c5c5a3e1e92b95dac36b64f3d68a4917a0.json',
+       'benreport912.json', 'benreport1788.json',
+       'Trojan.Gen.2-0fe6e63a11f2d7628b3c0380f34d7f65728208b4e1c38c2abbf0ea70fd7bd2e0.json',
+       'Trojan.Gen-56b04f84f47df3a9a44dc190d0fb7d99d1ed09b04c0651eb88d70d73de0d9035.json',
+       'ML.Attribute.HighConfidence-616435933cc3122cc969d455161c3f62278793bdc93ff9c6bfcaba63ad0447ec.json'],
+      dtype='object')

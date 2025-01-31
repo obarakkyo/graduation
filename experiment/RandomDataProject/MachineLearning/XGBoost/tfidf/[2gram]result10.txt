@@ -1,0 +1,34 @@
+サーチ時間 = 244.6498749256134
+Best params : {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'reg_alpha': 1, 'reg_lambda': 0.1}
+Best Score  : 0.9818758107269753
+best_model's score =  0.974496644295302
+[[366   7]
+ [ 12 360]]
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97       373
+           1       0.98      0.97      0.97       372
+
+    accuracy                           0.97       745
+   macro avg       0.97      0.97      0.97       745
+weighted avg       0.97      0.97      0.97       745
+
+Misclassified file names:
+Index(['SMG.Heur!gen-ba6ecfe982b09caad8e8a0e800581002607576da0d795b12d27240e1c0f27df5.json',
+       'benreport1543.json', 'report212.json', 'benreport1370.json',
+       'Trojan.Gen.2-1d784059ea56aaf798c600822c58e565694cda3ed77698a231c9514334ee3481.json',
+       'ML.Attribute.HighConfidence-02c69c8061410a229f6dbc4edfb07f746fa72a0853419a0fc22dc7bbbdc5e06d.json',
+       'benreport1031.json',
+       'NoSymantec-2f72375ff0217fe1d4065faa9e02066389ffd934d1e2659c4d06fe6a900c7529.json',
+       'Trojan.Gen.2-e8d99e48027327a0d1638f4d61a20926772eb7942ce4284455ec45047eff0c4e.json',
+       'report840.json',
+       'Trojan.Gen-d309cf6c49f831543c5a14549b94e0a209a10da1b86e3a1f8cef9a80b1beaac9.json',
+       'Trojan.Gen.2-0239a417007f9bcb21582baf617ec5e6721951a7a534282557c755c34d8a9df4.json',
+       'Ransom.TeslaCrypt-e134fde0574d2489db1d51dfb76aa8b4506560e95e57f5ab990fa3b47d755700.json',
+       'SecurityRisk.gen1-b7486a2e388f915b3651902cbbe72c4da21becfb8fdd62aa9f61808576e3f502.json',
+       'Trojan.Gen.2-62396ace4f7b0ccee975b6e5a071acebd11e1b7a967b8396063f7dfc95cd4856.json',
+       'report126.json',
+       'Trojan Horse-7d8e66671e237a0e4b43d48c6753fc72ed475cfe710149b5ac3daa99e48a2301.json',
+       'benreport1374.json',
+       'Trojan.Gen-7a5573248f02f5e13780b4213343f9394874af9380fae9bcbc5251a7267d2f26.json'],
+      dtype='object')

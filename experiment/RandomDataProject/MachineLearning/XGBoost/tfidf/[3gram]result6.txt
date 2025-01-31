@@ -1,0 +1,24 @@
+サーチ時間 = 243.75830578804016
+Best params : {'learning_rate': 0.1, 'max_depth': 20, 'n_estimators': 100, 'reg_alpha': 1, 'reg_lambda': 1}
+Best Score  : 0.9808662793976651
+best_model's score =  0.9865771812080537
+[[367   6]
+ [  4 368]]
+              precision    recall  f1-score   support
+
+           0       0.99      0.98      0.99       373
+           1       0.98      0.99      0.99       372
+
+    accuracy                           0.99       745
+   macro avg       0.99      0.99      0.99       745
+weighted avg       0.99      0.99      0.99       745
+
+Misclassified file names:
+Index(['report831.json', 'benreport1543.json',
+       'Trojan.Dropper!g1-617056d34236c8cdbe69939bf5bbccd81dfc0eec5e4215038ccc7a8ad5b669cc.json',
+       'report212.json',
+       'Packed.Generic.505-8e0e132881abd9ebaa32d3cf262b5a027588fb725fe8451c361ac24375bfff42.json',
+       'report840.json', 'benreport486.json', 'benreport912.json',
+       'Trojan.Gen.2-b7cc1301dcc0c0891805f52e80c389858421af381879869d80ac1a703b1f139d.json',
+       'Trojan.Dropper!g1-8a85097bbab74e4cead4fda9bf828ca6abaecf848281147567ba056f9bc27657.json'],
+      dtype='object')

@@ -1,0 +1,29 @@
+サーチ時間 = 272.5188584327698
+Best params : {'learning_rate': 0.1, 'max_depth': 10, 'n_estimators': 100, 'reg_alpha': 0.1, 'reg_lambda': 1}
+Best Score  : 0.9828813941684057
+best_model's score =  0.9798657718120806
+[[366   7]
+ [  8 364]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       373
+           1       0.98      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['benreport1031.json',
+       'Infostealer.Dyre-c060c8c14ca86b6be83f84857b2b67432d50a72c7f008d04bb863ee150dfd8d6.json',
+       'SMG.Heur!gen-6dc3defb06005fb7ac41305ef97de37e6c59fd513a71e2b27f0c5be6e42feb21.json',
+       'benreport1506.json',
+       'Infostealer-0d8ab7805b647bf56e310b15ccb166883881bf85c0ae73030f40c63b60aa2ab2.json',
+       'Trojan.Gen-7a7a798f68d19570b140c36df40ea3365775dbe43711e7887734e023ac38c7f7.json',
+       'Trojan.Gen.2-3c79b9085cb48965a215b5938cf501a75c9902806b6530393be270029b14f6be.json',
+       'Trojan.Gen.SMH.2-568207130ec5b989a2803cd435eba65c5932edfc7f1113bb22cab103233f8a57.json',
+       'benreport486.json', 'report840.json', 'report126.json',
+       'benreport1543.json', 'benreport912.json',
+       'Trojan.Gen.2-1cf3081810062cb5ff61f1e04304ce54b6cf5297841579b627872769d5d7307b.json',
+       'Infostealer.Bancos-5756f0ddb2ff1864197a3da87d5fa33aac20371eb096b9291931837ee61b1b4e.json'],
+      dtype='object')
