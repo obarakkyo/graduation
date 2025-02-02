@@ -1,0 +1,31 @@
+グリッドサーチ時間 = 252.84250950813293
+Best params : {'learning_rate': 0.1, 'max_depth': -1, 'nestimators': 20, 'num_leaves': 31, 'reg_alpha': 0.0, 'reg_lambda': 0.8}
+Best Score  : 0.9731425187524675
+best_model's score =  0.974496644295302
+[[362  11]
+ [  8 364]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.97      0.97       373
+           1       0.97      0.98      0.97       372
+
+    accuracy                           0.97       745
+   macro avg       0.97      0.97      0.97       745
+weighted avg       0.97      0.97      0.97       745
+
+Misclassified file names:
+Index(['report212.json', 'benreport1506.json',
+       'Trojan Horse-2bdf7c9f4be624fd696636b68127f98383c36312ed5a32eedd46b842220616f8.json',
+       'benreport1504.json', 'benreport1374.json', 'benreport10.json',
+       'benreport1134.json', 'benreport486.json', 'benreport1370.json',
+       'benreport438.json',
+       'Trojan.Gen-b203346bb9de772a9cda45a4ec1e630b178284ffe3b960bd63bc337e304ae76c.json',
+       'report126.json',
+       'Ransom.TeslaCrypt-e134fde0574d2489db1d51dfb76aa8b4506560e95e57f5ab990fa3b47d755700.json',
+       'Trojan.Gen.2-62396ace4f7b0ccee975b6e5a071acebd11e1b7a967b8396063f7dfc95cd4856.json',
+       'Ransom.LambdaLocker-527436992d09fa4ad6f7e590e28ea9c416acbde18d96a618aba7f6c071649f0e.json',
+       'None-0ff4371269273391479d79141a3363c275007cae6b5ed5ad8ec1c415513d124b.json',
+       'report850.json',
+       'Infostealer.Bancos-b755daedc107ba8cf294f0320381edd0bf7cbe910dc487b919a0b599cbeb1353.json',
+       'Infostealer.Limitail-eb9564da67131d38e827a75df42760359f9a599ea1318db2f74d6b52cf4f0275.json'],
+      dtype='object')

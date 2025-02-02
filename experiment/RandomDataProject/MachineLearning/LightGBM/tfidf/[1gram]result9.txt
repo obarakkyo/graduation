@@ -1,0 +1,24 @@
+グリッドサーチ時間 = 262.22521591186523
+Best params : {'learning_rate': 0.1, 'max_depth': -1, 'nestimators': 20, 'num_leaves': 50, 'reg_alpha': 0.2, 'reg_lambda': 1.0}
+Best Score  : 0.9845598105013817
+best_model's score =  0.9879194630872483
+[[369   4]
+ [  5 367]]
+              precision    recall  f1-score   support
+
+           0       0.99      0.99      0.99       373
+           1       0.99      0.99      0.99       372
+
+    accuracy                           0.99       745
+   macro avg       0.99      0.99      0.99       745
+weighted avg       0.99      0.99      0.99       745
+
+Misclassified file names:
+Index(['Infostealer.Dyre-c060c8c14ca86b6be83f84857b2b67432d50a72c7f008d04bb863ee150dfd8d6.json',
+       'SMG.Heur!gen-6dc3defb06005fb7ac41305ef97de37e6c59fd513a71e2b27f0c5be6e42feb21.json',
+       'benreport1506.json',
+       'Trojan.Gen.SMH.2-568207130ec5b989a2803cd435eba65c5932edfc7f1113bb22cab103233f8a57.json',
+       'benreport486.json', 'report840.json', 'report126.json',
+       'Trojan.Gen.2-1cf3081810062cb5ff61f1e04304ce54b6cf5297841579b627872769d5d7307b.json',
+       'Infostealer.Bancos-5756f0ddb2ff1864197a3da87d5fa33aac20371eb096b9291931837ee61b1b4e.json'],
+      dtype='object')

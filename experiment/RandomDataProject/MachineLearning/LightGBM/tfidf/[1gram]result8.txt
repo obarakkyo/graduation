@@ -1,0 +1,27 @@
+グリッドサーチ時間 = 267.5949401855469
+Best params : {'learning_rate': 0.1, 'max_depth': -1, 'nestimators': 20, 'num_leaves': 50, 'reg_alpha': 0.0, 'reg_lambda': 0.8}
+Best Score  : 0.984559246517399
+best_model's score =  0.9852348993288591
+[[370   3]
+ [  8 364]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.99       373
+           1       0.99      0.98      0.99       372
+
+    accuracy                           0.99       745
+   macro avg       0.99      0.99      0.99       745
+weighted avg       0.99      0.99      0.99       745
+
+Misclassified file names:
+Index(['Trojan.Gen.2-6270305af841f70ba58b658c0786f0983d28f1693c017dcce0eef0128598f190.json',
+       'Trojan.Gen-9f4193528c3ec6ff7ec87fb6c9bb92d45331dbb955a57bfcb9444d55c5854930.json',
+       'benreport486.json', 'report840.json',
+       'Ransom.TeslaCrypt-94074a6103a10635360382cc1036d757ad50c36d15de2d6b1f0f69b43a772b3f.json',
+       'Trojan.Gen-7115976399ecbd50eaf104935ec8de4988415bea670a5ec34709cb36cb8c418f.json',
+       'Ransom.Troldesh-09ec9a16426784b8cfbce5f5048757a4689a76f74bf8470ce7b19780fce27fec.json',
+       'Trojan.Gen.2-0492bd05a972fa5ae7a6bb2cecf9dc321e62ab0d0b76837070063f15364b8bb3.json',
+       'benreport1543.json',
+       'Ransom.TeslaCrypt!g6-563bca68927f87bc4def004b6f024dd49677e9609aaf6950082dc6bbb931398a.json',
+       'Ransom.Troldesh!gm-a507ada66569e3f785178f30f5e4e806715005a642391fcbcdee0f146a142b60.json'],
+      dtype='object')

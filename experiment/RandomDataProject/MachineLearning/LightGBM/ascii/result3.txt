@@ -1,0 +1,27 @@
+グリッドサーチ時間 = 256.2364251613617
+Best params : {'learning_rate': 0.1, 'max_depth': 10, 'nestimators': 20, 'num_leaves': 31, 'reg_alpha': 0.2, 'reg_lambda': 0.8}
+Best Score  : 0.9738147876600305
+best_model's score =  0.9825503355704698
+[[366   7]
+ [  6 366]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       373
+           1       0.98      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['benreport930.json', 'report212.json',
+       'Trojan.Gen.2-f3938a5d873d766fd81b770b91dfd00592033ea41e0a4a9ca565354816e65b08.json',
+       'benreport1506.json',
+       'Trojan.Gen-56b04f84f47df3a9a44dc190d0fb7d99d1ed09b04c0651eb88d70d73de0d9035.json',
+       'Infostealer.Limitail-1210fa15170398851d251cd557e382016a5e5cda335e0bd1156626028a66e024.json',
+       'report776.json', 'report126.json', 'benreport113.json',
+       'benreport431.json',
+       'W32.Rahack.H-dad8a9fe92eba764f3033ccbdc0971eb3cc11e6929b3da265db69a9ad975fc35.json',
+       'Trojan.Gen.2-29906b9904300c9944b3485c9a44c4ab14c47b3db616121a0057d3ecd19dd79c.json',
+       'Trojan.Gen.2-f0161776630b2c1d5be5e07ea2c5ae9cb43595dcb98961665462b5df54155d5b.json'],
+      dtype='object')

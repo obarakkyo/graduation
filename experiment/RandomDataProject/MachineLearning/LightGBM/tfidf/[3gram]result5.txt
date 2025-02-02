@@ -1,0 +1,24 @@
+グリッドサーチ時間 = 259.00156903266907
+Best params : {'learning_rate': 0.1, 'max_depth': 10, 'nestimators': 20, 'num_leaves': 50, 'reg_alpha': 0.2, 'reg_lambda': 1.0}
+Best Score  : 0.9805301449438837
+best_model's score =  0.9879194630872483
+[[368   5]
+ [  4 368]]
+              precision    recall  f1-score   support
+
+           0       0.99      0.99      0.99       373
+           1       0.99      0.99      0.99       372
+
+    accuracy                           0.99       745
+   macro avg       0.99      0.99      0.99       745
+weighted avg       0.99      0.99      0.99       745
+
+Misclassified file names:
+Index(['Trojan.Gen-52bce8b9c37d481e8544773cb62ae2c5c5a3e1e92b95dac36b64f3d68a4917a0.json',
+       'benreport1543.json', 'report212.json', 'benreport486.json',
+       'report840.json',
+       'W32.SillyFDC-4910ef7f82d69b856ddbe2f9f641c91f56730769f4483dbd08da0f2c44c26f2f.json',
+       'Infostealer.Banker.C-7366fdb8f2cfcc99e2857a38f718a713e2a5dcba9a594c4617949eeacee51029.json',
+       'benreport912.json',
+       'Backdoor.Trojan-b3690493c150a1438a7effe05664c6d3cb23d70193c86ae17c18b43c0e657fb0.json'],
+      dtype='object')

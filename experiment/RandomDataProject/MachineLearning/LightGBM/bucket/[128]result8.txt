@@ -1,0 +1,29 @@
+グリッドサーチ時間 = 265.9106333255768
+Best params : {'learning_rate': 0.1, 'max_depth': 10, 'nestimators': 20, 'num_leaves': 31, 'reg_alpha': 0.0, 'reg_lambda': 0.8}
+Best Score  : 0.9751581975071908
+best_model's score =  0.9825503355704698
+[[368   5]
+ [  8 364]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.99      0.98       373
+           1       0.99      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['benreport930.json',
+       'Trojan.Gen.2-62396ace4f7b0ccee975b6e5a071acebd11e1b7a967b8396063f7dfc95cd4856.json',
+       'benreport1506.json',
+       'Backdoor.Trojan-36f897378f88d75e44b9e0156b9e1682814b76e75e84f901f80c1765b00866b5.json',
+       'benreport1504.json',
+       'Trojan.Gen.2-fab1d405c164c74411dd2655a9f7dbb3e19ebcb3b0cb10815f163e42ce6a7800.json',
+       'benreport1374.json', 'benreport1370.json',
+       'SMG.Heur!gen-181ee7522dec7245f293043add900d31e79185c92edb5d90dc79d32f19be93a4.json',
+       'Trojan.Gen-7115976399ecbd50eaf104935ec8de4988415bea670a5ec34709cb36cb8c418f.json',
+       'Trojan.Nancrat-1e4ec2f6328cbc3f6d96d8373a5e903b7dab253cce578c6a3f8f0cf293985ba1.json',
+       'Ransom.Troldesh!gm-a507ada66569e3f785178f30f5e4e806715005a642391fcbcdee0f146a142b60.json',
+       'Trojan.Gen.2-201101268d9170184dbc48cd9eb9a589b7775e090dafd0336cee4f96d18fd224.json'],
+      dtype='object')

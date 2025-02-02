@@ -1,0 +1,29 @@
+グリッドサーチ時間 = 256.0470778942108
+Best params : {'learning_rate': 0.1, 'max_depth': -1, 'nestimators': 20, 'num_leaves': 50, 'reg_alpha': 0.2, 'reg_lambda': 0.8}
+Best Score  : 0.9889227905927471
+best_model's score =  0.9812080536912752
+[[367   6]
+ [  8 364]]
+              precision    recall  f1-score   support
+
+           0       0.98      0.98      0.98       373
+           1       0.98      0.98      0.98       372
+
+    accuracy                           0.98       745
+   macro avg       0.98      0.98      0.98       745
+weighted avg       0.98      0.98      0.98       745
+
+Misclassified file names:
+Index(['Trojan.Gen-52bce8b9c37d481e8544773cb62ae2c5c5a3e1e92b95dac36b64f3d68a4917a0.json',
+       'Trojan Horse-898f244d58414fcb456c4c89edbf52ac263c8f2935a21b41bcd58b43409e5d92.json',
+       'SMG.Heur!gen-3d94a392078b54fee0c25f533d16dd4fe9d6727be66a44993d55e114f6789b1a.json',
+       'Trojan.Gen.2-7197c82de19c3f453ce837695ebbff347804dd3424675087eef1ae6c798f400f.json',
+       'benreport1370.json',
+       'Trojan.Gen.8-69ca31717001e32870a2b43fbd130e16d2c8f1dce6323f7667d9029bb7ebeece.json',
+       'benreport486.json', 'report840.json',
+       'W32.SillyFDC-4910ef7f82d69b856ddbe2f9f641c91f56730769f4483dbd08da0f2c44c26f2f.json',
+       'Infostealer.Banker.C-7366fdb8f2cfcc99e2857a38f718a713e2a5dcba9a594c4617949eeacee51029.json',
+       'benreport912.json',
+       'Backdoor.Trojan-b3690493c150a1438a7effe05664c6d3cb23d70193c86ae17c18b43c0e657fb0.json',
+       'report126.json', 'benreport1374.json'],
+      dtype='object')
